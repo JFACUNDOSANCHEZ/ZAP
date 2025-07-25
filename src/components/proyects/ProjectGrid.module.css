@@ -1,0 +1,132 @@
+/* ProjectGrid.module.css */
+
+:root {
+  --overlay-bg: rgba(0, 0, 0, 0.7);
+  --overlay-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.7) 100%);
+  --text-light: #fff;
+  --text-muted: #ccc;
+  --radius: 12px;
+  --transition: 0.3s ease;
+}
+
+.projectGridSection {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 80px; /* Opcional: añade padding superior a la sección si la necesitas separada de algo de arriba */
+  padding-bottom: 80px; /* Opcional: añade padding inferior a la sección */
+}
+
+.projectIntroHeader {
+  padding: 0 40px; /* Aumenta el padding lateral del texto */
+  max-width: 900px; /* Permite un poco más de ancho para el texto */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 80px; /* MUCHO MÁS ESPACIO entre el texto y la cuadrícula */
+}
+
+.projectSectionTitle {
+  font-size: 3.5rem; /* Título un poco más grande */
+  font-weight: 700; /* Un poco más de peso para un look moderno */
+  color: #1a1a1a; /* Color de texto más oscuro para contraste */
+  margin-bottom: 25px; /* Más espacio entre el título y la descripción */
+  line-height: 1.2;
+}
+
+.projectSectionDescription {
+  font-size: 1.3rem; /* Descripción un poco más grande */
+  color: #555; /* Color de texto ligeramente más suave */
+  line-height: 1.7; /* Mayor interlineado para legibilidad */
+  max-width: 700px; /* Controla el ancho de la descripción */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid Container */
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0rem; /* Tus gaps son 0, lo cual significa que no hay espacio entre las celdas */
+  padding: 0rem;
+  width: 100%;
+  max-width: 2000px;
+  margin: 0 auto; /* Centrar la cuadrícula */
+}
+
+
+/* Project Card */
+.projectItem {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0; /* 'v0' no es un valor CSS válido, asumo que quieres '0' */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform var(--transition), box-shadow var(--transition);
+  background-color: #000;
+}
+
+.projectItem:hover {
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Project Image */
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.projectItem:hover .projectImage {
+  transform: scale(1.05);
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-gradient);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  transition: opacity var(--transition);
+}
+
+.projectItem:hover .overlay {
+  opacity: 1;
+}
+
+/* Overlay Text */
+.overlayTitle {
+  color: var(--text-light);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 5px;
+}
+
+.overlayCategory {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .projectSectionTitle {
+        font-size: 2.2rem; /* Reduce el tamaño del título en móviles */
+    }
+    .projectSectionDescription {
+        font-size: 1rem; /* Reduce el tamaño de la descripción en móviles */
+    }
+    .gridContainer {
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
+        gap: 1rem; /* Añade un pequeño espacio entre ítems en vista móvil */
+    }
+    .projectIntroHeader {
+        margin-bottom: 40px; /* Ajusta el margen inferior del encabezado en móviles */
+    }
+}

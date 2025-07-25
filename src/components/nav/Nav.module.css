@@ -1,0 +1,196 @@
+/* src/components/Nav.module.css */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  z-index: 10000; /* Alto z-index para que esté siempre encima */
+
+  background-color: transparent;
+  box-shadow: none; 
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.scrolledHeader {
+  background-color: rgb(0, 0, 0); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.082); 
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px);
+}
+
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+}
+
+.logo h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #fff; /* Asegúrate de que el texto sea visible en fondo transparente y oscuro */
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.navbarSecondary .navLinksSecondary {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.navbarSecondary .viewShowcaseBtn {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-left: 40px;
+  transition: background-color 0.3s ease;
+}
+
+.navbarSecondary .viewShowcaseBtn:hover {
+  color: #ffffff;
+  transition: ease 0.3s ;
+}
+
+.navbarMain .navLinksMain {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbarMain .navLinksMain li {
+  margin: 0 15px;
+}
+
+.navbarMain .navLinksMain a {
+  color: #f0f0f0; /* Color inicial de los enlaces (visible en fondo transparente) */
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.navbarMain .navLinksMain a:hover {
+  color: #090909;
+}
+
+/* Puedes cambiar el color del texto cuando el header está scrolleado si es necesario */
+.scrolledHeader .navbarMain .navLinksMain a,
+.scrolledHeader .languageSelector,
+.scrolledHeader .socialIcons a,
+.scrolledHeader .userIcon,
+.scrolledHeader .logo h1 {
+    color: #fff; /* O un color que contraste bien con rgba(0,0,0,0.7) */
+}
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.headerEnter {
+  animation: slideDown 0.7s ease-out forwards;
+}
+
+
+.languageSelector {
+  font-size: 14px;
+  color: #bbb;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.socialIcons a {
+  margin-left: 20px;
+  font-size: 18px;
+  color: #f0f0f0;
+  transition: color 0.3s ease;
+}
+
+.facebook:hover {
+  color: #1877f2; /* Facebook azul */
+}
+
+.twitter:hover {
+  color: #1da1f2; /* Twitter celeste */
+}
+
+.instagram:hover {
+  color: #e1306c; /* Instagram rosa */
+}
+
+.youtube:hover {
+  color: #ff0000; /* YouTube rojo */
+}
+.whatsapp:hover {
+  color: #25d366; /* WhatsApp verde */
+}
+.linkedin:hover {
+  color: #0077b5; /* LinkedIn azul */
+} 
+/* .socialIcons a:hover {
+  color: #070707;
+} */
+
+.userIcon {
+  color: #f0f0f0;
+  margin-left: 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* --- Media Queries para Responsividad del Header --- */
+@media (max-width: 992px) {
+  .header {
+    padding: 15px 20px;
+  }
+  .navbarMain {
+    display: none; /* Oculta la navegación principal en pantallas más pequeñas */
+  }
+  .headerRight .socialIcons,
+  .headerRight .languageSelector,
+  .headerRight .userIcon {
+    display: none; /* Oculta elementos extra en pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 768px) {
+  .headerLeft {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .navbarSecondary .viewShowcaseBtn {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    padding: 10px 15px;
+  }
+  .logo h1 {
+    font-size: 24px;
+  }
+}

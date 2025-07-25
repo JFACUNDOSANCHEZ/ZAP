@@ -1,0 +1,22 @@
+/* src/index.css o src/App.css */
+
+body {
+  margin: 0; /* Importante: Elimina cualquier margen por defecto del body */
+  padding: 0; /* Importante: Elimina cualquier padding por defecto del body */
+  box-sizing: border-box; /* Buena práctica para el modelo de caja */
+  font-family: 'Inter', sans-serif; /* Fuente general para el contenedor */
+
+  /* ESTO ES LO QUE SOLUCIONARÁ EL PROBLEMA DEL SOLAPAMIENTO */
+  /* Ajusta este valor. Es la altura que debe tener tu navbar. */
+                     /* Esto empuja todo el contenido de la página (incluyendo BrandingSection) hacia abajo */
+                     /* para que no quede debajo del navbar fijo. */
+}
+
+/* También es una buena práctica para el box-sizing en todo el documento */
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}

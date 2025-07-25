@@ -1,0 +1,258 @@
+/* src/components/ExpandableItem/ExpandableItem.module.css */
+
+.itemContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 90px;
+  border-bottom: 1px solid #eee;
+  border-top:1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, max-height 0.5s ease-out;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+
+  /* ESTILOS PARA LA ANIMACIÓN DE ENTRADA */
+  opacity: 0; /* Por defecto, oculto */
+  transform: translateY(50px); /* Un poco desplazado hacia abajo */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out, background-color 0.3s ease, border-color 0.3s ease, max-height 0.5s ease-out; /* Añade tus transiciones existentes */
+}
+
+/* Cuando el elemento está visible en el viewport */
+.itemContainer.visible {
+  opacity: 1; /* Se vuelve visible */
+  transform: translateY(0); /* Vuelve a su posición original */
+}
+
+
+/* Cuando está expandido, permite que el contenido se muestre */
+.itemContainer.expanded {
+  max-height: 1000px;
+  overflow: visible;
+  background-color: #f5f5f5;
+}
+
+
+.itemContainer:last-child {
+  border-bottom: none;
+}
+
+.itemContainer:hover {
+  background-color: #f9f9f9;
+  border-color: #ccc;
+}
+
+.leftContent {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.iconCircle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 25px;
+  transition: border-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.iconCircle svg {
+  width: 20px;
+  height: 20px;
+  fill: #666;
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.itemContainer.expanded .iconCircle svg {
+  transform: rotate(180deg);
+}
+.itemContainer:hover .iconCircle svg {
+  fill: #333;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-grow: 1;
+  max-width: 60%;
+  
+}
+
+.mainText {
+  font-size: 2.4rem;
+  font-weight:1700;
+  color: #1e1e1e;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.itemContainer:hover .mainText {
+  color: #000;
+}
+
+.descriptionText {
+  font-size: 1.1rem;
+  color: #777;
+  margin-top: 10px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease-out, opacity 0.5s ease-out, margin-top 0.5s ease-out;
+  line-height: 1.6;
+  max-width: 100%;
+}
+
+.itemContainer.expanded .descriptionText {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 15px;
+}
+
+.bigNumber {
+  font-size: 10em;
+  font-weight: 190;
+  color: rgba(200, 200, 200, 0.4);
+  font-family: 'Inter', sans-serif;
+  pointer-events: none;
+  width: 100px; 
+  right: 0px;
+  position: static; top: auto; right: auto; transform: none; margin-left: 0;
+  line-height: 1;
+}
+
+/* --- ESTILOS PARA LA IMAGEN AL HACER HOVER/EXPANDIR --- */
+.hoverImage {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%) translateX(100px);
+  width: 25%;
+  height: auto;
+  opacity: 0;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.051);
+}
+
+.itemContainer:hover .hoverImage,
+.itemContainer.expanded .hoverImage {
+  transform: translateY(-50%) translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .textContainer {
+    max-width: 65%;
+  }
+  .bigNumber {
+    font-size: 8rem;
+  }
+  .hoverImage {
+    width: 250px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .itemContainer {
+    padding: 30px 40px;
+  }
+  .textContainer {
+    max-width: 60%;
+  }
+  .mainText {
+    font-size: 1.8rem;
+  }
+  .bigNumber {
+    font-size: 6rem;
+  }
+  .hoverImage {
+    right: 40px;
+    width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .itemContainer {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    align-items: center;
+  }
+
+  .leftContent {
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .iconCircle {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .textContainer {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .mainText {
+    font-size: 1.5rem;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+
+  .descriptionText {
+    font-size: 0.9rem;
+    margin-left: 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  .bigNumber {
+    font-size: 3.5rem;
+    margin-left: 0;
+    order: -1;
+    margin-bottom: 10px;
+    position: static;
+    top: auto;
+    right: auto;
+    transform: none;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hoverImage {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 80%;
+    max-width: 250px;
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    box-shadow: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .itemContainer.expanded .hoverImage {
+    opacity: 1;
+  }
+  .itemContainer:hover .hoverImage {
+      opacity: 0;
+  }
+}

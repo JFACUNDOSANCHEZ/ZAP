@@ -1,0 +1,55 @@
+/* src/components/SomeSection/SomeSection.module.css */
+.sectionWrapper {
+  max-width: 10000px; /* Ancho máximo para el contenido de la sección */
+  margin: 80px auto; /* Centra la sección y le da margen vertical */
+  padding: 40px;
+  background-color: #fff; /* Fondo blanco */
+  border-radius: 15px;
+    font-family: 'Inter', sans-serif; /* O 'Montserrat', sans-serif; */
+
+  /* box-shadow: 0 10px 30px rgba(0,0,0,0.05); */
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e1e1e;
+  text-align: center;
+  margin-bottom: 60px;
+}
+/* SomeSection.module.css */
+
+.itemSlideIn {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Si querés diferenciar el timing para cada uno */
+.itemDelay1 { animation-delay: 0.2s; }
+.itemDelay2 { animation-delay: 0.6s; }
+.itemDelay3 { animation-delay: 0.9s; }
+.itemDelay4 { animation-delay: 0.8s; }
+
+.itemsList {
+  /* Contenedor de los ExpandableItem, no necesita mucho más si el item ya tiene sus estilos */
+}
+
+/* Responsive para SomeSection */
+@media (max-width: 768px) {
+  .sectionWrapper {
+    padding: 30px 20px;
+    margin: 40px auto;
+  }
+  .sectionTitle {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+}
