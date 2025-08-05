@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // <-- ¡Importamos esto!
 
 import Home from './components/home/Home';
-import ProjectDetail from './components/ProjectDetail/ProjectDetail'; // <-- ¡Importamos el nuevo componente!
+import ProjectDetail from './components/projectDetail/ProjectDetail'; // <-- ¡Importamos el nuevo componente!
 
 import './App.css'; 
 
