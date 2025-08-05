@@ -49,7 +49,7 @@ const Home = () => {
       <section id="nos">
         <AboutUs />
       </section>
-      
+      <BrandsSection></BrandsSection>
       <section id="contact">
         <ContactSection />
       </section>
