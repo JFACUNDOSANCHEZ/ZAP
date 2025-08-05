@@ -2,7 +2,11 @@
 import React, { useEffect, useState } from 'react';
 import styles from './DynamicTitle.module.css';
 
-const words = ['MARCA', 'IMAGEN', 'ESTILO', 'NEGOCIO', 'COMUNICACIÓN'];
+const words = [
+ ['Construimos', 'el futuro', 'de tu MARCA'],
+['Transformamos', 'ideas en', 'RESULTADOS'],
+ ['Hacemos que tu', 'historia sea', 'MEMORABLE'],
+];
 
 const DynamicTitle = ({ className }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -10,23 +14,36 @@ const DynamicTitle = ({ className }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setAnimationClass(styles.animateOut); // empieza animación de salida
+      setAnimationClass(styles.animateOut);
 
       setTimeout(() => {
         setCurrentIndex((prev) => (prev + 1) % words.length);
-        setAnimationClass(styles.animateIn); // nueva animación de entrada
-      }, 600); // Debe coincidir con duración de animación out
-    }, 3500); // Tiempo total por palabra
+        setAnimationClass(styles.animateIn);
+      }, 800);
+    }, 3500);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <span className={`${styles.dynamicWordWrapper} ${className || ''}`}>
-      <span className={`${styles.dynamicWord} ${animationClass}`}>
-        {words[currentIndex]}
-      </span>
-    </span>
+    <div className={`${styles.dynamicWordWrapper} ${className || ''}`}>
+      <div className={`${styles.dynamicWord} ${animationClass}`}>
+        {words[currentIndex].map((line, index) => (
+          <span
+            key={index}
+            className={`${styles.dynamicLine} ${
+              index === 0
+                ? styles.lineOne
+                : index === 1
+                ? styles.lineTwo
+                : styles.lineThree
+            }`}
+          >
+            {line}
+          </span>
+        ))}
+      </div>
+    </div>
   );
 };
 

@@ -1,21 +1,42 @@
 // src/components/ContactSection/ContactSection.jsx
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './ContactSection.module.css';
 
 const ContactSection = () => {
-  const [email, setEmail] = useState('');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    projectType: '',
+    message: '',
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Email enviado:', email);
+    console.log('Formulario enviado:', formData);
     // Aquí es donde integrarías la lógica de envío al backend o a un servicio de terceros
-    setEmail('');
+    // Por ejemplo, usando fetch para enviar los datos a un endpoint
+    
+    // Resetea el formulario
+    setFormData({
+      name: '',
+      email: '',
+      projectType: '',
+      message: '',
+    });
+    
     alert('¡Gracias por tu interés! Te contactaremos pronto.');
   };
 
   return (
-    <footer className={styles.contactHero}>
-      {/* Nuevo contenedor para el headline y el formulario en la parte superior */}
+    <footer id='contact' className={styles.contactHero}>
       <div className={styles.topContentContainer}>
         <div className={styles.heroContent}>
           <h1 className={styles.headline}>
@@ -24,70 +45,95 @@ const ContactSection = () => {
           </h1>
         </div>
 
-        {/* COLUMNA DEL FORMULARIO AHORA ARRIBA */}
-        <div className={styles.contactFormTop}> {/* Nueva clase para esta ubicación */}
-          <h3 className={styles.formTitle}>Dejanos tu email</h3>
-          {/* <p className={styles.formDescription}>Recibe nuestras novedades y ofertas exclusivas.</p> */}
-          <form onSubmit={handleSubmit} className={styles.subscribeForm}>
+        {/* COLUMNA DEL FORMULARIO COMPLETO */}
+        <div className={styles.contactFormTop}>
+          <h3 className={styles.formTitle}>Contanos de tu proyecto</h3>
+          <form onSubmit={handleSubmit} className={styles.contactForm}>
             <input
-              type="email"
-              placeholder="Tu dirección de email"
-              className={styles.emailInput}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              name="name"
+              placeholder="Tu nombre completo"
+              className={styles.formInput}
+              value={formData.name}
+              onChange={handleChange}
               required
             />
-            <button type="submit" className={styles.subscribeButton}>
-              Enviar
+            <input
+              type="email"
+              name="email"
+              placeholder="Tu dirección de email"
+              className={styles.formInput}
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            <select
+              name="projectType"
+              className={styles.formSelect}
+              value={formData.projectType}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Selecciona el tipo de proyecto</option>
+              <option value="branding">Branding y Diseño de Marca</option>
+              <option value="web-dev">Desarrollo Web</option>
+              <option value="social-media">Gestión de Redes Sociales</option>
+              <option value="ecommerce">E-commerce</option>
+              <option value="otros">Otros</option>
+            </select>
+            <textarea
+              name="message"
+              placeholder="Describinos tu idea..."
+              className={styles.formTextarea}
+              value={formData.message}
+              onChange={handleChange}
+              rows="5"
+              required
+            />
+            <button type="submit" className={styles.formButton}>
+              Enviar Mensaje
             </button>
           </form>
         </div>
-      </div> {/* Fin de topContentContainer */}
+      </div>
 
       <div className={styles.footerGrid}>
         <div>
-          <strong>Aumenta tus ventas</strong>
+          <strong>Servicios</strong>
           <p>SEM - Google Ads</p>
           <p>SEO - Posicionamiento web</p>
           <p>Gestión de Redes Sociales</p>
           <p>Desarrollo web</p>
           <p>E-commerce</p>
         </div>
-
         <div>
           <strong>Soluciones</strong>
           <p>Experiencia de Usuario (UX)</p>
           <p>Desarrollo de apps y sistemas</p>
           <p>Branding y diseño de marca</p>
         </div>
-
         <div>
           <strong>Menu</strong>
-          <p><a href="#home">Home</a></p>
-          <p><a href="#agencia">Agencia</a></p>
-          <p><a href="#servicios">Servicios</a></p>
-          <p><a href="#trabajos">Trabajos</a></p>
-          <p><a href="#contacto">Contacto</a></p>
+          <p><Link to="/#home">Home</Link></p>
+          <p><Link to="/#nos">Nosotros</Link></p>
+          <p><Link to="/#portfolio">Trabajos</Link></p>
+          <p><Link to="/#contact">Contacto</Link></p>
         </div>
-
         <div>
           <strong>Conectate</strong>
+          <p><a href="mailto:hola@somoszap.com">hola@somoszap.com</a></p>
           <p>Buenos Aires, Argentina<br />+54 11-3968-2284</p>
+          <p>Villa Allende, Córdoba, Arg.</p>
           <p>Barcelona, España<br />+34 654142249</p>
         </div>
-        {/* LA COLUMNA DEL FORMULARIO YA NO VA AQUÍ */}
       </div>
-
-      {/* Redes sociales verticales fijas */}
-      <div className={styles.socialVertical}>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-          <i className="fab fa-instagram"></i>
-        </a>
-        <a href="#">
-          <span className={styles.logoText}>C</span>
-        </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+      
+      <div className={styles.socialIcons}>
+        <a href="https://www.linkedin.com/in/sildelvillar/" target="_blank" rel="noopener noreferrer">
           <i className="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com/somoszap/?hl=es" target="_blank" rel="noopener noreferrer">
+          <i className="fab fa-instagram"></i>
         </a>
       </div>
     </footer>

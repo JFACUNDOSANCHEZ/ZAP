@@ -1,0 +1,143 @@
+/* src/components/ProjectDetail/ProjectDetail.module.css */
+/* -------------------------------------- */
+/* --- Contenedor Principal del Proyecto --- */
+/* -------------------------------------- */
+.projectDetailContainer {
+  max-width: 1400px; /* Un poco más ancho para el estilo de grilla */
+  margin: 0 auto;
+  padding: 100px 40px;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background-color: #000;
+}
+
+/* -------------------------------------- */
+/* --- Sección de Cabecera y Grilla --- */
+/* -------------------------------------- */
+.headerGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-bottom: 60px;
+}
+
+.projectCategory {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #bbb;
+}
+
+.projectTitle {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+/* -------------------------------------- */
+/* --- Grilla de Introducción (Meta-datos + Descripción) --- */
+/* -------------------------------------- */
+.introGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Dos columnas: una para meta, otra para descripción */
+  gap: 100px; /* Espacio generoso entre columnas */
+  margin-bottom: 80px;
+}
+
+.metaColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.metaItem strong {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #bbb;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.metaItem p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.projectDescription {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+}
+
+/* -------------------------------------- */
+/* --- Grilla de Imágenes --- */
+/* -------------------------------------- */
+.imageGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas para imágenes */
+  gap: 40px;
+}
+
+.galleryImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  /* La primera imagen podría ser más grande */
+  /* &:first-child { grid-column: 1 / -1; } */
+}
+
+/* -------------------------------------- */
+/* --- Botón de Regreso --- */
+/* -------------------------------------- */
+.backButtonContainer {
+  margin-top: 60px;
+  text-align: left;
+}
+
+.backButton {
+  text-decoration: none;
+  color: #FF00FF;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: opacity 0.3s;
+}
+
+.backButton:hover {
+  opacity: 0.8;
+}
+
+/* --- Estado de "no encontrado" --- */
+.notFoundContainer {
+  text-align: center;
+  padding: 150px 40px;
+  color: #fff;
+  background-color: #000;
+  font-family: 'Poppins', sans-serif;
+}
+
+.notFoundContainer h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.notFoundContainer p {
+  font-size: 1.2rem;
+  color: #bbb;
+}
+
+/* --- Media Queries para móviles --- */
+@media (max-width: 768px) {
+  .projectDetailContainer {
+    padding: 80px 20px;
+  }
+  .introGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .imageGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

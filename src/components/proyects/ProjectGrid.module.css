@@ -1,7 +1,7 @@
 /* ProjectGrid.module.css */
 
 :root {
-  --overlay-bg: rgba(0, 0, 0, 0.7);
+  --overlay-bg: rgba(0, 0, 0, 0.086);
   --overlay-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.7) 100%);
   --text-light: #fff;
   --text-muted: #ccc;
@@ -12,8 +12,8 @@
 .projectGridSection {
   margin: 0 auto;
   text-align: center;
-  padding-top: 80px; /* Opcional: añade padding superior a la sección si la necesitas separada de algo de arriba */
-  padding-bottom: 80px; /* Opcional: añade padding inferior a la sección */
+  padding-top: 0px; /* Opcional: añade padding superior a la sección si la necesitas separada de algo de arriba */
+  padding-bottom: px; /* Opcional: añade padding inferior a la sección */
 }
 
 .projectIntroHeader {

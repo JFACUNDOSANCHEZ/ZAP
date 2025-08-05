@@ -1,311 +1,184 @@
 /* src/components/ContactSection/ContactSection.module.css */
-
+/* -------------------------------------- */
+/* --- Estilos del Contenedor Principal --- */
+/* -------------------------------------- */
 .contactHero {
   background-color: #000;
-  color: white;
-  padding: 100px 40px 60px; /* Ajusta este padding si es necesario */
-  position: relative;
-  overflow: hidden;
-
+  color: #fff;
+  padding: 100px 40px;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Pseudo-elemento para el efecto de luz/sombra radial */
-.contactHero::before {
-  content: "";
-  position: absolute;
-  top: -1500x;
-  left: -150px;
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, #111 0%, transparent 70%);
-  z-index: 0;
-  opacity: 0.3;
-  filter: blur(60px);
-  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-}
-
-/* CONTENEDOR SUPERIOR PARA HEADLINE Y FORMULARIO */
 .topContentContainer {
-  display: flex; /* Permite que los elementos se coloquen uno al lado del otro */
-  justify-content: space-between; /* Empuja el headline a la izquierda y el formulario a la derecha */
-  align-items: flex-start; /* Alinea los ítems en la parte superior */
-  max-width: 1400px; /* Define el ancho máximo para este contenedor superior */
-  margin: 0 auto; /* Centra el contenedor */
-  position: relative; /* Asegura que esté por encima del ::before */
-  z-index: 1;
-  margin-bottom: 80px; /* Espacio entre la sección superior y el footerGrid */
-  padding: 0 40px; /* Padding lateral, ajusta si es necesario */
-}
-
-
-.heroContent {
-  max-width: 60%; /* Permite que el headline ocupe la izquierda */
-  text-align: left; /* Asegura que el texto esté a la izquierda */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 50px;
+  margin-bottom: 80px;
 }
 
 .headline {
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 1.2;
-  color: white;
-  margin: 0; /* Elimina el margen por defecto para un control preciso */
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #fff;
 }
 
 .arrow {
-  font-size: 70px;
-  color: #fcee09;
-  margin-left: 10px;
-  transition: transform 0.3s ease-out;
+  color: #fbff00;
+  font-size: clamp(4rem, 8vw, 6rem);
 }
 
-.headline:hover .arrow {
-  transform: translateX(15px);
-}
-
-/* ESTILOS ESPECÍFICOS PARA EL FORMULARIO EN LA PARTE SUPERIOR */
 .contactFormTop {
-  background-color: #000; /* Fondo negro para integrar */
-  padding: 40px; /* Aumentar el padding para que parezca más grande */
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  width: 450px; /* Aumentar el ancho para más presencia */
-  flex-shrink: 0;
-  margin-left: 40px;
+  flex-basis: 40%; /* El formulario ocupa más espacio */
 }
 
 .formTitle {
-  font-size: 2.2rem; /* Aumentar el tamaño del título */
-  font-weight: 700;
-  color: white;
-  margin-bottom: 15px; /* Más espacio debajo del título */
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #fff;
 }
 
-.formDescription {
-  font-size: 1.1rem; /* Aumentar el tamaño de la descripción */
-  color: #bbb;
-  margin-bottom: 30px; /* Más espacio debajo de la descripción */
-  line-height: 1.6; /* Mejorar la legibilidad de la descripción más grande */
-}
-
-.subscribeForm {
+/* -------------------------------------- */
+/* --- Estilos del Formulario Completo --- */
+/* -------------------------------------- */
+.contactForm {
   display: flex;
   flex-direction: column;
+  gap: 15px;
+}
+
+.formInput,
+.formSelect,
+.formTextarea {
+  background-color: transparent;
+  border: 1px solid #444;
+  color: #f0f0f0;
+  padding: 15px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
   width: 100%;
-  gap: 20px; /* Más espacio entre input y botón */
+  transition: border-color 0.3s;
 }
 
-.emailInput {
-  padding: 16px 20px; /* Aumentar el padding del input */
-  border: 1px solid #333;
-  border-radius: 8px;
-  background-color: #222;
-  color: #fff;
-  font-size: 1.15rem; /* Aumentar el tamaño del texto del input */
-  width: 100%;
-  box-sizing: border-box;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+.formInput::placeholder,
+.formTextarea::placeholder {
+  color: #888;
 }
 
-.emailInput::placeholder {
-  color: #777;
-  font-size: 1.15rem; /* Aumentar el tamaño del placeholder para consistencia */
-}
-
-.emailInput:focus {
+.formInput:focus,
+.formSelect:focus,
+.formTextarea:focus {
   outline: none;
-  border-color: #fcee09;
-  box-shadow: 0 0 0 3px rgba(252, 238, 9, 0.2);
+  border-color: #fff200;
 }
 
-.subscribeButton {
-  background-color: #fcee09;
+.formSelect {
+  /* Estilo específico para el select */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  padding-right: 40px;
+}
+.formSelect option {
+  color: black;
+}
+
+.formTextarea {
+  resize: vertical;
+}
+
+.formButton {
+  background-color: #f6ff00;
   color: #000;
-  padding: 16px 30px; /* Aumentar el padding del botón */
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1.2rem; /* Aumentar el tamaño del texto del botón */
   font-weight: 700;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  width: 100%;
+  font-size: 1rem;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  text-transform: uppercase;
 }
 
-.subscribeButton:hover {
-  background-color: #e0d008;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(252, 238, 9, 0.3);
+.formButton:hover {
+  background-color: #c9b500;
+  transform: translateY(-2px);
 }
 
-/* FOOTER GRID: AHORA CON 4 COLUMNAS ESTÁNDAR */
+/* -------------------------------------- */
+/* --- Estilos del Footer Grid --- */
+/* -------------------------------------- */
 .footerGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Vuelve a tu diseño original de 4 columnas auto-ajustables */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 40px;
-  margin-top: 60px; /* Mantén el espacio de arriba */
-  position: relative;
-  z-index: 1;
-  max-width: 1200px; /* Ajusta el ancho máximo si es necesario */
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 40px;
+  border-top: 1px solid #333;
+  padding-top: 40px;
+  color: #bbb;
 }
 
 .footerGrid strong {
   display: block;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: white;
-  font-size: 18px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #fff;
 }
 
-.footerGrid p {
-  font-size: 15px;
-  color: #ccc;
-  margin: 4px 0;
-}
-
-.footerGrid a {
-  color: #ccc;
+.footerGrid p, .footerGrid a {
+  margin: 5px 0;
+  color: #bbb;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s;
 }
 
 .footerGrid a:hover {
-  color: #fff;
-  text-decoration: underline;
+  color: #ffff00;
 }
 
-/* Redes sociales verticales fijas */
-.socialVertical {
-  position: fixed; /* Asegura que se mantenga fijo */
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #fcee09;
+.socialIcons {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   gap: 20px;
-  padding: 20px 10px;
-  z-index: 100;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  margin-top: 40px;
 }
 
-.socialVertical a {
-  color: #000;
-  font-size: 20px;
+.socialIcons a {
+  font-size: 1.5rem;
+  color: #fff;
+  transition: color 0.3s;
 }
 
-.socialVertical a:hover {
-  color: #333; /* Color oscuro al hover */
+.socialIcons a:hover {
+  color: #fbff00;
 }
 
-.logoText {
-  font-weight: 700;
-  font-size: 18px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .headline {
-    font-size: 54px;
-  }
-  .topContentContainer {
-    flex-direction: column; /* Apila el headline y el formulario en pantallas más pequeñas */
-    align-items: center; /* Centra los elementos apilados */
-    text-align: center; /* Centra el texto del headline */
-    padding: 0 20px;
-  }
-  .heroContent {
-    max-width: 100%; /* Ocupa todo el ancho */
-    text-align: center; /* Centra el texto en este breakpoint */
-    margin-bottom: 40px; /* Espacio entre headline y formulario */
-  }
-  .contactFormTop {
-    width: 90%; 
-     /* Permitir un mayor ancho en pantallas medianas */ 
-    max-width: 500px; /* Mantener un máximo si es necesario */
-    margin-left: auto;
-    margin-right: auto;
-    padding: 30px; /* Reducir un poco el padding en pantallas medianas */
-  }
-  .formTitle {
-    font-size: 2rem;
-  }
-  .formDescription {
-    font-size: 1rem;
-  }
-  .subscribeForm {
-    gap: 15px;
-  }
-  .emailInput,
-  .subscribeButton {
-    font-size: 1rem;
-    padding: 12px 15px;
-  }
-}
-
-@media (max-width: 992px) {
-  .headline {
-    font-size: 48px;
-  }
-  .footerGrid {
-    grid-template-columns: repeat(2, minmax(150px, 1fr)); /* 2 columnas para el footer grid */
-    gap: 30px;
-  }
-}
-
+/* -------------------------------------- */
+/* --- Media Queries para Móviles --- */
+/* -------------------------------------- */
 @media (max-width: 768px) {
   .contactHero {
-    padding: 80px 20px 40px;
+    padding: 80px 20px;
   }
-  .headline {
-    font-size: 38px;
-  }
-  .arrow {
-    font-size: 50px;
-  }
+
   .topContentContainer {
-    margin-bottom: 60px; /* Ajusta el margen si es necesario */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
   }
+
   .heroContent {
     margin-bottom: 30px;
   }
-  .footerGrid {
-    grid-template-columns: 1fr; /* Una columna en móviles */
-    gap: 30px;
-    padding: 0 20px;
-  }
-  .socialVertical {
-    position: static;
-    transform: none;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 40px;
-    border-left: none;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 20px;
-  }
-}
 
-@media (max-width: 480px) {
-  .headline {
-    font-size: 32px;
-  }
-  .emailInput,
-  .subscribeButton {
-    font-size: 0.95rem;
-    padding: 10px 15px;
-  }
-  .formTitle {
-    font-size: 1.5rem;
-  }
-  .formDescription {
-    font-size: 0.85rem;
+  .footerGrid {
+    gap: 30px;
   }
 }

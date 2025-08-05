@@ -1,82 +1,104 @@
 // src/components/ExpandableItem/ExpandableItem.jsx
-import React, { useState, useRef, useEffect } from 'react'; // Importa useRef y useEffect
+import React, { useState, useRef, useEffect } from 'react';
 import styles from './ExpandableItem.module.css';
+import project7Img from '../../assets/revi.png';
+import project8Img from '../../assets/project7.png';
+import project3Img from '../../assets/project3.png';
 
 // SVG para el icono de flecha hacia arriba/abajo
 const ArrowIcon = () => (
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
-  </svg>
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+</svg>
 );
 
-const ExpandableItem = ({ number, title, description, imageUrl }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const [isVisible, setIsVisible] = useState(false); // Nuevo estado para controlar la visibilidad en el viewport
-  const itemRef = useRef(null); // Ref para el itemContainer
+const ExpandableItem = ({ number, title, description, imageUrl, hoverImages }) => {
+// Eliminamos el estado 'isExpanded' y el handler 'handleClick'
+const [isVisible, setIsVisible] = useState(false);
+const itemRef = useRef(null);
 
-  // Efecto para observar la visibilidad del componente
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        // Cuando el elemento entra en el viewport (isIntersecting es true)
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          // Opcional: Si quieres que la animación solo ocurra una vez, desconecta el observador
-          observer.unobserve(entry.target);
-        }
-      },
-      {
-        root: null, // El viewport es el root
-        rootMargin: '0px', // No hay margen extra
-        threshold: 0.1, // Dispara cuando al menos el 10% del elemento está visible
-      }
-    );
+// Estado para el carrusel de imágenes en hover
+const [hovering, setHovering] = useState(false);
+const [currentHoverImageIndex, setCurrentHoverImageIndex] = useState(0);
 
-    if (itemRef.current) {
-      observer.observe(itemRef.current);
-    }
+useEffect(() => {
+const observer = new IntersectionObserver(
+([entry]) => {
+if (entry.isIntersecting) {
+setIsVisible(true);
+observer.unobserve(entry.target);
+}
+},
+{
+root: null,
+rootMargin: '0px',
+threshold: 0.9,
+}
+);
 
-    // Función de limpieza para desconectar el observador cuando el componente se desmonte
-    return () => {
-      if (itemRef.current) {
-        observer.unobserve(itemRef.current);
-      }
-    };
-  }, []); // El array vacío asegura que se ejecuta una sola vez al montar
+if (itemRef.current) {
+observer.observe(itemRef.current);
+}
 
-  const handleClick = () => {
-    setIsExpanded(!isExpanded);
-  };
+return () => {
+if (itemRef.current) {
+observer.unobserve(itemRef.current);
+}
+};
+}, []);
 
-  return (
-    <div
-      ref={itemRef} // Asigna la ref al div principal
-      // Añade la clase 'visible' cuando el elemento entra en el viewport
-      className={`${styles.itemContainer} ${isExpanded ? styles.expanded : ''} ${isVisible ? styles.visible : ''}`}
-      onClick={handleClick}
-    >
-      <div className={styles.leftContent}>
-        <div className={styles.iconCircle}>
-          <ArrowIcon />
-        </div>
-        <div className={styles.textContainer}>
-          <h3 className={styles.mainText}>{title}</h3>
-          <p className={styles.descriptionText}>{description}</p>
-        </div>
-      </div>
-      <div className={styles.bigNumber}>
-        {number}
-      </div>
+useEffect(() => {
+if (hovering && hoverImages && hoverImages.length > 1) {
+const interval = setInterval(() => {
+setCurrentHoverImageIndex(prevIndex => (prevIndex + 1) % hoverImages.length);
+}, 3000);
+return () => clearInterval(interval);
+} else {
+setCurrentHoverImageIndex(0);
+}
+}, [hovering, hoverImages]);
 
-      {imageUrl && (
-        <img
-          src={imageUrl}
-          alt={title}
-          className={styles.hoverImage}
-        />
-      )}
-    </div>
-  );
+return (
+<div
+ref={itemRef}
+className={`${styles.itemContainer} ${isVisible ? styles.visible : ''}`}
+onMouseEnter={() => setHovering(true)}
+onMouseLeave={() => setHovering(false)}
+>
+<div className={styles.leftContent}>
+<div className={styles.iconCircle}>
+<ArrowIcon />
+</div>
+<div className={styles.textContainer}>
+<h3 className={styles.mainText}>{title}</h3>
+{/* La descripción siempre estará en el DOM, su visibilidad se controlará con CSS */}
+<p className={styles.descriptionText}>{description}</p>
+</div>
+</div>
+<div className={styles.bigNumber}>
+{number}
+</div>
+
+{hovering && hoverImages && hoverImages.length > 0 && (
+<div className={styles.hoverImageCarousel}>
+<img
+key={currentHoverImageIndex}
+src={hoverImages[currentHoverImageIndex]}
+alt={title}
+className={styles.carouselImage}
+/>
+</div>
+)}
+
+{!hovering && imageUrl && (
+<img
+src={imageUrl}
+alt={title}
+className={styles.hoverImage}
+/>
+)}
+</div>
+);
 };
 
 export default ExpandableItem;

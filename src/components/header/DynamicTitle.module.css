@@ -1,48 +1,111 @@
+/* src/components/DynamicTitle.module.css */
+
+/* --- Contenedor principal de todo el título --- */
 .dynamicWordWrapper {
-  display: inline-block;
+  display: block;
   overflow: hidden;
-  min-width: 250px;
-  text-align: center;
+  /* Altura para evitar saltos al cambiar el texto */
+  min-height: 15vw;
 }
 
+/* --- Contenedor de las tres líneas (se encarga de la animación de cambio) --- */
 .dynamicWord {
-  display: inline-block;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   white-space: nowrap;
 }
 
-/* Entrada desde la izquierda */
-@keyframes slideIn {
+/* --- Estilos base para todas las líneas de texto --- */
+.dynamicLine {
+  display: block;
+  font-size: 5vw;
+  line-height: 1.1;
+  text-transform: uppercase;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Estilos y animaciones únicos para cada línea --- */
+
+/* Línea superior: Más ligera y sutil */
+.lineOne {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100; /* Extra bold */
+  color: #fff; /* Blanco puro */
+  /* Animación de entrada: aparece después con un desplazamiento mayor */
+  animation: entrance 0.8s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* Línea del medio: Fuerte y destacada (la principal) */
+.lineTwo {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400; /* Extra bold */
+  color: #fff; /* Blanco puro */
+  /* Animación de entrada: aparece después con un desplazamiento mayor */
+  animation: entrance 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+/* Línea inferior: Estilo secundario, con espaciado */
+.lineThree {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900; /* Extra bold */
+  color: #fff; /* Blanco puro */
+  /* Animación de entrada: aparece después con un desplazamiento mayor */
+  animation: entrance 0.8s ease-out forwards; 
+  animation-delay: 0.6s;
+}
+
+
+/* --- Animaciones --- */
+
+/* Animación de entrada inicial para cada línea (sube y se desvanece) */
+@keyframes entrance {
   from {
-    transform: translateX(-100%);
     opacity: 0;
-    filter: blur(5px);
+    transform: translateY(20px);
   }
   to {
-    transform: translateX(0%);
     opacity: 1;
-    filter: blur(0);
+    transform: translateY(0);
   }
 }
 
-/* Salida hacia la derecha */
-@keyframes slideOut {
+/* Animaciones para el cambio de frase (cuando rota el texto) */
+@keyframes changeIn {
   from {
-    transform: translateX(0%);
-    opacity: 1;
-    filter: blur(0);
+    opacity: 0;
+    transform: translateY(10px);
   }
   to {
-    transform: translateX(100%);
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes changeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
     opacity: 0;
-    filter: blur(5px);
+    transform: translateY(-10px);
   }
 }
 
 .animateIn {
-  animation: slideIn 0.6s ease-out forwards;
+  animation: changeIn 0.6s ease-out forwards;
 }
 
 .animateOut {
-  animation: slideOut 0.6s ease-in forwards;
+  animation: changeOut 0.6s ease-in forwards;
+}
+
+/* Media query para móviles */
+@media (max-width: 768px) {
+  .dynamicLine {
+    font-size: 10vw;
+  }
 }

@@ -1,8 +1,10 @@
+// src/components/Header.jsx
+
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Header.module.css';
 import herobg from '../../assets/hero-bg.mp4';
 import Nav from '../nav/Nav';
-import DynamicTitle from './DynamicTitle';
+import DynamicTitle from './DynamicTitle'; // Importa el componente actualizado
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,13 +13,11 @@ const Header = () => {
   const heroSectionRef = useRef(null);
 
   useEffect(() => {
-    setAnimateHero(true); // Activar animación al montar
-
+    setAnimateHero(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       setScrollYPosition(window.scrollY);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -44,20 +44,17 @@ const Header = () => {
   return (
     <header ref={heroSectionRef} className={styles.heroSection}>
       <Nav isScrolled={isScrolled} />
-
-   <video
-  className={styles.videoBackground}
-  autoPlay
-  loop
-  muted
-  playsInline
->
-  <source src={herobg} type="video/mp4" />
-  Tu navegador no soporta videos HTML5.
-</video>
-
-<div className={styles.overlay}></div>
-
+      <video
+        className={styles.videoBackground}
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source src={herobg} type="video/mp4" />
+        Tu navegador no soporta videos HTML5.
+      </video>
+      <div className={styles.overlay}></div>
       <div
         className={`${styles.heroContent} ${animateHero ? styles.animate : ''}`}
         style={{ transform: `translateY(${titleTranslateY}px)` }}
@@ -66,18 +63,15 @@ const Header = () => {
           SOMOS ZAP
         </p>
 
+        {/* Simplificado para usar solo el componente DynamicTitle */}
         <h1 className={styles.mainHeroTitle}>
-          <div className={`${styles.heroLineStatic} ${styles.slideFromRight}`}>construimos
-</div>
-          <DynamicTitle className={`${styles.dynamicWordInHero} ${styles}`} />
-          <div className={`${styles.heroLineStatic} ${styles.slideFromLeft}`}>DIGITAL</div>
+          <DynamicTitle className={styles.dynamicWordInHero} />
         </h1>
 
         <div className={`${styles.projectShowcaseText} ${styles.fadeIn}`}>
-          PROJECT SHOWCASE
+          ESTUDIO CREATIVO
         </div>
       </div>
-
       <div className={styles.scrollIndicator}>
         <div className={styles.scrollDot}></div>
       </div>
@@ -86,4 +80,3 @@ const Header = () => {
 };
 
 export default Header;
-

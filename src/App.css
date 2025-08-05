@@ -20,3 +20,6 @@ html {
 *, *::before, *::after {
   box-sizing: inherit;
 }
+html {
+  scroll-behavior: smooth;
+}

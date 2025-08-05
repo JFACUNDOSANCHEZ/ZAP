@@ -13,7 +13,7 @@
 .imageParallaxSection {
     height: 100vh; /* Altura que determina por cuánto tiempo se ve la imagen */
     /* Reemplaza 'tu-imagen-de-fondo.jpg' con la URL real de tu imagen */
-    background-image: url('../../assets/bg-img3.png'); /* EJEMPLO: Ajusta la ruta a tu imagen */
+    background-image: url('https://images.pexels.com/photos/1932666/pexels-photo-1932666.jpeg?_gl=1*10vk48v*_ga*MTUzODg0MDg5NS4xNzUyMDkyOTQ0*_ga_8JE65Q40S6*czE3NTQzNjgxODEkbzE3JGcxJHQxNzU0MzY4MjczJGo1MiRsMCRoMA..'); /* EJEMPLO: Ajusta la ruta a tu imagen */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -38,7 +38,7 @@
 .teamGrid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    gap: 0px;
     max-width: 1000px;
     margin: 40px auto 0 auto;
 }
