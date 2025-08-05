@@ -28,6 +28,11 @@ const Home = () => {
   return (
     <div id="home" className={styles.homeContainer}>
       <Header /> 
+      <section className={styles.imageParallaxSection}>
+        <div className={styles.parallaxContent}>
+         
+        </div>
+      </section>
       {/* ... Tu código de otras secciones ... */}
       <SomeSection></SomeSection>
       {/* Asegúrate de que tus secciones tengan los IDs correctos */}
