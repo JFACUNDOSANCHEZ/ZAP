@@ -4,7 +4,7 @@ import ExpandableItem from '../expandableItem/ExpandableItem';
 import styles from './SomeSection.module.css';
 
 // Importa todas las imágenes que necesitas
-import project7Img from '../../assets/oru.png';
+import project7Img from '../../assets/project11.png';
 import project8Img from '../../assets/project7.png';
 import project3Img from '../../assets/project3.png';
 // Asume que tienes más imágenes, como las siguientes
