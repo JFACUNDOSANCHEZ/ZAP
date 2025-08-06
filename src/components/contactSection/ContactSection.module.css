@@ -25,7 +25,7 @@
 }
 
 .arrow {
-  color: #fbff00;
+  color: #ffffff;
   font-size: clamp(4rem, 8vw, 6rem);
 }
 
@@ -71,7 +71,7 @@
 .formSelect:focus,
 .formTextarea:focus {
   outline: none;
-  border-color: #fff200;
+  border-color: #ffffff;
 }
 
 .formSelect {
@@ -93,7 +93,7 @@
 }
 
 .formButton {
-  background-color: #f6ff00;
+  background-color: #ffffff;
   color: #000;
   font-weight: 700;
   font-size: 1rem;
@@ -106,7 +106,7 @@
 }
 
 .formButton:hover {
-  background-color: #c9b500;
+  background-color: #858585;
   transform: translateY(-2px);
 }
 

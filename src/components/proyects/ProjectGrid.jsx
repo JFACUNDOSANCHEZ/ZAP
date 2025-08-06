@@ -28,7 +28,7 @@ const ProjectGrid = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.5 }}
         >
-          Últimos Trabajos:
+          Marcas que conectan. Proyectos que impactan.
         </motion.h2>
         <motion.p
           className={styles.projectSectionDescription}
