@@ -1,14 +1,20 @@
 /* src/components/DynamicTitle.module.css */
-
+/* -------------------------------------- */
 /* --- Contenedor principal de todo el título --- */
+/* -------------------------------------- */
 .dynamicWordWrapper {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 25vh; /* Mantener la altura para evitar saltos */
   overflow: hidden;
-  /* Altura para evitar saltos al cambiar el texto */
-  min-height: 15vw;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
 }
 
-/* --- Contenedor de las tres líneas (se encarga de la animación de cambio) --- */
+/* -------------------------------------- */
+/* --- Contenedor de las líneas --- */
+/* -------------------------------------- */
 .dynamicWord {
   display: flex;
   flex-direction: column;
@@ -16,52 +22,40 @@
   white-space: nowrap;
 }
 
-/* --- Estilos base para todas las líneas de texto --- */
+/* -------------------------------------- */
+/* --- Estilos base para todas las líneas --- */
+/* -------------------------------------- */
 .dynamicLine {
   display: block;
-  font-size: 5vw;
+  font-size: clamp(2rem, 5vw, 7rem);
   line-height: 1.1;
   text-transform: uppercase;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  /* Estilos iniciales de la animación */
+  opacity: 0;
+  transform: translateY(20px);
 }
 
-/* --- Estilos y animaciones únicos para cada línea --- */
-
-/* Línea superior: Más ligera y sutil */
+/* --- Estilos y jerarquía para cada línea --- */
 .lineOne {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 100; /* Extra bold */
-  color: #fff; /* Blanco puro */
-  /* Animación de entrada: aparece después con un desplazamiento mayor */
-  animation: entrance 0.8s ease-out forwards;
-  animation-delay: 0.2s;
+  font-weight: 100;
+  color: #fff;
 }
 
-/* Línea del medio: Fuerte y destacada (la principal) */
 .lineTwo {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400; /* Extra bold */
-  color: #fff; /* Blanco puro */
-  /* Animación de entrada: aparece después con un desplazamiento mayor */
-  animation: entrance 0.8s ease-out forwards;
-  animation-delay: 0.4s;
+  font-weight: 400;
+  color: #fff;
 }
 
-/* Línea inferior: Estilo secundario, con espaciado */
 .lineThree {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 900; /* Extra bold */
-  color: #fff; /* Blanco puro */
-  /* Animación de entrada: aparece después con un desplazamiento mayor */
-  animation: entrance 0.8s ease-out forwards; 
-  animation-delay: 0.6s;
+  font-weight: 900;
+  color: #fff;
 }
 
-
-/* --- Animaciones --- */
-
-/* Animación de entrada inicial para cada línea (sube y se desvanece) */
-@keyframes entrance {
+/* -------------------------------------- */
+/* --- Animación de ENTRADA escalonada --- */
+/* -------------------------------------- */
+@keyframes staggeredIn {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -72,40 +66,27 @@
   }
 }
 
-/* Animaciones para el cambio de frase (cuando rota el texto) */
-@keyframes changeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Aplicamos la animación de entrada a cada línea con un delay */
+.dynamicLine {
+  animation: staggeredIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
-@keyframes changeOut {
-  from {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-}
+.dynamicLine:nth-child(1) { animation-delay: 0.1s; }
+.dynamicLine:nth-child(2) { animation-delay: 0.2s; }
+.dynamicLine:nth-child(3) { animation-delay: 0.3s; }
 
-.animateIn {
-  animation: changeIn 0.6s ease-out forwards;
-}
 
-.animateOut {
-  animation: changeOut 0.6s ease-in forwards;
-}
-
-/* Media query para móviles */
+/* -------------------------------------- */
+/* --- Media Queries --- */
+/* -------------------------------------- */
 @media (max-width: 768px) {
-  .dynamicLine {
-    font-size: 10vw;
+  .dynamicWordWrapper {
+    min-height: 20vh;
   }
+  .dynamicLine {
+    font-size: clamp(1.5rem, 7vw, 4rem);
+  }
+  .lineOne { font-size: clamp(1.2rem, 4vw, 2rem); }
+  .lineTwo { font-size: clamp(2.5rem, 7vw, 4rem); }
+  .lineThree { font-size: clamp(1.2rem, 4vw, 2rem); }
 }
