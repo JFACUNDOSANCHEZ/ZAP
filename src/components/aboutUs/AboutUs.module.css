@@ -26,7 +26,7 @@
 /* Estilo para la imagen del logo */
 .logo {
     /* Agrandamos la imagen del logo */
-    width: 350px;
+    width: 100%;
     height: auto;
     margin: 25px 0; /* Aumentamos el margen para más espacio */
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
