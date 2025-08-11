@@ -12,15 +12,14 @@ const LinkedinIcon = () => (
 
 
 const AboutUs = () => {
-    // Importa las URLs de las imágenes
     const micaImage = "https://www.palermo.edu/Archivos_content/2024/dyc/noviembre/heidi-clair/Heidi-Clair-750x335.jpg";
     const silImage = "https://img.freepik.com/fotos-premium/retrato-mujer-moda-mechon-pelo_91497-3794.jpg";
 
-    // URLs de las redes sociales
-    const silLinkedin = "https://www.linkedin.com/in/silviadelvillar/";
-    const silInstagram = "https://www.instagram.com/silviadelvillar/";
-    const micaLinkedin = "https://www.linkedin.com/in/micaelaperez/";
-    const micaInstagram = "https://www.instagram.com/micaelaperez/";
+    // URLs de ejemplo para las redes sociales
+    const silLinkedin = "#";
+    const silInstagram = "#";
+    const micaLinkedin = "#";
+    const micaInstagram = "#";
 
     return (
         <section id='nos' className={styles.aboutUsContainer}>

@@ -1,51 +1,39 @@
-/* src/components/ExpandableItem/ExpandableItem.module.css */
-
-/* --- Contenedor Principal y Animación de Entrada --- */
+/* --- Contenedor principal --- */
 .itemContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 30px 90px;
+  padding: 5px 35px;
   border-bottom: 1px solid #eee;
-  border-top:1px solid #eee;
+  border-top: 1px solid #eee;
   cursor: pointer;
   transition: all 0.5s ease;
   overflow: hidden;
   position: relative;
   font-family: 'Inter', sans-serif;
-
-  /* Estilos para la animación de entrada */
-  opacity: 0; 
+  opacity: 0;
   transform: translateY(50px);
 }
 
-/* Cuando el elemento está visible en el viewport */
 .itemContainer.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* CAMBIO CLAVE: Estilos que se aplican en hover (antes en .expanded) */
 .itemContainer:hover {
-  background-color: #8080800b; /* Se mantiene el color de expandido */
+  background-color: #8080800b;
 }
-/* Estilo del ícono en hover */
+
 .itemContainer:hover .iconCircle svg {
   transform: rotate(180deg);
   fill: #333;
 }
-/* Estilo del texto en hover */
+
 .itemContainer:hover .mainText {
   color: #000;
 }
 
-
-.itemContainer:last-child {
-  border-bottom: none;
-}
-
-
-/* --- Contenido del Lado Izquierdo --- */
+/* --- Lado izquierdo --- */
 .leftContent {
   display: flex;
   align-items: center;
@@ -62,8 +50,8 @@
   align-items: center;
   margin-right: 85px;
   margin-left: 4px;
-  transition: border-color 0.3s ease;
   flex-shrink: 0;
+  transition: border-color 0.3s ease;
 }
 
 .iconCircle svg {
@@ -82,8 +70,8 @@
 }
 
 .mainText {
-  font-size: 2.7rem;
-  font-weight: 1700;
+  font-size: 2.4rem;
+  font-weight: 700;
   color: #1e1e1e;
   margin: 0;
   margin-left: 10px;
@@ -91,40 +79,27 @@
 }
 
 .descriptionText {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #777;
-  /* CAMBIO CLAVE: La descripción empieza oculta */
   max-height: 0;
   overflow: hidden;
   opacity: 0;
   transition: max-height 0.5s ease-out, opacity 0.5s ease-out, margin-top 0.5s ease-out;
   line-height: 1.6;
-  max-width: 100%;
 }
 
-/* CAMBIO CLAVE: Estilo para la descripción que aparece en hover */
 .itemContainer:hover .descriptionText {
-  max-height: 200px;
+  max-height: 100px;
   opacity: 1;
   margin-top: 15px;
 }
 
-
-/* --- Número Grande --- */
+/* --- Número grande --- */
 .bigNumber {
   font-size: 10em;
   font-weight: 190;
   color: rgba(200, 200, 200, 0.4);
-  font-family: 'Inter', sans-serif;
   pointer-events: none;
-  width: 100px; 
-  right: 0px;
-  position: static; 
-  top: auto; 
-  right: auto; 
-  transform: none; 
-  margin-left: 0;
-  line-height: 1;
   transition: all 0.5s ease;
 }
 
@@ -132,29 +107,17 @@
   color: rgba(200, 200, 200, 0.8);
 }
 
-
-/* --- ESTILOS PARA LA IMAGEN DEL CARRUSEL EN HOVER --- */
-@keyframes carousel-fade {
-  0% {
-    opacity: 0;
-    transform: scale(1.05);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
+/* --- Imagen carrusel --- */
 .hoverImageCarousel {
   position: absolute;
   right: 4px;
   top: 50%;
   transform: translateY(-50%) translateX(100px);
   width: 25%;
-  height: auto;
+  height: 100%;
   opacity: 0;
   z-index: 1;
-  border-radius: 10px;
+  border-radius: 0px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.051);
   overflow: hidden;
   transition: transform 0.5s ease-out, opacity 0.5s ease-out;
@@ -165,138 +128,64 @@
   opacity: 1;
 }
 
+/* Estilo para las imágenes individuales del carrusel */
 .carouselImage {
   width: 100%;
-  height: auto;
-  display: block;
-  animation: carousel-fade 1.0s ease infinite alternate;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
+/* Solo la imagen con la clase .active es visible */
+.carouselImage.active {
+  opacity: 1;
+}
 
-/* --- ESTILOS DE LA IMAGEN ESTÁTICA --- */
+/* --- Imagen estática --- */
 .hoverImage {
   position: absolute;
   right: 10px;
   top: 50%;
-  transform: translateY(-50%) translateX(100px);
+  transform: translateY(-50%) translateX(0);
   width: 25%;
-  height: auto;
-  opacity: 0;
- transition: transform 0.5s ease-out, opacity 0.5s ease-out;  z-index: 0;
-  pointer-events: none;
+  opacity: 1;
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.051);
+  transition: opacity 0.5s ease-out;
 }
 
-/* La imagen estática aparece cuando no hay hover ni click */
-.itemContainer:not(:hover) .hoverImage {
-  transform: translateY(-50%) translateX(0);
-  opacity: 1;
-}
-
-/* Oculta la imagen estática cuando el carrusel está activo */
+/* Ocultar imagen estática en hover */
 .itemContainer:hover .hoverImage {
-    transform: translateY(-50%) translateX(0) scale(1.1);
-    opacity: 1;
+  opacity: 0;
+  pointer-events: none;
 }
 
-
-/* --- AJUSTES RESPONSIVOS --- */
-@media (max-width: 1200px) {
-  .textContainer {
-    max-width: 65%;
-  }
-  .bigNumber {
-    font-size: 8rem;
-  }
-  .hoverImage, .hoverImageCarousel {
-    width: 250px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .itemContainer {
-    padding: 30px 40px;
-  }
-  .textContainer {
-    max-width: 60%;
-  }
-  .mainText {
-    font-size: 1.8rem;
-  }
-  .bigNumber {
-    font-size: 6rem;
-  }
-  .hoverImage, .hoverImageCarousel {
-    right: 40px;
-    width: 180px;
-  }
-}
-
+/* --- Responsivo --- */
 @media (max-width: 768px) {
   .itemContainer {
     flex-wrap: wrap;
-    justify-content: center;
     padding: 20px;
-    align-items: center;
+    justify-content: center;
   }
   .leftContent {
     flex-direction: column;
     margin-bottom: 15px;
-    width: 100%;
-    align-items: center;
-  }
-  .iconCircle {
-    margin-right: 0;
-    margin-bottom: 15px;
-  }
-  .textContainer {
-    max-width: 100%;
-    text-align: left;
-  }
-  .mainText {
-    font-size: 1.5rem;
-    text-align: left;
-    margin-bottom: 5px;
-  }
-  .descriptionText {
-    font-size: 0.9rem;
-    margin-left: 0;
-    width: 100%;
-    text-align: left;
   }
   .bigNumber {
     font-size: 3.5rem;
-    margin-left: 0;
-    order: -1;
-    margin-bottom: 10px;
-    position: static;
-    top: auto;
-    right: auto;
-    transform: none;
-    text-align: center;
     width: 100%;
+    text-align: center;
   }
   .hoverImage, .hoverImageCarousel {
     position: relative;
     top: auto;
-    left: auto;
     transform: none;
     width: 80%;
     max-width: 250px;
     margin-top: 20px;
-    opacity: 0;
-    transition: opacity 0.5s ease-out;
-    box-shadow: none;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .itemContainer:not(:hover) .hoverImage {
-    opacity: 1;
-  }
-  .itemContainer:hover .hoverImage,
-  .itemContainer:hover .hoverImageCarousel {
-    opacity: 1;
   }
 }
