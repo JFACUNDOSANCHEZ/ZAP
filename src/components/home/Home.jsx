@@ -35,8 +35,8 @@ const Home = () => {
       </section>
       {/* ... Tu código de otras secciones ... */}
       <section id='servicios' >
-      <SomeSection></SomeSection>
       </section>
+      <SomeSection></SomeSection>
       {/* Asegúrate de que tus secciones tengan los IDs correctos */}
         {/* Contenido de la sección de inicio */}
       

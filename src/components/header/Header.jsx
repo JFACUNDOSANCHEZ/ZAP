@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Header.module.css';
-import herobg from '../../assets/hero-bg.mp4';
+import herobg from '../../assets/hero-bg1.mp4';
 import Nav from '../nav/Nav';
 import DynamicTitle from './DynamicTitle'; // Importa el componente actualizado
 
