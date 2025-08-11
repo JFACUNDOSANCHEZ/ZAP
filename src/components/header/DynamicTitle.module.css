@@ -1,15 +1,21 @@
 /* src/components/DynamicTitle.module.css */
 /* -------------------------------------- */
-/* --- Contenedor principal de todo el título --- */
+/* --- Importación de tipografías --- */
+/* -------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Playfair+Display:ital@1&display=swap');
+
+/* -------------------------------------- */
+/* --- Contenedor principal del título --- */
 /* -------------------------------------- */
 .dynamicWordWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 25vh; /* Mantener la altura para evitar saltos */
+  min-height: 25vh;
   overflow: hidden;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-align: center;
+  position: relative;
 }
 
 /* -------------------------------------- */
@@ -18,7 +24,7 @@
 .dynamicWord {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center; /* Centramos las líneas */
   white-space: nowrap;
 }
 
@@ -27,33 +33,48 @@
 /* -------------------------------------- */
 .dynamicLine {
   display: block;
-  font-size: clamp(2rem, 5vw, 7rem);
   line-height: 1.1;
   text-transform: uppercase;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  /* Estilos iniciales de la animación */
   opacity: 0;
   transform: translateY(20px);
 }
 
 /* --- Estilos y jerarquía para cada línea --- */
+
+.dynamicWordWrapper {
+  font-family: 'Inter', sans-serif;
+  /* ...otros estilos... */
+}
+
+/* --- Estilos y jerarquía para cada línea --- */
 .lineOne {
-  font-weight: 100;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-style: italic;
   color: #fff;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  text-transform: none;
+  margin-bottom: -15px;
 }
 
 .lineTwo {
-  font-weight: 400;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
   color: #fff;
+  font-size: clamp(3rem, 7vw, 9rem); /* Le damos un tamaño más grande */
+  letter-spacing: 0.1em; /* Añade un espaciado sutil */
 }
 
 .lineThree {
-  font-weight: 900;
-  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 /* -------------------------------------- */
-/* --- Animación de ENTRADA escalonada --- */
+/* --- Animaciones de ENTRADA y SALIDA --- */
 /* -------------------------------------- */
 @keyframes staggeredIn {
   from {
@@ -66,7 +87,18 @@
   }
 }
 
-/* Aplicamos la animación de entrada a cada línea con un delay */
+@keyframes staggeredOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Aplicamos la animación de entrada por defecto */
 .dynamicLine {
   animation: staggeredIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
@@ -74,7 +106,6 @@
 .dynamicLine:nth-child(1) { animation-delay: 0.1s; }
 .dynamicLine:nth-child(2) { animation-delay: 0.2s; }
 .dynamicLine:nth-child(3) { animation-delay: 0.3s; }
-
 
 /* -------------------------------------- */
 /* --- Media Queries --- */
@@ -86,7 +117,13 @@
   .dynamicLine {
     font-size: clamp(1.5rem, 7vw, 4rem);
   }
-  .lineOne { font-size: clamp(1.2rem, 4vw, 2rem); }
-  .lineTwo { font-size: clamp(2.5rem, 7vw, 4rem); }
-  .lineThree { font-size: clamp(1.2rem, 4vw, 2rem); }
+  .lineOne {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+  }
+  .lineTwo {
+    font-size: clamp(2.5rem, 7vw, 4rem);
+  }
+  .lineThree {
+    font-size: clamp(1.2rem, 4vw, 2rem);
+  }
 }

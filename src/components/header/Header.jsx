@@ -60,7 +60,7 @@ const Header = () => {
         style={{ transform: `translateY(${titleTranslateY}px)` }}
       >
         <p className={`${styles.heroPretitle} ${styles.slideFromLeft}`}>
-          SOMOS ZAP
+          {/* SOMOS ZAP */}
         </p>
 
         {/* Simplificado para usar solo el componente DynamicTitle */}
@@ -69,7 +69,7 @@ const Header = () => {
         </h1>
 
         <div className={`${styles.projectShowcaseText} ${styles.fadeIn}`}>
-          ESTUDIO CREATIVO
+          {/* ESTUDIO CREATIVO */}
         </div>
       </div>
       <div className={styles.scrollIndicator}>

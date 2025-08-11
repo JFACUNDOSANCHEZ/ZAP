@@ -37,8 +37,7 @@ const Home = () => {
       <section id='servicios' >
       </section>
       <SomeSection></SomeSection>
-      {/* Asegúrate de que tus secciones tengan los IDs correctos */}
-        {/* Contenido de la sección de inicio */}
+    
       
       <div id="portfolio"></div>
       <br /><br /> {/* El div que usas para el scroll */}
