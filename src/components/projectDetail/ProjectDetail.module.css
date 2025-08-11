@@ -1,9 +1,7 @@
-/* src/components/ProjectDetail/ProjectDetail.module.css */
 /* -------------------------------------- */
 /* --- Contenedor Principal del Proyecto --- */
 /* -------------------------------------- */
 .projectDetailContainer {
-  max-width: 1400px; /* Un poco más ancho para el estilo de grilla */
   margin: 0 auto;
   padding: 100px 40px;
   font-family: 'Poppins', sans-serif;
@@ -12,7 +10,7 @@
 }
 
 /* -------------------------------------- */
-/* --- Sección de Cabecera y Grilla --- */
+/* --- Sección de Cabecera y Título --- */
 /* -------------------------------------- */
 .headerGrid {
   display: grid;
@@ -36,12 +34,12 @@
 }
 
 /* -------------------------------------- */
-/* --- Grilla de Introducción (Meta-datos + Descripción) --- */
+/* --- Grilla de Introducción (Estilo unmedioestudio) --- */
 /* -------------------------------------- */
 .introGrid {
   display: grid;
-  grid-template-columns: 1fr 2fr; /* Dos columnas: una para meta, otra para descripción */
-  gap: 100px; /* Espacio generoso entre columnas */
+  grid-template-columns: 1fr 2fr;
+  gap: 100px;
   margin-bottom: 80px;
 }
 
@@ -66,30 +64,67 @@
 }
 
 .projectDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.descriptionText {
+  display: flex;
+  flex-direction: column;
+}
+
+.descriptionTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.2;
+  margin: 0;
+  color: #fff;
+}
+
+.descriptionParagraph {
   font-size: clamp(1rem, 1.5vw, 1.2rem);
   line-height: 1.6;
+  color: #aaa;
+  margin: 0;
 }
 
 /* -------------------------------------- */
-/* --- Grilla de Imágenes --- */
+/* --- Grilla de Imágenes Personalizada --- */
 /* -------------------------------------- */
-.imageGrid {
+.customImageGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Dos columnas para imágenes */
-  gap: 40px;
+  grid-template-columns: 1fr 1fr 1fr; /* Tres columnas */
+  grid-template-rows: auto auto; /* Dos filas */
+  gap: 20px;
+}
+
+.imageTopLeft {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.imageTopRight {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.imageBottomFull {
+  grid-column: 1 / -1; /* Ocupa todas las columnas */
+  grid-row: 2 / 3;
 }
 
 .galleryImage {
   width: 100%;
   height: auto;
   display: block;
+  object-fit: cover;
   border-radius: 8px;
-  /* La primera imagen podría ser más grande */
-  /* &:first-child { grid-column: 1 / -1; } */
 }
 
 /* -------------------------------------- */
-/* --- Botón de Regreso --- */
+/* --- Botón de Regreso y otros estilos --- */
 /* -------------------------------------- */
 .backButtonContainer {
   margin-top: 60px;
@@ -136,8 +171,18 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  .imageGrid {
+  .customImageGrid {
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
     gap: 20px;
+  }
+  .imageTopLeft,
+  .imageTopRight,
+  .imageBottomFull {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+  .projectDescription {
+      gap: 20px;
   }
 }

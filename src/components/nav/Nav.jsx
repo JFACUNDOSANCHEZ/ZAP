@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'; // Importa Link de react-router-dom
 import styles from './Nav.module.css';
+import logo from '../../assets/ZAP-LOGO.png'; // Asegúrate de tener un logo para tu navbar
 
 const Nav = ({ isScrolled }) => {
   const [hasEntered, setHasEntered] = useState(false);
@@ -16,7 +17,7 @@ const Nav = ({ isScrolled }) => {
     >
       <div className={styles.headerLeft}>
         <div className={styles.logo}>
-          <h1>ZAP.</h1>
+          <img src={logo} alt="" className={styles.logo} />
         </div>
         <nav className={styles.navbarSecondary}>
           <ul className={styles.navLinksSecondary}>

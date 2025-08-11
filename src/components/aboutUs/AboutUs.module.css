@@ -1,162 +1,117 @@
 /* src/components/AboutUs/AboutUs.module.css */
-
-/* --- Contenedor Principal --- */
 .aboutUsContainer {
-    font-family: 'Inter', sans-serif;
-    color: #1e1e1e;
-    padding: 80px 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    background-color: #fcfcfc;
+    padding: 60px 20px;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* --- SECCIÓN DE INTRODUCCIÓN: ESTILO MINIMALISTA Y TIPOGRÁFICO --- */
 .introSection {
+    max-width: 700px;
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
 
 .title {
-    font-size: 6rem;
-    font-weight: 1700;
-    margin: 0;
-    line-height: 1;
-    text-transform: uppercase;
-    color: #000;
+    /* Agrandamos el título principal */
+    font-size: clamp(3rem, 7vw, 4rem);
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    letter-spacing: -0.02em;
+}
+
+/* Estilo para la imagen del logo */
+.logo {
+    /* Agrandamos la imagen del logo */
+    width: 350px;
+    height: auto;
+    margin: 25px 0; /* Aumentamos el margen para más espacio */
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
 
 .mainText {
-    font-size: 1.4rem;
-    font-weight: 500;
+    /* Aumentamos el tamaño del texto principal */
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
     color: #555;
-    margin: 30px auto 0;
-    max-width: 800px;
+    margin-bottom: 15px;
     line-height: 1.6;
 }
 
 .quote {
-    font-size: 1.6rem;
+    /* Aumentamos el tamaño del texto de la cita */
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
     font-style: italic;
-    font-weight: 600;
-    color: #777;
-    margin-top: 40px;
-    padding-left: 0;
-    border: none;
+    color: #888;
+    margin-top: 25px;
 }
 
-/* --- SECCIÓN DE FUNDADORAS: NUEVO ESTILO HORIZONTAL --- */
 .foundersSection {
     display: flex;
-    justify-content: center;
     gap: 40px;
-    margin-bottom: 80px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .founderCard {
-    position: relative;
-    flex: 1;
-    min-width: 350px;
-    height: 450px;
-    border-radius: 12px;
-    overflow: hidden;
-    background-size: cover;
-    background-position: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-.founderCard::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-    transition: background 0.4s ease;
-}
-
-.founderCard:hover::before {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    padding: 30px 20px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .founderCard:hover {
-    transform: translateY(-15px) scale(1.05);
-    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
 }
 
-.cardContent {
-    position: relative;
-    bottom: 0;
-    padding: 30px;
-    color: #fff;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 2;
+.founderPhoto {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
 }
 
 .founderName {
-    font-size: 1.8rem;
-    font-weight: 1900;
-    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #1a1a1a;
 }
 
 .founderBio {
-    font-size: 1rem;
-    color: #fff;
-    line-height: 1.5;
-    margin-top: 5px;
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 15px;
 }
 
 .socialLinks {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-top: 15px;
 }
 
-.socialLink {
-    display: inline-block;
-    color: #fff;
-    opacity: 0.7;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+.socialLinks a {
+    color: #555;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.socialLink:hover {
-    opacity: 1;
-    transform: translateY(-3px) scale(1.1);
+.socialLinks a:hover {
+    color: #ff6b6b;
+    transform: scale(1.15);
 }
 
-.socialLink svg {
-    width: 24px;
-    height: 24px;
-    fill: #fff;
-}
-
-/* --- Responsive Design --- */
 @media (max-width: 768px) {
-    .aboutUsContainer {
-        padding: 60px 20px;
-    }
-    .title {
-        font-size: 3rem;
-    }
-    .mainText {
-        font-size: 1.1rem;
-        max-width: 100%;
-    }
     .foundersSection {
         flex-direction: column;
         align-items: center;
-        gap: 40px;
-    }
-    .founderCard {
-        width: 100%;
-        height: 400px;
     }
 }
