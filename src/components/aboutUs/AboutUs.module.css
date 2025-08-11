@@ -2,132 +2,161 @@
 
 /* --- Contenedor Principal --- */
 .aboutUsContainer {
-  font-family: 'Inter', sans-serif;
-  color: #1e1e1e;
-  padding: 80px 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: #fcfcfc;
+    font-family: 'Inter', sans-serif;
+    color: #1e1e1e;
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fcfcfc;
 }
 
 /* --- SECCIÓN DE INTRODUCCIÓN: ESTILO MINIMALISTA Y TIPOGRÁFICO --- */
 .introSection {
-  text-align: center;
-  margin-bottom: 100px;
+    text-align: center;
+    margin-bottom: 100px;
 }
 
 .title {
-  font-size: 6rem;
-  font-weight: 1700;
-  margin: 0;
-  line-height: 1;
-  text-transform: uppercase;
-  color: #000;
+    font-size: 6rem;
+    font-weight: 1700;
+    margin: 0;
+    line-height: 1;
+    text-transform: uppercase;
+    color: #000;
 }
 
 .mainText {
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: #555;
-  margin: 30px auto 0;
-  max-width: 800px;
-  line-height: 1.6;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #555;
+    margin: 30px auto 0;
+    max-width: 800px;
+    line-height: 1.6;
 }
 
 .quote {
-  font-size: 1.6rem;
-  font-style: italic;
-  font-weight: 600;
-  color: #777;
-  margin-top: 40px;
-  padding-left: 0;
-  border: none;
+    font-size: 1.6rem;
+    font-style: italic;
+    font-weight: 600;
+    color: #777;
+    margin-top: 40px;
+    padding-left: 0;
+    border: none;
 }
 
 /* --- SECCIÓN DE FUNDADORAS: NUEVO ESTILO HORIZONTAL --- */
 .foundersSection {
-  display: flex; /* ¡CAMBIO CLAVE AQUÍ! */
-  justify-content: center;
-  gap: 40px; /* Espacio entre las tarjetas */
-  margin-bottom: 80px;
-  flex-wrap: wrap; /* Para que se apilen en dispositivos pequeños */
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 80px;
+    flex-wrap: wrap;
 }
 
 .founderCard {
-  position: relative;
-  flex: 1; /* ¡CAMBIO CLAVE AQUÍ! Cada tarjeta ocupa el mismo espacio */
-  min-width: 350px; /* Evita que las tarjetas se hagan demasiado pequeñas */
-  height: 450px;
-  border-radius: 12px;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    flex: 1;
+    min-width: 350px;
+    height: 450px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .founderCard::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
-  transition: background 0.4s ease;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    transition: background 0.4s ease;
 }
 
 .founderCard:hover::before {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.1));
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
 }
 
 .founderCard:hover {
-  transform: translateY(-15px) scale(1.05);
-  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.2);
 }
 
 .cardContent {
-  position: absolute;
-  bottom: 0;
-  padding: 30px;
-  color: #fff;
-  width: 100%;
-  box-sizing: border-box;
+    position: relative;
+    bottom: 0;
+    padding: 30px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 2;
 }
 
 .founderName {
-  font-size: 1.8rem;
-  font-weight: 1900;
-  margin: 0;
+    font-size: 1.8rem;
+    font-weight: 1900;
+    margin: 0;
 }
 
 .founderBio {
-  font-size: 1rem;
-  color: #fff;
-  line-height: 1.5;
-  margin-top: 10px;
+    font-size: 1rem;
+    color: #fff;
+    line-height: 1.5;
+    margin-top: 5px;
 }
 
+.socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.socialLink {
+    display: inline-block;
+    color: #fff;
+    opacity: 0.7;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.socialLink:hover {
+    opacity: 1;
+    transform: translateY(-3px) scale(1.1);
+}
+
+.socialLink svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+}
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
-  .aboutUsContainer {
-    padding: 60px 20px;
-  }
-  .title {
-    font-size: 3rem;
-  }
-  .mainText {
-    font-size: 1.1rem;
-    max-width: 100%;
-  }
-  .foundersSection {
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-  }
-  .founderCard {
-    width: 100%;
-    height: 400px;
-  }
+    .aboutUsContainer {
+        padding: 60px 20px;
+    }
+    .title {
+        font-size: 3rem;
+    }
+    .mainText {
+        font-size: 1.1rem;
+        max-width: 100%;
+    }
+    .foundersSection {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    .founderCard {
+        width: 100%;
+        height: 400px;
+    }
 }

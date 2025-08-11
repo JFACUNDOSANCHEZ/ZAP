@@ -48,7 +48,9 @@
   gap: 0rem; /* Tus gaps son 0, lo cual significa que no hay espacio entre las celdas */
   padding: 0rem;
   width: 100%;
-  max-width: 2000px;
+  max-width: 3000px;
+  height: 100%;
+
   margin: 0 auto; /* Centrar la cuadrícula */
 }
 
@@ -57,6 +59,7 @@
 .projectItem {
   position: relative;
   overflow: hidden;
+  height: 500px; /* Altura fija para las tarjetas */
   border-radius: 0; /* 'v0' no es un valor CSS válido, asumo que quieres '0' */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transition: transform var(--transition), box-shadow var(--transition);

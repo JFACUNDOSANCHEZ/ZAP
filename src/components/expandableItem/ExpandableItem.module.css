@@ -82,7 +82,7 @@
 }
 
 .mainText {
-  font-size: 2.4rem;
+  font-size: 2.7rem;
   font-weight: 1700;
   color: #1e1e1e;
   margin: 0;
@@ -91,7 +91,7 @@
 }
 
 .descriptionText {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: #777;
   /* CAMBIO CLAVE: La descripción empieza oculta */
   max-height: 0;
@@ -169,7 +169,7 @@
   width: 100%;
   height: auto;
   display: block;
-  animation: carousel-fade 1.5s ease infinite alternate;
+  animation: carousel-fade 1.0s ease infinite alternate;
 }
 
 
@@ -182,8 +182,7 @@
   width: 25%;
   height: auto;
   opacity: 0;
-  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-  z-index: 0;
+ transition: transform 0.5s ease-out, opacity 0.5s ease-out;  z-index: 0;
   pointer-events: none;
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.051);
@@ -197,8 +196,8 @@
 
 /* Oculta la imagen estática cuando el carrusel está activo */
 .itemContainer:hover .hoverImage {
-  opacity: 0;
-  transform: translateY(-50%) translateX(20px);
+    transform: translateY(-50%) translateX(0) scale(1.1);
+    opacity: 1;
 }
 
 

@@ -54,7 +54,6 @@ const Home = () => {
         <ContactSection />
       </section>
       
-      {/* ... El resto de tus componentes ... */}
     </div>
   );
 };
