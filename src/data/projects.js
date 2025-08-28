@@ -1,6 +1,6 @@
 // src/data/projects.js
 // Importa todas tus imágenes para que estén disponibles
-import project03Img from '../assets/AkoAgro/AKOP.png';
+import project03Img from '../assets/AkoAgro/AKOP.webp';
 import project13Img from '../assets/AkoAgro/AKOP2.png';
 import project12Img from '../assets/AkoAgro/AKOP3.png';
 import project11Img from '../assets/AkoAgro/AKOP4.png';
@@ -12,14 +12,14 @@ import project24Img from '../assets/DivinaTierra/DT24.png';
 
 
 
-import project31Img from '../assets/Mufa/1.png';
+import project31Img from '../assets/Mufa/1.webp';
 import project32Img from '../assets/Mufa/2.png';
 import project33Img from '../assets/Mufa/3.png';
 import project34Img from '../assets/Mufa/4.png';
 
 
 
-import project41Img from '../assets/Marull/1.png';
+import project41Img from '../assets/Marull/1.webp';
 import project42Img from '../assets/Marull/2.png';
 import project43Img from '../assets/Marull/3.png';
 import project44Img from '../assets/Marull/4.png';
@@ -33,7 +33,7 @@ import project53Img from '../assets/Kromos/3.png';
 import project54Img from '../assets/Kromos/4.png';
 
 
-import project61Img from '../assets/Orus/1.png';
+import project61Img from '../assets/Orus/1.webp';
 import project62Img from '../assets/Orus/2.png';
 import project63Img from '../assets/Orus/3.png';
 
@@ -43,7 +43,7 @@ import project71Img from '../assets/Dasein/1.png';
 import project72Img from '../assets/Dasein/2.png';
 import project73Img from '../assets/Dasein/3.png';
 
-import project81Img from '../assets/Punto33/1.png';
+import project81Img from '../assets/Punto33/1.webp';
 import project82Img from '../assets/Punto33/2.png';
 import project83Img from '../assets/Punto33/3.png';
 

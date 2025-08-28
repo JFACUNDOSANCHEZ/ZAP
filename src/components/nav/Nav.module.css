@@ -21,6 +21,15 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.082); 
   backdrop-filter: blur(8px); 
   -webkit-backdrop-filter: blur(8px);
+   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 06px 40px;
+  z-index: 10000;
 }
 
 
@@ -72,11 +81,11 @@
 }
 
 .navbarMain .navLinksMain li {
-  margin: 0 15px;
+  margin: 0 35px;
 }
 
 .navbarMain .navLinksMain a {
-  color: #f0f0f0; /* Color inicial de los enlaces (visible en fondo transparente) */
+  color: #d1d0d0; /* Color inicial de los enlaces (visible en fondo transparente) */
   text-decoration: none;
   font-size: 16px;
   font-weight: 400;
@@ -84,9 +93,28 @@
 }
 
 .navbarMain .navLinksMain a:hover {
-  color: #090909;
+  color: #ffffff;
 }
 
+
+/* Reglas para cuando el header NO tiene scroll */
+.whatsapp:hover {
+  color: #25d366;
+}
+.linkedin:hover {
+  color: #0077b5;
+}
+.instagram:hover {
+  color: #e1306c; /* Instagram rosa */
+}
+
+/* Reglas más específicas para cuando el header SÍ tiene scroll */
+.scrolledHeader .whatsapp:hover {
+  color: #25d366;
+}
+.scrolledHeader .linkedin:hover {
+  color: #0077b5;
+}
 /* Puedes cambiar el color del texto cuando el header está scrolleado si es necesario */
 .scrolledHeader .navbarMain .navLinksMain a,
 .scrolledHeader .languageSelector,
@@ -137,9 +165,7 @@
   color: #e1306c; /* Instagram rosa */
 }
 
-.youtube:hover {
-  color: #ff0000; /* YouTube rojo */
-}
+
 .whatsapp:hover {
   color: #25d366; /* WhatsApp verde */
 }
@@ -162,23 +188,23 @@
   .header {
     padding: 15px 20px;
   }
+    .logo {
+    width: 80px; /* Reduce el ancho del logo en pantallas más pequeñas */
+  }
+
   .navbarMain {
     display: none; /* Oculta la navegación principal en pantallas más pequeñas */
   }
-  .headerRight .socialIcons,
-  .headerRight .languageSelector,
-  .headerRight .userIcon {
-    display: none; /* Oculta elementos extra en pantallas más pequeñas */
-  }
+
+  
 }
 
 @media (max-width: 768px) {
-  .headerLeft {
-    width: 100%;
-    justify-content: space-between;
+  .header {
+    padding: 15px 20px;
   }
-  .navbarSecondary .viewShowcaseBtn {
-    margin-left: 0;
+  .navbarMain {
+    display: none; /* Oculta la navegación principal en pantallas más pequeñas */
   }
 }
 

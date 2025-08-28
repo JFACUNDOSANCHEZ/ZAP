@@ -2,7 +2,8 @@
 /* -------------------------------------- */
 /* --- Importación de tipografías --- */
 /* -------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Playfair+Display:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;900&family=Playfair+Display:ital@1&family=Oswald:wght@700&display=swap');
+
 
 /* -------------------------------------- */
 /* --- Contenedor principal del título --- */
@@ -25,7 +26,7 @@
   display: flex;
   flex-direction: column;
   align-items: center; /* Centramos las líneas */
-  white-space: nowrap;
+  /* NO USAR: white-space: nowrap;  <-- Esto es lo que causaba el problema */
 }
 
 /* -------------------------------------- */
@@ -42,12 +43,6 @@
 
 /* --- Estilos y jerarquía para cada línea --- */
 
-.dynamicWordWrapper {
-  font-family: 'Inter', sans-serif;
-  /* ...otros estilos... */
-}
-
-/* --- Estilos y jerarquía para cada línea --- */
 .lineOne {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
@@ -62,8 +57,8 @@
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
   color: #fff;
-  font-size: clamp(3rem, 7vw, 9rem); /* Le damos un tamaño más grande */
-  letter-spacing: 0.1em; /* Añade un espaciado sutil */
+  font-size: clamp(3rem, 7vw, 9rem);
+  letter-spacing: 0.1em;
 }
 
 .lineThree {
@@ -114,16 +109,34 @@
   .dynamicWordWrapper {
     min-height: 20vh;
   }
-  .dynamicLine {
-    font-size: clamp(1.5rem, 7vw, 4rem);
-  }
+  
   .lineOne {
-    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: -5px; 
   }
+  
   .lineTwo {
     font-size: clamp(2.5rem, 7vw, 4rem);
+    letter-spacing: 0.05em; 
   }
+  
   .lineThree {
-    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .dynamicWordWrapper {
+    min-height: 18vh;
+  }
+
+  .lineOne {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: 5px; /* Margen positivo para separar si es necesario */
+  }
+
+  .lineTwo {
+    font-size: clamp(2rem, 6vw, 3rem);
+    letter-spacing: 0;
   }
 }

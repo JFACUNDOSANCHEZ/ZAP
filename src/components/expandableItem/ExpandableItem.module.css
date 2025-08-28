@@ -175,11 +175,29 @@
     flex-direction: column;
     margin-bottom: 15px;
   }
+  
+  .iconCircle {
+    display: none;
+  }
+  
   .bigNumber {
     font-size: 3.5rem;
     width: 100%;
     text-align: center;
   }
+
+  /* NUEVO: Tamaños de fuente ajustados para móviles */
+  .mainText {
+    font-size: 1.8rem;
+    margin-left: 0; /* Centra el texto */
+    text-align: center;
+  }
+  
+  .descriptionText {
+    font-size: 1rem;
+    text-align: center;
+  }
+
   .hoverImage, .hoverImageCarousel {
     position: relative;
     top: auto;
