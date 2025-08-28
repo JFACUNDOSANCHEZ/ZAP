@@ -39,7 +39,7 @@ import project63Img from '../assets/Orus/3.png';
 
 
 
-import project71Img from '../assets/Dasein/1.png';
+import project71Img from '../assets/Dasein/1.webp';
 import project72Img from '../assets/Dasein/2.png';
 import project73Img from '../assets/Dasein/3.png';
 
@@ -106,9 +106,10 @@ const projects = [
     category: 'Diseño de Producto',
     description: 'Diseñamos soluciones de empaque creativas y sostenibles, enfocadas en la experiencia del usuario y la visibilidad de la marca en el punto de venta.',
     fullImages: [project61Img, project62Img, project63Img],
-  },  {
+  },  
+  {
     id: '7', // ID único corregido
-    imageSrc: project71Img,
+    imageSrc: project73Img,
     title: 'Packaging para Alimentos',
     category: 'Diseño de Producto',
     description: 'Diseñamos soluciones de empaque creativas y sostenibles, enfocadas en la experiencia del usuario y la visibilidad de la marca en el punto de venta.',
