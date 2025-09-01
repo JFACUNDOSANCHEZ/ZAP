@@ -9,6 +9,7 @@ import Header from '../header/Header';
 import ProjectGrid from '../proyects/ProjectGrid';
 import AboutUs from '../aboutUs/AboutUs';
 import BrandsSection from '../brandsSection/BrandsSection';
+import Reviews from '../reviews/Reviews';
 
 const Home = () => {
   const location = useLocation(); // Obtiene la información de la URL
@@ -48,11 +49,11 @@ const Home = () => {
       <section id="nos">
         <AboutUs />
       </section>
+      <Reviews></Reviews>
       <BrandsSection></BrandsSection>
       <section id="contact">
         <ContactSection />
       </section>
-      
     </div>
   );
 };

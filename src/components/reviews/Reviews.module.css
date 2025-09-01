@@ -1,168 +1,114 @@
-/* src/components/Reviews.module.css */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
+/* Sección principal */
 .reviewsSection {
-  padding: 80px 20px; /* Padding generoso */
-  background-color: #f8fafd; /* Fondo muy claro, consistente */
+  background-color: #f8f8f8;
+  color: #333;
+  padding: 80px 40px;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
-  font-family: 'Inter', sans-serif;
-  color: #333; /* Color de texto general */
 }
 
-.mainTitle {
-  font-size: 2.8em;
+/* Encabezado */
+.reviewsHeader {
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+.reviewsTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  color: #1a2c4e; /* Azul oscuro corporativo */
-  margin-bottom: 15px;
-  line-height: 1.2;
+  margin-bottom: 10px;
+  color: #1a1a1a;
 }
 
-.mainSubtitle {
-  font-size: 1.2em;
+.reviewsSubtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
   color: #555;
-  max-width: 700px;
-  margin: 0 auto 60px auto; /* Espacio después del subtítulo y antes de las reviews */
-  line-height: 1.6;
 }
 
-.reviewsList {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3 columnas en desktop, se adapta */
-  gap: 30px; /* Espacio entre las tarjetas */
-  max-width: 1200px; /* Ancho máximo para el grid */
+/* Contenedor del carrusel */
+.carouselContainer {
+  max-width: 800px;
+  height: 400px;
   margin: 0 auto;
-  justify-items: center; /* Centra las tarjetas si hay menos de 3 */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
+/* Tarjeta de cada reseña */
 .reviewCard {
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada */
-  padding: 35px;
+  padding: 40px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   width: 100%;
-  max-width: 380px; /* Asegura un ancho máximo para las tarjetas */
-  text-align: left; /* Alinea el contenido de la tarjeta a la izquierda */
-
+  position: absolute;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribuye el espacio para que el userInfo quede abajo */
-  min-height: 380px; /* Asegura una altura mínima para la uniformidad */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.reviewCard:hover {
-  transform: translateY(-8px); /* Efecto de elevación más notable */
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-}
-
-.rating {
-  color: #f3b100; /* Color dorado para las estrellas */
-  font-size: 1.2em; /* Tamaño de las estrellas */
-  margin-bottom: 15px; /* Espacio debajo de las estrellas */
-  display: flex; /* Para que las estrellas estén en línea */
-}
-
-.starFilled {
-  color: #f3b100; /* Color para estrellas llenas */
-  margin-right: 2px; /* Pequeño espacio entre estrellas */
-}
-
-.starEmpty {
-  color: #e0e0e0; /* Color para estrellas vacías */
-  margin-right: 2px;
+  justify-content: center;
+  align-items: center;
 }
 
 .reviewText {
-  font-size: 1.05em;
-  color: #444;
-  line-height: 1.7;
-  flex-grow: 1; /* Permite que el texto ocupe el espacio restante */
-  margin-bottom: 25px; /* Espacio antes de la info del usuario */
-  font-style: italic; /* Para que el texto de la reseña sea cursiva */
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 20px;
 }
 
-.userInfo {
+/* Nuevo contenedor para la foto y el texto del autor */
+.authorInfo {
   display: flex;
   align-items: center;
-  margin-top: auto; /* Empuja la información del usuario hacia abajo */
+  gap: 15px;
+  margin-top: 20px;
 }
 
-.userImage {
-  width: 60px; /* Tamaño de la imagen */
+.reviewImage {
+  width: 60px;
   height: 60px;
-  border-radius: 50%; /* Circular */
+  border-radius: 50%;
   object-fit: cover;
-  margin-right: 15px;
-  border: 3px solid #0382a1; /* Borde con tu color principal */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.userNameRole {
+.authorDetails {
   display: flex;
   flex-direction: column;
-  text-align: left; /* Asegura que el texto esté alineado a la izquierda dentro de este div */
+  align-items: flex-start;
 }
 
-.reviewerName {
-  font-size: 1.2em;
-  color: #1a2c4e; /* Azul oscuro corporativo */
-  font-weight: 700;
-  margin-bottom: 2px; /* Poco espacio entre nombre y título */
+.reviewAuthor {
+  font-weight: 600;
+  margin: 0 0 5px;
+  color: #1a1a1a;
 }
 
-.reviewerTitle {
-  font-size: 0.9em;
-  color: #777; /* Color más suave para el cargo */
-  font-weight: 400;
+.reviewCompany {
+  font-size: 0.9rem;
+  color: #888;
   margin: 0;
 }
 
-
-/* --------------------------------------------------------------------- */
-/* --- MEDIA QUERIES --- */
-/* --------------------------------------------------------------------- */
-
-@media (max-width: 992px) {
-  .reviewsSection { padding: 60px 15px; }
-  .mainTitle { font-size: 2.2em; }
-  .mainSubtitle { font-size: 1.1em; margin-bottom: 50px; }
-  .reviewsList {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 2 columnas en tablet */
-    gap: 25px;
-  }
-  .reviewCard {
-    padding: 30px;
-    min-height: 360px;
-  }
-  .reviewText { font-size: 1em; }
-  .userImage { width: 50px; height: 50px; }
-  .reviewerName { font-size: 1.1em; }
-  .reviewerTitle { font-size: 0.85em; }
+/* Navegación */
+.navigation {
+    margin-top: 30px;
 }
 
-@media (max-width: 768px) {
-  .reviewsSection { padding: 50px 10px; }
-  .mainTitle { font-size: 1.8em; margin-bottom: 10px;}
-  .mainSubtitle { font-size: 1em; margin-bottom: 40px;}
-  .reviewsList {
-    grid-template-columns: 1fr; /* 1 columna en móvil */
-    gap: 20px;
-  }
-  .reviewCard {
-    max-width: 320px; /* Asegura que no sea demasiado ancha en móvil */
-    min-height: auto; /* La altura se ajusta al contenido */
-    padding: 25px;
-  }
+.navButton {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
-@media (max-width: 576px) {
-  .reviewsSection { padding: 40px 10px; }
-  .mainTitle { font-size: 1.6em; }
-  .mainSubtitle { font-size: 0.9em; margin-bottom: 30px;}
-  .rating { font-size: 1.1em; }
-  .reviewText { font-size: 0.95em; }
-  .userImage { width: 45px; height: 45px; margin-right: 10px;}
-  .reviewerName { font-size: 1em; }
-  .reviewerTitle { font-size: 0.8em; }
+.navButton:hover {
+    background-color: #555;
 }

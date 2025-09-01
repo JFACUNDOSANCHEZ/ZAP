@@ -1,184 +1,205 @@
-/* src/components/ContactSection/ContactSection.module.css */
-/* -------------------------------------- */
-/* --- Estilos del Contenedor Principal --- */
-/* -------------------------------------- */
+/* Contact Section (Footer) */
 .contactHero {
-  background-color: #000;
-  color: #fff;
-  padding: 100px 40px;
-  font-family: 'Poppins', sans-serif;
+    background-color: #000000;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    padding: 100px 40px; /* Ajustado el padding para más espacio vertical si es necesario */
 }
 
 .topContentContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 50px;
-  margin-bottom: 80px;
+    display: flex;
+    flex-direction: column; /* Por defecto apilado en móvil */
+    align-items: center; /* Centrado en móvil */
+    gap: 0px; /* Aumentado el espacio entre el título y el contenedor de botones */
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+}
+
+@media (min-width: 768px) {
+    .topContentContainer {
+        flex-direction: row; /* En escritorio, en fila */
+        justify-content: space-around; /* Distribuye el espacio entre los dos bloques */
+        align-items: center; /* Alinea verticalmente los dos bloques */
+        text-align: left; /* Alinea el texto a la izquierda en escritorio */
+    }
+}
+
+/* Hero Content (texto principal de contacto) */
+.heroContent {
+    max-width: 600px;
+    text-align: center; /* Centrado en móvil */
+}
+
+@media (min-width: 768px) {
+    .heroContent {
+        text-align: left; /* Alinear a la izquierda en escritorio */
+        flex: 1; /* Ocupa su parte del espacio */
+        padding-right: 40px; /* Añade un poco de espacio a la derecha del texto */
+    }
 }
 
 .headline {
-  font-size: clamp(3rem, 6vw, 5rem);
-  font-weight: 900;
-  line-height: 1.1;
-  color: #fff;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
 }
 
 .arrow {
-  color: #ffffff;
-  font-size: clamp(4rem, 8vw, 6rem);
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 400;
+    transform: rotate(45deg);
 }
 
-.contactFormTop {
-  flex-basis: 40%; /* El formulario ocupa más espacio */
+/* Contenedor de Botones de Contacto */
+.contactButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los botones dentro de su contenedor */
+    text-align: center;
+    gap: 20px; /* Espacio vertical entre los botones */
+    width: 100%;
+    max-width: 380px; /* Ajusta el ancho máximo para los botones */
+    flex: 1; /* Ocupa su parte del espacio */
 }
 
-.formTitle {
-  font-size: clamp(1.5rem, 3vw, 2rem);
-  font-weight: 500;
-  margin-bottom: 20px;
-  color: #fff;
+@media (min-width: 768px) {
+    .contactButtonsContainer {
+        align-items: flex-start; /* Alinea los botones a la izquierda en escritorio */
+        text-align: left; /* Alinea el título de los botones a la izquierda */
+        padding-left: 40px; /* Añade un poco de espacio a la izquierda de los botones */
+        border-left: 1px solid #333; /* Opcional: una línea divisoria sutil */
+    }
 }
 
-/* -------------------------------------- */
-/* --- Estilos del Formulario Completo --- */
-/* -------------------------------------- */
-.contactForm {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+.buttonsTitle {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    margin-bottom: 20px; /* Más espacio debajo del título de los botones */
+    color: #fff;
+    width: 100%; /* Asegura que el título ocupe el ancho y se alinee bien */
 }
 
-.formInput,
-.formSelect,
-.formTextarea {
-  background-color: transparent;
-  border: 1px solid #444;
-  color: #f0f0f0;
-  padding: 15px 20px;
-  font-size: 1rem;
-  border-radius: 5px;
-  width: 100%;
-  transition: border-color 0.3s;
+/* Base style for action buttons */
+.actionButton {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 15px 30px;
+    border-radius: 30px; /* Bordes suaves */
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px; /* Espacio entre el icono y el texto del botón */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    max-width: 350px; /* Limita el ancho del botón para que no sea demasiado largo */
+    justify-content: flex-start; /* Alinea el contenido del botón a la izquierda */
 }
 
-.formInput::placeholder,
-.formTextarea::placeholder {
-  color: #888;
+.actionButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sutil sombra al hacer hover */
 }
 
-.formInput:focus,
-.formSelect:focus,
-.formTextarea:focus {
-  outline: none;
-  border-color: #ffffff;
+/* Specific button styles (WhatsApp, Instagram, LinkedIn, Email) */
+/* ... (mantener los estilos de color existentes para cada botón) ... */
+.whatsappButton {
+  margin-bottom: 10px;
+  background-color: #25D366; }
+.whatsappButton:hover { background-color: #128C7E; }
+
+.instagramButton { 
+  margin-bottom: 10px;
+  
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.instagramButton:hover { filter: brightness(1.1); }
+
+.linkedinButton { background-color: #0077B5;
+  margin-bottom: 10px;
+ }
+.linkedinButton:hover { background-color: #005582; }
+
+.emailButton { background-color: #D44638;
+  margin-bottom: 10px;
+
+}
+.emailButton:hover { background-color: #B4281A; }
+
+
+/* Icon style (reemplazar con Font Awesome si lo tienes) */
+.icon {
+    font-size: 1.3rem;
+    font-weight: bold;
+    /* Para reemplazar los iconos 'W', 'I', etc. con Font Awesome:
+       - Asegúrate de tener Font Awesome importado en tu proyecto.
+       - En el HTML de cada botón, reemplaza <span className={styles.icon}></span>
+         por <i className="fab fa-whatsapp"></i>, <i className="fab fa-instagram"></i>, etc.
+       - Puedes eliminar estos estilos .icon si usas Font Awesome.
+    */
 }
 
-.formSelect {
-  /* Estilo específico para el select */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="white" d="M7 10l5 5 5-5z"/></svg>');
-  background-repeat: no-repeat;
-  background-position: right 15px center;
-  padding-right: 40px;
-}
-.formSelect option {
-  color: black;
-}
 
-.formTextarea {
-  resize: vertical;
-}
-
-.formButton {
-  background-color: #ffffff;
-  color: #000;
-  font-weight: 700;
-  font-size: 1rem;
-  padding: 15px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  text-transform: uppercase;
-}
-
-.formButton:hover {
-  background-color: #858585;
-  transform: translateY(-2px);
-}
-
-/* -------------------------------------- */
-/* --- Estilos del Footer Grid --- */
-/* -------------------------------------- */
+/* Footer Grid */
 .footerGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px;
-  border-top: 1px solid #333;
-  padding-top: 40px;
-  color: #bbb;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 50px;
+    border-top: 1px solid #333;
 }
-
+/* ... (el resto de tus estilos de footer se mantienen igual) ... */
 .footerGrid strong {
-  display: block;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 15px;
-  color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: block;
 }
 
-.footerGrid p, .footerGrid a {
-  margin: 5px 0;
-  color: #bbb;
-  text-decoration: none;
-  transition: color 0.3s;
+.footerGrid p {
+    font-size: 0.9rem;
+    margin: 5px 0;
+    color: #aaa;
+}
+
+.footerGrid a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .footerGrid a:hover {
-  color: #ffff00;
+    color: #aaa;
 }
 
+/* Social Icons (del footer) */
 .socialIcons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  margin-top: 40px;
+    text-align: center;
+    margin-top: 40px;
 }
 
 .socialIcons a {
-  font-size: 1.5rem;
-  color: #fff;
-  transition: color 0.3s;
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
 }
 
 .socialIcons a:hover {
-  color: #fbff00;
+    color: #aaa;
 }
 
-/* -------------------------------------- */
-/* --- Media Queries para Móviles --- */
-/* -------------------------------------- */
-@media (max-width: 768px) {
-  .contactHero {
-    padding: 80px 20px;
-  }
-
-  .topContentContainer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 40px;
-  }
-
-  .heroContent {
-    margin-bottom: 30px;
-  }
-
-  .footerGrid {
-    gap: 30px;
-  }
+/* Ajustes responsivos para botones */
+@media (max-width: 767px) {
+    .actionButton {
+        font-size: 1rem;
+        padding: 12px 25px;
+        justify-content: center; /* Centrar en móviles */
+    }
+    .contactButtonsContainer {
+        align-items: center; /* Centrar botones en móviles */
+    }
 }

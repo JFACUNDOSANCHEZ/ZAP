@@ -28,7 +28,7 @@ import project61Img from '../assets/Orus/1.webp';
 import project62Img from '../assets/Orus/2.png';
 import project63Img from '../assets/Orus/3.png';
 
-import project71Img from '../assets/Dasein/1.webp';
+import project71Img from '../assets/Dasein/1.png';
 import project72Img from '../assets/Dasein/2.png';
 import project73Img from '../assets/Dasein/3.png';
 
@@ -135,7 +135,7 @@ const projects = [
       'un paso natural para una empresa que, desde hace años, ha sido un referente en la zona sur de Córdoba.',
       'Con ese cambio de imagen, buscamos reflejar no solo una estética moderna, sino también la evolución de una relación de confianza y compromiso .'
     ],
-    mainText: 'Marull: una nueva cara, la misma pasión y dedicación de siempre. Un referente en la zona sur de Córdoba, con una evolución de confianza y compromiso.',
+    mainText: 'El rebranding de Marull Inmobiliaria fue un paso natural para una empresa que, desde hace años, ha sido un referente en la zona sur de Córdoba. Con ese cambio de imagen, buscamos reflejar no solo una estética moderna, sino también la evolución de una relación de confianza y compromiso que se construyó a lo largo de décadas con nuestros clientes',
     parallaxImage: project42Img,
     gallery: [
       project43Img,

@@ -1,139 +1,108 @@
-/* ProjectGrid.module.css */
-
-:root {
-    --overlay-bg: rgba(0, 0, 0, 0.086);
-    --overlay-gradient: linear-gradient(to bottom, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.7) 100%);
-    --text-light: #fff;
-    --text-muted: #ccc;
-    --radius: 12px;
-    --transition: 0.3s ease;
-}
-
+/* ==== SECCIÓN PRINCIPAL ==== */
 .projectGridSection {
-    margin: 0 auto;
-    text-align: center;
-    padding-top: 0px;
-    padding-bottom: px;
+margin: 0 auto;
 }
 
 .projectIntroHeader {
-    padding: 0 40px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 80px;
+text-align: center;
+margin-bottom: 3rem;
 }
 
 .projectSectionTitle {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 25px;
-    line-height: 1.2;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #1e1e1e;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-left: 10px;
 }
 
 .projectSectionDescription {
-    font-size: 1.3rem;
-    color: #555;
-    line-height: 1.7;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+font-size: 1.5rem;
+color: #555;
+  margin-bottom: 80px;
+
 }
 
-/* Grid Container */
+/* ==== GRID DE PROYECTOS ==== */
 .gridContainer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0rem;
-    padding: 0rem;
-    width: 100%;
-    max-width: 3000px;
-    height: 100%;
-    margin: 0 auto;
+display: grid;
+grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+gap: 0rem;
 }
 
-/* Project Card */
+/* Responsive: 1 columna en pantallas pequeñas */
+@media (max-width: 768px) {
+.gridContainer {
+grid-template-columns: 1fr;
+}
+}
+
+/* ==== ITEM DE PROYECTO ==== */
 .projectItem {
-    position: relative;
-    overflow: hidden;
-    height: 500px;
-    border-radius: 0;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    transition: transform var(--transition), box-shadow var(--transition);
-    background-color: #000;
+position: relative;
+display: block;
+overflow: hidden;
+border-radius: 0;
+margin: 0;
+padding: 0;
+text-decoration: none;
+color: inherit;
+line-height: 0;
+height: 500px; /* <--- Altura fija para el contenedor */
 }
 
-.projectItem:hover {
-    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* Project Image */
+/* ==== IMAGEN ==== */
 .projectImage {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
+width: 100%;
+height: 100%; /* <--- Ahora la imagen ocupa el 100% de la altura del contenedor */
+object-fit: cover; /* <--- CLAVE: cubre el área, recortando si es necesario */
+display: block;
+transition: transform 0.8s ease;
+transform: scale(1);
+vertical-align: top;
 }
 
-.projectItem:hover .projectImage {
-    transform: scale(1.05);
-}
-
-/* Overlay */
+/* ==== OVERLAY ==== */
 .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7); /* Fondo opaco */
-    opacity: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Centrado vertical */
-    align-items: center; /* Centrado horizontal */
-    padding: 0;
-    transition: opacity var(--transition);
-    text-align: center;
+position: absolute;
+inset: 0;
+background-color: rgba(0, 0, 0, 0.4);
+display: flex;
+flex-direction: column;
+justify-content: center; /* Centra el contenido verticalmente */
+align-items: center; /* Centra el contenido horizontalmente */
+padding: 1.5rem; /* Ajuste para que el título no esté pegado a los bordes */
+opacity: 0;
+transition: opacity 0.4s ease;
+text-align: center; /* Asegura que el texto dentro del overlay también esté centrado */
 }
 
-.projectItem:hover .overlay {
-    opacity: 1;
-}
-
-/* Overlay Text */
+/* ==== TEXTO EN EL OVERLAY ==== */
 .overlayTitle {
-    color: var(--text-light);
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin: 0;
-    transform: scale(0.8);
-    transition: transform 0.3s ease;
-}
-
-.projectItem:hover .overlayTitle {
-    transform: scale(1);
+color: white;
+font-size: 1.5rem; /* Hacemos el título un poco más grande para que destaque solo */
+font-weight: bold;
+margin: 0; /* Aseguramos que no tenga márgenes extras */
+transform: none;
+opacity: 0;
+transition: all 0.4s ease;
 }
 
 .overlayCategory {
-    display: none; /* Oculta la categoría para un look más limpio */
+display: none; /* <--- Ocultamos la categoría */
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .projectSectionTitle {
-        font-size: 2.2rem;
-    }
-    .projectSectionDescription {
-        font-size: 1rem;
-    }
-    .gridContainer {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    .projectIntroHeader {
-        margin-bottom: 40px;
-    }
+/* ==== HOVER EFFECT ==== */
+.projectItem:hover .projectImage {
+transform: scale(1.05); /* Zoom in */
+}
+
+.projectItem:hover .overlay {
+opacity: 1;
+}
+
+.projectItem:hover .overlayTitle {
+transform: none;
+opacity: 1;
 }

@@ -4,6 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import projectsData from '../../data/projects';
 import { motion } from 'framer-motion';
 import styles from './ProjectDetail.module.css';
+import ContactSection from '../contactSection/ContactSection';
 
 const ProjectDetail = () => {
     const { id } = useParams();
@@ -86,6 +87,7 @@ const ProjectDetail = () => {
                 <div className={styles.backButtonContainer}>
                     <Link to="/#portfolio" className={styles.backButtonWhite}>&lt;- Volver al portfolio</Link>
                 </div>
+                
             </motion.div>
         </>
     );
