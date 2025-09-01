@@ -1,188 +1,156 @@
-/* -------------------------------------- */
-/* --- Contenedor Principal del Proyecto --- */
-/* -------------------------------------- */
+/* Contenedor principal de la página de detalle */
 .projectDetailContainer {
-  margin: 0 auto;
-  padding: 100px 40px;
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
-  background-color: #000;
+    margin: 0 auto;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background-color: #111;
+    overflow-x: hidden;
+    padding: 0;
 }
 
-/* -------------------------------------- */
-/* --- Sección de Cabecera y Título --- */
-/* -------------------------------------- */
-.headerGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
-  margin-bottom: 60px;
+/* Sección del título y la categoría */
+.titleSection {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(80px, 15vw, 150px) 40px 0;
+    text-align: left;
 }
 
 .projectCategory {
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
-  font-weight: 400;
-  text-transform: uppercase;
-  color: #bbb;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #aaa;
+    margin: 0;
 }
 
 .projectTitle {
-  font-size: clamp(3rem, 6vw, 5rem);
-  font-weight: 900;
-  line-height: 1.1;
-  text-transform: uppercase;
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: 800;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin: 10px 0 0;
 }
 
-/* -------------------------------------- */
-/* --- Grilla de Introducción (Estilo unmedioestudio) --- */
-/* -------------------------------------- */
-.introGrid {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 100px;
-  margin-bottom: 80px;
+/* Sección de la imagen principal */
+.mainImageContainer {
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    margin-top: 50px;
+}
+.mainImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-.metaColumn {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+/* Sección de contenido de dos columnas (texto y paralaje) */
+.contentGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 150px auto 0;
+    padding: 0 40px;
+    /* Esto ya está bien y centra los dos contenedores entre sí */
+    align-items: center; 
 }
 
-.metaItem strong {
-  display: block;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #bbb;
-  text-transform: uppercase;
-  margin-bottom: 5px;
+
+.textContent {
+    /* Aquí está la clave para centrar el texto dentro de su propio contenedor */
+    display: flex;
+    flex-direction: column; /* Apila el contenido (h1, p) verticalmente */
+    justify-content: center; /* Centra el contenido verticalmente */
+    
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.6;
+    color: #ccc;
+    padding: 20px;
 }
 
-.metaItem p {
-  font-size: 1.1rem;
-  font-weight: 500;
+/* Contenedor de la imagen de paralaje */
+.parallaxImageContainer {
+    width: 100%;
+    height: 500px; /* Puedes ajustar la altura según sea necesario */
+    min-height: 400px; /* Asegura que el contenedor tenga una altura mínima */
+    background-image: var(--parallax-image);
+    background-size: cover; /* Asegura que la imagen cubra todo el área */
+    background-position: center center; /* Centra la imagen tanto horizontal como verticalmente */
+    background-attachment: fixed; /* Efecto de parallax */
+    display: block;
 }
-
-.projectDescription {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.descriptionText {
-  display: flex;
-  flex-direction: column;
-}
-
-.descriptionTitle {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  font-style: italic;
-  line-height: 1.2;
-  margin: 0;
-  color: #fff;
-}
-
-.descriptionParagraph {
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-  line-height: 1.6;
-  color: #aaa;
-  margin: 0;
-}
-
-/* -------------------------------------- */
-/* --- Grilla de Imágenes Personalizada --- */
-/* -------------------------------------- */
-.customImageGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* Tres columnas */
-  grid-template-rows: auto auto; /* Dos filas */
-  gap: 20px;
-}
-
-.imageTopLeft {
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
-}
-
-.imageTopRight {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-}
-
-.imageBottomFull {
-  grid-column: 1 / -1; /* Ocupa todas las columnas */
-  grid-row: 2 / 3;
+/* Galería de fotos inferior */
+.photoGalleryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 0 40px;
 }
 
 .galleryImage {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  border-radius: 8px;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
 }
 
-/* -------------------------------------- */
-/* --- Botón de Regreso y otros estilos --- */
-/* -------------------------------------- */
+.galleryImage:hover {
+    transform: scale(1.02);
+}
+
+/* Botón de regreso */
 .backButtonContainer {
-  margin-top: 60px;
-  text-align: left;
+    max-width: 1200px;
+    margin: 60px auto 100px;
+    padding: 0 40px;
 }
 
-.backButton {
-  text-decoration: none;
-  color: #FF00FF;
-  font-size: 1.2rem;
-  font-weight: 600;
-  transition: opacity 0.3s;
+.backButtonWhite {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
 
-.backButton:hover {
-  opacity: 0.8;
+.backButtonWhite:hover {
+    background-color: #fff;
+    color: #111;
 }
 
-/* --- Estado de "no encontrado" --- */
-.notFoundContainer {
-  text-align: center;
-  padding: 150px 40px;
-  color: #fff;
-  background-color: #000;
-  font-family: 'Poppins', sans-serif;
-}
-
-.notFoundContainer h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.notFoundContainer p {
-  font-size: 1.2rem;
-  color: #bbb;
-}
-
-/* --- Media Queries para móviles --- */
+/* Media Queries para una perfecta adaptabilidad */
 @media (max-width: 768px) {
-  .projectDetailContainer {
-    padding: 80px 20px;
-  }
-  .introGrid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .customImageGrid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 20px;
-  }
-  .imageTopLeft,
-  .imageTopRight,
-  .imageBottomFull {
-    grid-column: 1 / -1;
-    grid-row: auto;
-  }
-  .projectDescription {
-      gap: 20px;
-  }
+    .contentGrid { 
+        grid-template-columns: 1fr; 
+        gap: 40px;
+        padding: 0 20px;
+    }
+    .textContent {
+        padding: 0;
+    }
+    .parallaxImageContainer {
+        height: 300px;
+    }
+    .photoGalleryGrid {
+        padding: 0 20px;
+    }
+    .backButtonContainer {
+        padding: 0 20px;
+    }
+}
+@media (max-width: 768px) {
+    .parallaxImageContainer {
+        background-attachment: scroll; /* Desactivar el efecto parallax en dispositivos móviles */
+    }
 }

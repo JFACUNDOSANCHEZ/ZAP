@@ -15,7 +15,6 @@
 }
 
 .title {
-    /* Agrandamos el título principal */
     font-size: clamp(3rem, 7vw, 4rem);
     font-weight: 700;
     color: #2c3e50;
@@ -23,17 +22,14 @@
     letter-spacing: -0.02em;
 }
 
-/* Estilo para la imagen del logo */
 .logo {
-    /* Agrandamos la imagen del logo */
     width: 80%;
     height: auto;
-    margin: 25px 0; /* Aumentamos el margen para más espacio */
+    margin: 25px 0;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
 
 .mainText {
-    /* Aumentamos el tamaño del texto principal */
     font-size: clamp(1.1rem, 2vw, 1.25rem);
     color: #555;
     margin-bottom: 15px;
@@ -41,13 +37,13 @@
 }
 
 .quote {
-    /* Aumentamos el tamaño del texto de la cita */
     font-size: clamp(1.2rem, 2.5vw, 1.5rem);
     font-style: italic;
     color: #888;
     margin-top: 25px;
 }
 
+/* Estilos de tarjetas divididas horizontalmente */
 .foundersSection {
     display: flex;
     gap: 40px;
@@ -56,51 +52,57 @@
 }
 
 .founderCard {
-    background: #fff;
+    background: #ffffff;
     border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-    padding: 30px 20px;
-    max-width: 300px;
-    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    display: flex; /* <-- Usamos flexbox para dividir */
+    align-items: stretch;
+    max-width: 700px; /* <-- La hacemos mucho más ancha */
+    text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .founderCard:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
 .founderPhoto {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    width: 250px; /* Tamaño fijo para la foto */
+    height: 100%; /* Ocupa toda la altura de la tarjeta */
+    border-radius: 16px 0 0 16px; /* Solo las esquinas izquierdas redondeadas */
     object-fit: cover;
-    margin-bottom: 15px;
-    border: 2px solid #e0e0e0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+    object-position: top; /* Ajustamos la posición para que no se corte la cabeza */
+}
+
+.founderContent {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .founderName {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 6px;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
     color: #1a1a1a;
 }
 
 .founderBio {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: #666;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .socialLinks {
     display: flex;
-    justify-content: center;
-    gap: 15px;
+    justify-content: flex-start; /* Alineamos a la izquierda */
+    gap: 20px;
 }
 
 .socialLinks a {
-    color: #555;
+    color: #888;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -113,5 +115,21 @@
     .foundersSection {
         flex-direction: column;
         align-items: center;
+    }
+    .founderCard {
+        flex-direction: column; /* Apilamos en móviles */
+        text-align: center;
+        max-width: 380px;
+    }
+    .founderPhoto {
+        width: 100%;
+        height: 250px;
+        border-radius: 16px 16px 0 0;
+    }
+    .founderContent {
+        padding: 20px;
+    }
+    .socialLinks {
+        justify-content: center; /* Centramos los íconos */
     }
 }

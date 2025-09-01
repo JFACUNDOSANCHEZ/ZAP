@@ -1,43 +1,32 @@
-// src/data/projects.js
 // Importa todas tus imágenes para que estén disponibles
 import project03Img from '../assets/AkoAgro/AKOP.webp';
 import project13Img from '../assets/AkoAgro/AKOP2.png';
 import project12Img from '../assets/AkoAgro/AKOP3.png';
 import project11Img from '../assets/AkoAgro/AKOP4.png';
 
-import project04Img from '../assets/DivinaTierra/1DT.png';
+import project04Img from '../assets/DivinaTierra/1.png';
 import project22Img from '../assets/DivinaTierra/DT22.png';
 import project23Img from '../assets/DivinaTierra/DT23.png';
 import project24Img from '../assets/DivinaTierra/DT24.png';
-
-
 
 import project31Img from '../assets/Mufa/1.webp';
 import project32Img from '../assets/Mufa/2.png';
 import project33Img from '../assets/Mufa/3.png';
 import project34Img from '../assets/Mufa/4.png';
 
-
-
 import project41Img from '../assets/Marull/1.webp';
 import project42Img from '../assets/Marull/2.png';
 import project43Img from '../assets/Marull/3.png';
 import project44Img from '../assets/Marull/4.png';
-
-
-
 
 import project51Img from '../assets/Kromos/1.png';
 import project52Img from '../assets/Kromos/2.png';
 import project53Img from '../assets/Kromos/3.png';
 import project54Img from '../assets/Kromos/4.png';
 
-
 import project61Img from '../assets/Orus/1.webp';
 import project62Img from '../assets/Orus/2.png';
 import project63Img from '../assets/Orus/3.png';
-
-
 
 import project71Img from '../assets/Dasein/1.webp';
 import project72Img from '../assets/Dasein/2.png';
@@ -48,74 +37,145 @@ import project82Img from '../assets/Punto33/2.png';
 import project83Img from '../assets/Punto33/3.png';
 
 
-
-
 const projects = [
   {
-    id: '3', // ID único corregido
+    id: '3',
     imageSrc: project31Img,
-    title: 'Rediseño Web Gastronómico',
-    category: 'Web Development',
-    description: 'Desarrollamos una nueva página web optimizada para móviles, con una interfaz intuitiva y un diseño limpio que resalta los productos y facilita el proceso de reserva online.',
-    fullImages: [project31Img, project32Img, project33Img, project34Img  ],
+    title: 'MUFA: Sabor y Estilo Italiano en Córdoba',
+    category: 'El verdadero sabor de la tradición italiana con una actitud que te dejará sin aliento.',
+    descriptionParts: [
+      'Esta no es solo una marca, es una declaración de intenciones. MUFA fusiona la audacia de lo contemporáneo con la tradición culinaria de Italia.',
+      'Su estilo es provocador, agresivo y auténtico, diseñado para quienes buscan una experiencia que va más allá de lo convencional.',
+      'Cada detalle, desde el packaging hasta la comunicación, grita pasión y herencia italiana, pero con un twist moderno que desafía lo establecido.'
+    ],
+    mainText: 'MUFA no es solo comida, es una experiencia. El verdadero sabor de la tradición italiana con una actitud que te dejará sin aliento. Fusionamos la audacia de lo contemporáneo con la tradición culinaria de Italia. Su estilo es provocador, agresivo y auténtico. Diseñado para quienes buscan una experiencia que va más allá de lo convencional en Córdoba. Cada detalle, desde el packaging hasta la comunicación, grita pasión y herencia italiana, pero con un twist moderno que desafía lo establecido.',
+    parallaxImage: project32Img,
+    gallery: [
+      project33Img,
+      project34Img,
+    ],
   },
   {
-    id: '2', // ID único corregido
+    id: '2', 
     imageSrc: project04Img,
-    title: ' Campaña "Asian Bites"',
-    category: 'Publicidad Digital',
-    description: 'Para esta campaña publicitaria, creamos una serie de anuncios digitales dinámicos y atractivos, diseñados para generar un alto engagement en redes sociales y dirigir tráfico al sitio web del cliente.',
-    fullImages: [project22Img, project23Img,project24Img],
+    title: 'Divina Tierra',
+    category: 'Transformar el concepto "Alimento Libre" en una marca coherente y honesta',
+    descriptionParts: [
+      'Divina Tierra fue transformar el concepto "Alimento Libre" en una marca coherente y honesta. El tagline es la esencia: una declaración de principios que habla de libertad y pureza.',
+      'El diseño se centró en una estética rústica y moderna, con una paleta de colores inspirada en la tierra, para reflejar la autenticidad del producto.',
+      'El logo fue concebido como un sello de garantía que certifica el origen de los huevos de gallinas criadas en libertad.',
+      'Cada decisión visual se tomó para contar la historia de Divina Tierra: una marca que celebra la conexión con la naturaleza y el respeto por la vida animal.'
+    ],
+    mainText: 'Divina Tierra fue transformar el concepto "Alimento Libre" en una marca coherente y honesta. El tagline es la esencia: una declaración de principios que habla de libertad y pureza. El diseño se centró en una estética rústica y moderna, con una paleta de colores inspirada en la tierra, para reflejar la autenticidad del producto. El logo fue concebido como un sello de garantía que certifica el origen de los huevos de gallinas criadas en libertad. Cada decisión visual se tomó para contar la historia de Divina Tierra: una marca que celebra la conexión con la naturaleza y el respeto por la vida animal.',
+    parallaxImage: project22Img,
+    gallery: [
+      project23Img,
+      project24Img,
+    ],
   },
   {
-    id: '1', // ID único corregido
+    id: '1', 
     imageSrc: project03Img,
-    title: 'Marca de Restaurante Japonés',
-    category: 'Branding & Food Photography',
-    description: 'Este proyecto de branding se centró en capturar la esencia minimalista y elegante de la cocina japonesa. Desarrollamos una identidad visual completa, desde el logo hasta los menús y la fotografía de alimentos, para una experiencia de marca cohesiva y memorable.',
-    fullImages: [project12Img, project11Img, project13Img],
+    title: 'Ako Agro',
+    category: 'Una identidad de marca que resonara con innovación y eficiencia en la agricultura',
+    descriptionParts: [
+      'Para Ako Agro, creamos una identidad de marca que resonara con innovación y eficiencia en la agricultura.',
+      'Entendimos que el futuro del campo exigía soluciones optimizadas y sostenibles, y la marca debía reflejar esa promesa.',
+      'Nuestro enfoque de branding fue posicionar a Ako Agro como un aliado estratégico y confiable.',
+      'Desarrollamos un lenguaje visual y verbal que proyecta modernidad y solidez, con elementos que evocan crecimiento y tecnología.',
+      'El objetivo: que la marca comunicara calidad, confianza y resultados tangibles, distinguiéndose en el mercado.',
+      'Cada detalle de la marca se diseñó para construir una identidad fuerte y relevante, simbolizando una promesa de crecimiento y prosperidad para el sector agropecuario.'
+    ],
+    mainText: 'Para Ako Agro, creamos una identidad de marca que resonara con innovación y eficiencia en la agricultura. Entendimos que el futuro del campo exigía soluciones optimizadas y sostenibles, y la marca debía reflejar esa promesa. Nuestro enfoque de branding fue posicionar a Ako Agro como un aliado estratégico y confiable. Desarrollamos un lenguaje visual y verbal que proyecta modernidad y solidez, con elementos que evocan crecimiento y tecnología. El objetivo: que la marca comunicara calidad, confianza y resultados tangibles, distinguiéndose en el mercado. Cada detalle de la marca se diseñó para construir una identidad fuerte y relevante, simbolizando una promesa de crecimiento y prosperidad para el sector agropecuario.',
+    parallaxImage: project13Img,
+    gallery: [
+      project12Img,
+      project11Img,
+    ],
   },
   {
-    id: '8', // ID único corregido
+    id: '8', 
     imageSrc: project81Img,
     title: 'Packaging para Alimentos',
     category: 'Diseño de Producto',
-    description: 'Diseñamos soluciones de empaque creativas y sostenibles, enfocadas en la experiencia del usuario y la visibilidad de la marca en el punto de venta.',
-    fullImages: [project81Img, project82Img, project83Img],
+    descriptionParts: [
+      'Diseñamos soluciones de empaque creativas y sostenibles, enfocadas en la experiencia del usuario y la visibilidad de la marca en el punto de venta.'
+    ],
+    mainText: 'Diseñamos soluciones de empaque creativas y sostenibles, enfocadas en la experiencia del usuario y la visibilidad de la marca en el punto de venta.',
+    parallaxImage: project82Img,
+    gallery: [
+      project83Img,
+    ],
   },
   {
-    id: '5', // ID único corregido
+    id: '5', 
     imageSrc: project51Img,
-    title: 'Estrategia de Contenido Culinario',
-    category: 'Marketing Digital',
-    description: 'Descripción detallada de la estrategia de contenido para un restaurante, incluyendo la planificación de campañas y la gestión de redes sociales.',
-    fullImages: [project51Img, project52Img, project53Img, project54Img],
+    title: 'Kromos',
+    category: 'Bike Shop Concept',
+    descriptionParts: [
+      'El rebranding de Kromos fue un ejercicio para transformar una tienda de bicicletas en un "Bike Shop Concept".',
+      'El objetivo fue crear una identidad que comunicara más que una venta: una filosofía.',
+      'El diseño se centró en el nombre Kromos como el ADN de la marca, uniendo el guiño clásico del "cromo" con una visión moderna.',
+      'La identidad visual se construyó para ser dinámica y limpia, reflejando la pasión por el ciclismo.',
+      'Este rebranding es la narrativa de una marca que no solo vende productos, sino que invita a vivir la cultura ciclista.'
+    ],
+    mainText: 'El rebranding de Kromos fue un ejercicio para transformar una tienda de bicicletas en un "Bike Shop Concept". El objetivo fue crear una identidad que comunicara más que una venta: una filosofía. El diseño se centró en el nombre Kromos como el ADN de la marca, uniendo el guiño clásico del "cromo" con una visión moderna. La identidad visual se construyó para ser dinámica y limpia, reflejando la pasión por el ciclismo. Este rebranding es la narrativa de una marca que no solo vende productos, sino que invita a vivir la cultura ciclista.',
+    parallaxImage: project52Img,
+    gallery: [
+      project53Img,
+      project54Img,
+    ],
   },
   {
-    id: '4', // ID único corregido
+    id: '4', 
     imageSrc: project41Img,
-    title: 'Menú Digital Interactivo',
-    category: 'Diseño UX/UI',
-    description: 'Diseñamos una experiencia de usuario fluida y visualmente atractiva para un menú digital, permitiendo a los clientes explorar los platos con descripciones detalladas e imágenes de alta calidad directamente desde sus dispositivos móviles.',
-    fullImages: [project41Img, project42Img, project43Img, project44Img ],
+    title: 'Marull',
+    category: 'Nuestra nueva cara fue el resultado de la misma pasión y dedicación de siempre',
+    descriptionParts: [
+      'un paso natural para una empresa que, desde hace años, ha sido un referente en la zona sur de Córdoba.',
+      'Con ese cambio de imagen, buscamos reflejar no solo una estética moderna, sino también la evolución de una relación de confianza y compromiso .'
+    ],
+    mainText: 'Marull: una nueva cara, la misma pasión y dedicación de siempre. Un referente en la zona sur de Córdoba, con una evolución de confianza y compromiso.',
+    parallaxImage: project42Img,
+    gallery: [
+      project43Img,
+      project44Img,
+    ],
   },
   {
-    id: '6', // ID único corregido
+    id: '6', 
     imageSrc: project61Img,
-    title: 'Packaging para Alimentos',
-    category: 'Diseño de Producto',
-    description: 'Diseñamos soluciones de empaque creativas y sostenibles, enfocadas en la experiencia del usuario y la visibilidad de la marca en el punto de venta.',
-    fullImages: [project61Img, project62Img, project63Img],
-  },  
-  {
-    id: '7', // ID único corregido
-    imageSrc: project73Img,
-    title: 'Packaging para Alimentos',
-    category: 'Diseño de Producto',
-    description: 'Diseñamos soluciones de empaque creativas y sostenibles, enfocadas en la experiencia del usuario y la visibilidad de la marca en el punto de venta.',
-    fullImages: [project71Img, project72Img, project73Img],
+    title: 'ORUS®: Data Water Solutions',
+    category: 'ORUS trae una solución única e innovadora para la gestión del agua en América Latina',
+    descriptionParts: [
+      'ORUS trae una solución única e innovadora para la gestión del agua en América Latina.',
+      'Nuestra tecnología facilita una mejor toma de decisiones al ofrecer información precisa y en tiempo real.',
+      'Esto permite un diseño mejorado de medidas estructurales y una optimización general de los recursos hídricos.',
+    ],
+    mainText: 'ORUS trae una solución única e innovadora para la gestión del agua en América Latina. Aprovechamos técnicas de velocimetría por imágenes para medir remotamente los caudales en cursos de agua, proporcionando datos cruciales para una gestión sostenible y la mitigación del riesgo hídrico. Nuestra tecnología facilita una mejor toma de decisiones al ofrecer información precisa y en tiempo real. Esto permite un diseño mejorado de medidas estructurales y una optimización general de los recursos hídricos.',
+    parallaxImage: project62Img,
+    gallery: [
+      project63Img,
+    ],
   },
-  // Puedes seguir añadiendo más proyectos aquí
+  {
+    id: '7', 
+    imageSrc: project72Img,
+    title: 'Dasein: Diseño y Cálculo Estructural',
+    category: 'Aquí, el minimalismo se encuentra con la fuerza del brutalismo',
+    descriptionParts: [
+      'En Dasein, cada proyecto es una declaración. Hemos concebido una pieza geométrica única, donde la abstracción de la letra "D" surge de la fusión de elementos.',
+      'Este símbolo no es solo un logo; es un lenguaje visual robusto que encarna nuestros valores.',
+      'Aquí, el minimalismo se encuentra con la fuerza del brutalismo.',
+      'Los cortes limpios y nuestra impresión 3D abstracta dan vida a un símbolo potente y esencial.',
+      'Esto es Dasein: la identidad inconfundible de nuestra marca.'
+    ],
+    mainText: 'En Dasein, cada proyecto es una declaración. Hemos concebido una pieza geométrica única, donde la abstracción de la letra "D" surge de la fusión de elementos. Este símbolo no es solo un logo; es un lenguaje visual robusto que encarna nuestros valores. Aquí, el minimalismo se encuentra con la fuerza del brutalismo. Los cortes limpios y nuestra impresión 3D abstracta dan vida a un símbolo potente y esencial. Esto es Dasein: la identidad inconfundible de nuestra marca.',
+    parallaxImage: project71Img,
+    gallery: [
+      project73Img,
+    ],
+  },
 ];
 
 export default projects;
