@@ -28,8 +28,8 @@ import project61Img from '../assets/Orus/1.webp';
 import project62Img from '../assets/Orus/2.png';
 import project63Img from '../assets/Orus/3.png';
 
-import project71Img from '../assets/Dasein/1.png';
-import project72Img from '../assets/Dasein/2.png';
+import project71Img from '../assets/Dasein/1.webp';
+import project72Img from '../assets/Dasein/2.webp';
 import project73Img from '../assets/Dasein/3.png';
 
 import project81Img from '../assets/Punto33/1.webp';
