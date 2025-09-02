@@ -5,8 +5,8 @@ import styles from './AboutUs.module.css';
 import logoAboutUs from '../../assets/ZAP-TAGLINE1.png';
 
 const AboutUs = () => {
-  const micaImage = "https://www.palermo.edu/Archivos_content/2024/dyc/noviembre/heidi-clair/Heidi-Clair-750x335.jpg";
-  const silImage = "https://img.freepik.com/fotos-premium/retrato-mujer-moda-mechon-pelo_91497-3794.jpg";
+const micaImage = "https://www.esade.edu/wp-content/uploads/2024/07/mujer-emprendedora-1.jpg";
+  const silImage = "https://generalcargo.net/wp-content/uploads/2023/04/AdobeStock_565116699-scaled.jpeg";
 
   const silLinkedin = "#";
   const silInstagram = "#";

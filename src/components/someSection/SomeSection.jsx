@@ -9,7 +9,7 @@ import project8Img from '../../assets/project7.png';
 import project3Img from '../../assets/project3.png';
 // Asume que tienes más imágenes, como las siguientes
 import project4Img from '../../assets/project10.png';
-import project1Img from '../../assets/project2.png';
+import project1Img from '../../assets/project2.webp';
 import project6Img from '../../assets/project8.png';
 import project11Img from '../../assets/web.png';
 import project12Img from '../../assets/MartosMa.png';

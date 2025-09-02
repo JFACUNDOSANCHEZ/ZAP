@@ -39,25 +39,57 @@ import project83Img from '../assets/Punto33/3.png';
 
 const projects = [
   {
-    id: '2', 
-    imageSrc: project04Img,
-    title: 'Divina Tierra',
-    category: 'Transformar el concepto "Alimento Libre" en una marca coherente y honesta',
-    descriptionParts: [
-      'Divina Tierra fue transformar el concepto "Alimento Libre" en una marca coherente y honesta. El tagline es la esencia: una declaración de principios que habla de libertad y pureza.',
-      'El diseño se centró en una estética rústica y moderna, con una paleta de colores inspirada en la tierra, para reflejar la autenticidad del producto.',
-      'El logo fue concebido como un sello de garantía que certifica el origen de los huevos de gallinas criadas en libertad.',
-      'Cada decisión visual se tomó para contar la historia de Divina Tierra: una marca que celebra la conexión con la naturaleza y el respeto por la vida animal.'
-    ],
-    mainText: 'Divina Tierra fue transformar el concepto "Alimento Libre" en una marca coherente y honesta. El tagline es la esencia: una declaración de principios que habla de libertad y pureza. El diseño se centró en una estética rústica y moderna, con una paleta de colores inspirada en la tierra, para reflejar la autenticidad del producto. El logo fue concebido como un sello de garantía que certifica el origen de los huevos de gallinas criadas en libertad. Cada decisión visual se tomó para contar la historia de Divina Tierra: una marca que celebra la conexión con la naturaleza y el respeto por la vida animal.',
-    parallaxImage: project22Img,
-    gallery: [
-      project23Img,
-      project24Img,
-    ],
-  },
-  {
-    id: '1', 
+    id: '8', 
+      imageSrc: project81Img,
+      title: 'Packaging para Alimentos',
+      category: 'Diseño de Producto',
+      descriptionParts: [
+        'Diseñamos soluciones de empaque creativas y sostenibles, enfocadas en la experiencia del usuario y la visibilidad de la marca en el punto de venta.'
+      ],
+      mainText: 'Diseñamos soluciones de empaque creativas y sostenibles, enfocadas en la experiencia del usuario y la visibilidad de la marca en el punto de venta.',
+      parallaxImage: project82Img,
+      gallery: [
+        project83Img,
+      ],
+    },
+    {
+      id: '7', 
+      imageSrc: project72Img,
+      title: 'Dasein: Diseño y Cálculo Estructural',
+      category: 'Aquí, el minimalismo se encuentra con la fuerza del brutalismo',
+      descriptionParts: [
+        'En Dasein, cada proyecto es una declaración. Hemos concebido una pieza geométrica única, donde la abstracción de la letra "D" surge de la fusión de elementos.',
+        'Este símbolo no es solo un logo; es un lenguaje visual robusto que encarna nuestros valores.',
+        'Aquí, el minimalismo se encuentra con la fuerza del brutalismo.',
+        'Los cortes limpios y nuestra impresión 3D abstracta dan vida a un símbolo potente y esencial.',
+        'Esto es Dasein: la identidad inconfundible de nuestra marca.'
+      ],
+      mainText: 'En Dasein, cada proyecto es una declaración. Hemos concebido una pieza geométrica única, donde la abstracción de la letra "D" surge de la fusión de elementos. Este símbolo no es solo un logo; es un lenguaje visual robusto que encarna nuestros valores. Aquí, el minimalismo se encuentra con la fuerza del brutalismo. Los cortes limpios y nuestra impresión 3D abstracta dan vida a un símbolo potente y esencial. Esto es Dasein: la identidad inconfundible de nuestra marca.',
+      parallaxImage: project71Img,
+      gallery: [
+        project73Img,
+      ],
+    },
+    {
+      id: '2', 
+      imageSrc: project04Img,
+      title: 'Divina Tierra',
+      category: 'Transformar el concepto "Alimento Libre" en una marca coherente y honesta',
+      descriptionParts: [
+        'Divina Tierra fue transformar el concepto "Alimento Libre" en una marca coherente y honesta. El tagline es la esencia: una declaración de principios que habla de libertad y pureza.',
+        'El diseño se centró en una estética rústica y moderna, con una paleta de colores inspirada en la tierra, para reflejar la autenticidad del producto.',
+        'El logo fue concebido como un sello de garantía que certifica el origen de los huevos de gallinas criadas en libertad.',
+        'Cada decisión visual se tomó para contar la historia de Divina Tierra: una marca que celebra la conexión con la naturaleza y el respeto por la vida animal.'
+      ],
+      mainText: 'Divina Tierra fue transformar el concepto "Alimento Libre" en una marca coherente y honesta. El tagline es la esencia: una declaración de principios que habla de libertad y pureza. El diseño se centró en una estética rústica y moderna, con una paleta de colores inspirada en la tierra, para reflejar la autenticidad del producto. El logo fue concebido como un sello de garantía que certifica el origen de los huevos de gallinas criadas en libertad. Cada decisión visual se tomó para contar la historia de Divina Tierra: una marca que celebra la conexión con la naturaleza y el respeto por la vida animal.',
+      parallaxImage: project22Img,
+      gallery: [
+        project23Img,
+        project24Img,
+      ],
+    },
+    {
+      id: '1', 
     imageSrc: project03Img,
     title: 'Ako Agro',
     category: 'Una identidad de marca que resonara con innovación y eficiencia en la agricultura',
@@ -79,7 +111,7 @@ const projects = [
   {
     id: '3',
     imageSrc: project31Img,
-    title: 'MUFA: Sabor y Estilo Italiano en Córdoba',
+    title: 'MUFA',
     category: 'El verdadero sabor de la tradición italiana con una actitud que te dejará sin aliento.',
     descriptionParts: [
       'Esta no es solo una marca, es una declaración de intenciones. MUFA fusiona la audacia de lo contemporáneo con la tradición culinaria de Italia.',
@@ -91,39 +123,6 @@ const projects = [
     gallery: [
       project33Img,
       project34Img,
-    ],
-  },
-  {
-    id: '8', 
-    imageSrc: project81Img,
-    title: 'Packaging para Alimentos',
-    category: 'Diseño de Producto',
-    descriptionParts: [
-      'Diseñamos soluciones de empaque creativas y sostenibles, enfocadas en la experiencia del usuario y la visibilidad de la marca en el punto de venta.'
-    ],
-    mainText: 'Diseñamos soluciones de empaque creativas y sostenibles, enfocadas en la experiencia del usuario y la visibilidad de la marca en el punto de venta.',
-    parallaxImage: project82Img,
-    gallery: [
-      project83Img,
-    ],
-  },
-  {
-    id: '5', 
-    imageSrc: project51Img,
-    title: 'Kromos',
-    category: 'Bike Shop Concept',
-    descriptionParts: [
-      'El rebranding de Kromos fue un ejercicio para transformar una tienda de bicicletas en un "Bike Shop Concept".',
-      'El objetivo fue crear una identidad que comunicara más que una venta: una filosofía.',
-      'El diseño se centró en el nombre Kromos como el ADN de la marca, uniendo el guiño clásico del "cromo" con una visión moderna.',
-      'La identidad visual se construyó para ser dinámica y limpia, reflejando la pasión por el ciclismo.',
-      'Este rebranding es la narrativa de una marca que no solo vende productos, sino que invita a vivir la cultura ciclista.'
-    ],
-    mainText: 'El rebranding de Kromos fue un ejercicio para transformar una tienda de bicicletas en un "Bike Shop Concept". El objetivo fue crear una identidad que comunicara más que una venta: una filosofía. El diseño se centró en el nombre Kromos como el ADN de la marca, uniendo el guiño clásico del "cromo" con una visión moderna. La identidad visual se construyó para ser dinámica y limpia, reflejando la pasión por el ciclismo. Este rebranding es la narrativa de una marca que no solo vende productos, sino que invita a vivir la cultura ciclista.',
-    parallaxImage: project52Img,
-    gallery: [
-      project53Img,
-      project54Img,
     ],
   },
   {
@@ -159,21 +158,22 @@ const projects = [
     ],
   },
   {
-    id: '7', 
-    imageSrc: project72Img,
-    title: 'Dasein: Diseño y Cálculo Estructural',
-    category: 'Aquí, el minimalismo se encuentra con la fuerza del brutalismo',
+    id: '5', 
+    imageSrc: project51Img,
+    title: 'Kromos',
+    category: 'Bike Shop Concept',
     descriptionParts: [
-      'En Dasein, cada proyecto es una declaración. Hemos concebido una pieza geométrica única, donde la abstracción de la letra "D" surge de la fusión de elementos.',
-      'Este símbolo no es solo un logo; es un lenguaje visual robusto que encarna nuestros valores.',
-      'Aquí, el minimalismo se encuentra con la fuerza del brutalismo.',
-      'Los cortes limpios y nuestra impresión 3D abstracta dan vida a un símbolo potente y esencial.',
-      'Esto es Dasein: la identidad inconfundible de nuestra marca.'
+      'El rebranding de Kromos fue un ejercicio para transformar una tienda de bicicletas en un "Bike Shop Concept".',
+      'El objetivo fue crear una identidad que comunicara más que una venta: una filosofía.',
+      'El diseño se centró en el nombre Kromos como el ADN de la marca, uniendo el guiño clásico del "cromo" con una visión moderna.',
+      'La identidad visual se construyó para ser dinámica y limpia, reflejando la pasión por el ciclismo.',
+      'Este rebranding es la narrativa de una marca que no solo vende productos, sino que invita a vivir la cultura ciclista.'
     ],
-    mainText: 'En Dasein, cada proyecto es una declaración. Hemos concebido una pieza geométrica única, donde la abstracción de la letra "D" surge de la fusión de elementos. Este símbolo no es solo un logo; es un lenguaje visual robusto que encarna nuestros valores. Aquí, el minimalismo se encuentra con la fuerza del brutalismo. Los cortes limpios y nuestra impresión 3D abstracta dan vida a un símbolo potente y esencial. Esto es Dasein: la identidad inconfundible de nuestra marca.',
-    parallaxImage: project71Img,
+    mainText: 'El rebranding de Kromos fue un ejercicio para transformar una tienda de bicicletas en un "Bike Shop Concept". El objetivo fue crear una identidad que comunicara más que una venta: una filosofía. El diseño se centró en el nombre Kromos como el ADN de la marca, uniendo el guiño clásico del "cromo" con una visión moderna. La identidad visual se construyó para ser dinámica y limpia, reflejando la pasión por el ciclismo. Este rebranding es la narrativa de una marca que no solo vende productos, sino que invita a vivir la cultura ciclista.',
+    parallaxImage: project52Img,
     gallery: [
-      project73Img,
+      project53Img,
+      project54Img,
     ],
   },
 ];
