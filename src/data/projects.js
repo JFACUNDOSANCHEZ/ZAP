@@ -39,23 +39,6 @@ import project83Img from '../assets/Punto33/3.png';
 
 const projects = [
   {
-    id: '3',
-    imageSrc: project31Img,
-    title: 'MUFA: Sabor y Estilo Italiano en Córdoba',
-    category: 'El verdadero sabor de la tradición italiana con una actitud que te dejará sin aliento.',
-    descriptionParts: [
-      'Esta no es solo una marca, es una declaración de intenciones. MUFA fusiona la audacia de lo contemporáneo con la tradición culinaria de Italia.',
-      'Su estilo es provocador, agresivo y auténtico, diseñado para quienes buscan una experiencia que va más allá de lo convencional.',
-      'Cada detalle, desde el packaging hasta la comunicación, grita pasión y herencia italiana, pero con un twist moderno que desafía lo establecido.'
-    ],
-    mainText: 'MUFA no es solo comida, es una experiencia. El verdadero sabor de la tradición italiana con una actitud que te dejará sin aliento. Fusionamos la audacia de lo contemporáneo con la tradición culinaria de Italia. Su estilo es provocador, agresivo y auténtico. Diseñado para quienes buscan una experiencia que va más allá de lo convencional en Córdoba. Cada detalle, desde el packaging hasta la comunicación, grita pasión y herencia italiana, pero con un twist moderno que desafía lo establecido.',
-    parallaxImage: project32Img,
-    gallery: [
-      project33Img,
-      project34Img,
-    ],
-  },
-  {
     id: '2', 
     imageSrc: project04Img,
     title: 'Divina Tierra',
@@ -91,6 +74,23 @@ const projects = [
     gallery: [
       project12Img,
       project11Img,
+    ],
+  },
+  {
+    id: '3',
+    imageSrc: project31Img,
+    title: 'MUFA: Sabor y Estilo Italiano en Córdoba',
+    category: 'El verdadero sabor de la tradición italiana con una actitud que te dejará sin aliento.',
+    descriptionParts: [
+      'Esta no es solo una marca, es una declaración de intenciones. MUFA fusiona la audacia de lo contemporáneo con la tradición culinaria de Italia.',
+      'Su estilo es provocador, agresivo y auténtico, diseñado para quienes buscan una experiencia que va más allá de lo convencional.',
+      'Cada detalle, desde el packaging hasta la comunicación, grita pasión y herencia italiana, pero con un twist moderno que desafía lo establecido.'
+    ],
+    mainText: 'MUFA no es solo comida, es una experiencia. El verdadero sabor de la tradición italiana con una actitud que te dejará sin aliento. Fusionamos la audacia de lo contemporáneo con la tradición culinaria de Italia. Su estilo es provocador, agresivo y auténtico. Diseñado para quienes buscan una experiencia que va más allá de lo convencional en Córdoba. Cada detalle, desde el packaging hasta la comunicación, grita pasión y herencia italiana, pero con un twist moderno que desafía lo establecido.',
+    parallaxImage: project32Img,
+    gallery: [
+      project33Img,
+      project34Img,
     ],
   },
   {

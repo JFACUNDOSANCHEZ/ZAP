@@ -1,205 +1,175 @@
 /* Contact Section (Footer) */
 .contactHero {
-    background-color: #000000;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-    padding: 100px 40px; /* Ajustado el padding para más espacio vertical si es necesario */
+background-color: #000000;
+color: #fff;
+font-family: 'Poppins', sans-serif;
+padding: 100px 40px;
 }
 
 .topContentContainer {
-    display: flex;
-    flex-direction: column; /* Por defecto apilado en móvil */
-    align-items: center; /* Centrado en móvil */
-    gap: 0px; /* Aumentado el espacio entre el título y el contenedor de botones */
-    max-width: 1200px;
-    margin: 0 auto 80px auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0px;
+max-width: 1200px;
+margin: 0 auto 80px auto;
 }
 
 @media (min-width: 768px) {
-    .topContentContainer {
-        flex-direction: row; /* En escritorio, en fila */
-        justify-content: space-around; /* Distribuye el espacio entre los dos bloques */
-        align-items: center; /* Alinea verticalmente los dos bloques */
-        text-align: left; /* Alinea el texto a la izquierda en escritorio */
-    }
+.topContentContainer {
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
+text-align: left;
+}
 }
 
-/* Hero Content (texto principal de contacto) */
 .heroContent {
-    max-width: 600px;
-    text-align: center; /* Centrado en móvil */
+max-width: 600px;
+text-align: center;
 }
 
 @media (min-width: 768px) {
-    .heroContent {
-        text-align: left; /* Alinear a la izquierda en escritorio */
-        flex: 1; /* Ocupa su parte del espacio */
-        padding-right: 40px; /* Añade un poco de espacio a la derecha del texto */
-    }
+.heroContent {
+text-align: left;
+flex: 1;
+padding-right: 40px;
+}
 }
 
 .headline {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 800;
-    line-height: 1.1;
-    margin: 0;
+font-size: clamp(2.5rem, 5vw, 4rem);
+font-weight: 800;
+line-height: 1.1;
+margin: 0;
 }
 
 .arrow {
-    display: inline-block;
-    font-size: 1em;
-    font-weight: 400;
-    transform: rotate(45deg);
+display: inline-block;
+font-size: 1em;
+font-weight: 400;
+transform: rotate(45deg);
 }
 
-/* Contenedor de Botones de Contacto */
 .contactButtonsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra los botones dentro de su contenedor */
-    text-align: center;
-    gap: 20px; /* Espacio vertical entre los botones */
-    width: 100%;
-    max-width: 380px; /* Ajusta el ancho máximo para los botones */
-    flex: 1; /* Ocupa su parte del espacio */
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+gap: 20px;
+width: 100%;
+max-width: 380px;
+flex: 1;
 }
 
 @media (min-width: 768px) {
-    .contactButtonsContainer {
-        align-items: flex-start; /* Alinea los botones a la izquierda en escritorio */
-        text-align: left; /* Alinea el título de los botones a la izquierda */
-        padding-left: 40px; /* Añade un poco de espacio a la izquierda de los botones */
-        border-left: 1px solid #333; /* Opcional: una línea divisoria sutil */
-    }
+.contactButtonsContainer {
+align-items: flex-start;
+text-align: left;
+padding-left: 40px;
+border-left: 1px solid #333;
+}
 }
 
 .buttonsTitle {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    font-weight: 600;
-    margin-bottom: 20px; /* Más espacio debajo del título de los botones */
-    color: #fff;
-    width: 100%; /* Asegura que el título ocupe el ancho y se alinee bien */
+font-size: clamp(1.5rem, 3vw, 2rem);
+font-weight: 600;
+margin-bottom: 20px;
+color: #fff;
+width: 100%;
 }
 
-/* Base style for action buttons */
+/* BASE STYLE - Botones grises por defecto */
 .actionButton {
-    color: #fff;
-    font-size: 1.1rem;
-    font-weight: 600;
-    padding: 15px 30px;
-    border-radius: 30px; /* Bordes suaves */
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 12px; /* Espacio entre el icono y el texto del botón */
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    width: 100%;
-    max-width: 350px; /* Limita el ancho del botón para que no sea demasiado largo */
-    justify-content: flex-start; /* Alinea el contenido del botón a la izquierda */
+color: #fff;
+font-size: 1.1rem;
+font-weight: 600;
+padding: 15px 30px;
+border-radius: 30px;
+text-decoration: none;
+display: inline-flex;
+align-items: center;
+gap: 12px;
+transition: background-color 0.3s ease, transform 0.3s ease;
+width: 100%;
+max-width: 350px;
+justify-content: flex-start;
+background-color: #333;
+margin-bottom: 10px; /* <--- AGREGADO: Separación entre botones */
 }
 
+/* HOVER EFFECT - Transición y Sombra */
 .actionButton:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sutil sombra al hacer hover */
+transform: translateY(-3px);
+box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Specific button styles (WhatsApp, Instagram, LinkedIn, Email) */
-/* ... (mantener los estilos de color existentes para cada botón) ... */
-.whatsappButton {
-  margin-bottom: 10px;
-  background-color: #25D366; }
-.whatsappButton:hover { background-color: #128C7E; }
-
-.instagramButton { 
-  margin-bottom: 10px;
-  
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
-.instagramButton:hover { filter: brightness(1.1); }
-
-.linkedinButton { background-color: #0077B5;
-  margin-bottom: 10px;
- }
-.linkedinButton:hover { background-color: #005582; }
-
-.emailButton { background-color: #D44638;
-  margin-bottom: 10px;
-
+.whatsappButton:hover {
+background-color: #25D366;
 }
-.emailButton:hover { background-color: #B4281A; }
 
+.instagramButton:hover {
+background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+filter: brightness(1.1);
+}
 
-/* Icon style (reemplazar con Font Awesome si lo tienes) */
+.linkedinButton:hover {
+background-color: #0077B5;
+}
+
+.emailButton:hover {
+background-color: #D44638;
+}
+
+/* Icon style */
 .icon {
-    font-size: 1.3rem;
-    font-weight: bold;
-    /* Para reemplazar los iconos 'W', 'I', etc. con Font Awesome:
-       - Asegúrate de tener Font Awesome importado en tu proyecto.
-       - En el HTML de cada botón, reemplaza <span className={styles.icon}></span>
-         por <i className="fab fa-whatsapp"></i>, <i className="fab fa-instagram"></i>, etc.
-       - Puedes eliminar estos estilos .icon si usas Font Awesome.
-    */
+font-size: 1.3rem;
+font-weight: bold;
 }
-
 
 /* Footer Grid */
 .footerGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top: 50px;
-    border-top: 1px solid #333;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 30px;
+max-width: 1200px;
+margin: 0 auto;
+padding-top: 50px;
+border-top: 1px solid #333;
 }
-/* ... (el resto de tus estilos de footer se mantienen igual) ... */
+
 .footerGrid strong {
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    display: block;
+font-weight: 600;
+font-size: 1.1rem;
+margin-bottom: 10px;
+display: block;
 }
 
 .footerGrid p {
-    font-size: 0.9rem;
-    margin: 5px 0;
-    color: #aaa;
+font-size: 0.9rem;
+margin: 5px 0;
+color: #aaa;
 }
 
 .footerGrid a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s ease;
+color: #fff;
+text-decoration: none;
+transition: color 0.3s ease;
 }
 
 .footerGrid a:hover {
-    color: #aaa;
-}
-
-/* Social Icons (del footer) */
-.socialIcons {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.socialIcons a {
-    color: #fff;
-    font-size: 1.5rem;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
-
-.socialIcons a:hover {
-    color: #aaa;
+color: #aaa;
 }
 
 /* Ajustes responsivos para botones */
 @media (max-width: 767px) {
-    .actionButton {
-        font-size: 1rem;
-        padding: 12px 25px;
-        justify-content: center; /* Centrar en móviles */
-    }
-    .contactButtonsContainer {
-        align-items: center; /* Centrar botones en móviles */
-    }
+.actionButton {
+font-size: 1rem;
+padding: 12px 25px;
+justify-content: center;
+}
+.contactButtonsContainer {
+align-items: center;
+}
 }
