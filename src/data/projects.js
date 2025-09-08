@@ -4,7 +4,7 @@ import project13Img from '../assets/AkoAgro/AKOP2.png';
 import project12Img from '../assets/AkoAgro/AKOP3.png';
 import project11Img from '../assets/AkoAgro/AKOP4.png';
 
-import project04Img from '../assets/DivinaTierra/1.png';
+import project04Img from '../assets/DivinaTierra/1.jpg';
 import project22Img from '../assets/DivinaTierra/DT22.webp';
 import project23Img from '../assets/DivinaTierra/DT23.webp';
 import project24Img from '../assets/DivinaTierra/DT24.webp';
