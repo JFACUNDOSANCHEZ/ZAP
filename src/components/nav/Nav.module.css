@@ -1,6 +1,7 @@
 /* src/components/Nav.module.css */
 
 .header {
+  /* Propiedades base para el header, incluyendo el posicionamiento fijo */
   position: fixed;
   top: 0;
   left: 0;
@@ -11,27 +12,22 @@
   padding: 06px 40px;
   z-index: 10000; /* Alto z-index para que esté siempre encima */
 
+  /* Estilos para el estado inicial (sin scroll) */
   background-color: transparent;
   box-shadow: none; 
-  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  
+  /* Transiciones para todas las propiedades que cambian */
+  transition: background-color 0.4s ease, box-shadow 0.4s ease, backdrop-filter 0.4s ease, -webkit-backdrop-filter 0.4s ease;
 }
 
 .scrolledHeader {
-  background-color: rgb(0, 0, 0); 
+  /* Solo se definen los estilos que CAMBIAN cuando hay scroll */
+  background-color: rgba(0, 0, 0, 0.7); /* Un poco de transparencia para el blur */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.082); 
   backdrop-filter: blur(8px); 
   -webkit-backdrop-filter: blur(8px);
-   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 06px 40px;
-  z-index: 10000;
+  /* Ya no se repiten: position, top, left, width, display, justify-content, align-items, padding, z-index */
 }
-
 
 .headerLeft {
   display: flex;
@@ -43,18 +39,20 @@
   align-items: center;
 }
 
-.logo  {
-  
+.logo {
   width: 120px;
+  /* Si el logo es una imagen, asegúrate de que tenga un 'max-width: 100%; height: auto;' para ser responsivo */
 }
-
-.navbarSecondary .navLinksSecondary {
-  list-style: none;
+/* Si el logo es un texto, puedes darle estilo aquí. Ejemplo:
+.logo h1 {
+  color: #fff;
+  font-size: 28px;
   margin: 0;
-  padding: 0;
+  font-family: 'Montserrat', sans-serif;
 }
+*/
 
-
+/* Estilos para el botón "View Showcase" si lo usas en el navbarSecondary */
 .navbarSecondary .viewShowcaseBtn {
   background-color: #ffffff;
   color: #000000;
@@ -70,7 +68,8 @@
 
 .navbarSecondary .viewShowcaseBtn:hover {
   color: #ffffff;
-  transition: ease 0.3s ;
+  background-color: #555; /* Un color de fondo al hacer hover para que el texto blanco resalte */
+  transition: ease 0.3s;
 }
 
 .navbarMain .navLinksMain {
@@ -90,39 +89,64 @@
   font-size: 16px;
   font-weight: 400;
   transition: color 0.3s ease;
+  font-family: 'Montserrat', sans-serif; /* Asumiendo que usas Montserrat */
+  text-transform: uppercase; /* Para que el texto se vea como en la imagen */
+  letter-spacing: 0.05em; /* Un poco de espaciado entre letras */
 }
 
 .navbarMain .navLinksMain a:hover {
   color: #ffffff;
 }
 
+/* Reglas para los iconos sociales cuando el header NO tiene scroll */
+.socialIcons a {
+  margin-left: 20px;
+  font-size: 18px;
+  color: #f0f0f0; /* Color inicial para los iconos */
+  transition: color 0.3s ease;
+}
 
-/* Reglas para cuando el header NO tiene scroll */
 .whatsapp:hover {
-  color: #25d366;
+  color: #25d366; /* WhatsApp verde */
 }
 .linkedin:hover {
-  color: #0077b5;
+  color: #0077b5; /* LinkedIn azul */
 }
 .instagram:hover {
   color: #e1306c; /* Instagram rosa */
 }
+/* Si tienes un icono de Facebook o Twitter:
+.facebook:hover {
+  color: #1877f2; 
+}
+.twitter:hover {
+  color: #1da1f2; 
+}
+*/
+
 
 /* Reglas más específicas para cuando el header SÍ tiene scroll */
+/* Aquí aseguras que el color del texto y los iconos sea blanco cuando el fondo es oscuro */
+.scrolledHeader .navbarMain .navLinksMain a,
+.scrolledHeader .languageSelector,
+.scrolledHeader .socialIcons a,
+.scrolledHeader .userIcon,
+.scrolledHeader .logo h1 { /* Si tu logo es texto, también lo pones aquí */
+    color: #fff; 
+}
+/* Si quieres que los hover cambien al mismo color que el resto cuando está scrolleado */
 .scrolledHeader .whatsapp:hover {
   color: #25d366;
 }
 .scrolledHeader .linkedin:hover {
   color: #0077b5;
 }
-/* Puedes cambiar el color del texto cuando el header está scrolleado si es necesario */
-.scrolledHeader .navbarMain .navLinksMain a,
-.scrolledHeader .languageSelector,
-.scrolledHeader .socialIcons a,
-.scrolledHeader .userIcon,
-.scrolledHeader .logo h1 {
-    color: #fff; /* O un color que contraste bien con rgba(0,0,0,0.7) */
+.scrolledHeader .instagram:hover {
+  color: #e1306c;
 }
+
+
+/* Animación para la entrada del header (si lo usas) */
 @keyframes slideDown {
   0% {
     transform: translateY(-100%);
@@ -138,7 +162,6 @@
   animation: slideDown 0.7s ease-out forwards;
 }
 
-
 .languageSelector {
   font-size: 14px;
   color: #bbb;
@@ -146,35 +169,6 @@
   cursor: pointer;
 }
 
-.socialIcons a {
-  margin-left: 20px;
-  font-size: 18px;
-  color: #f0f0f0;
-  transition: color 0.3s ease;
-}
-
-.facebook:hover {
-  color: #1877f2; /* Facebook azul */
-}
-
-.twitter:hover {
-  color: #1da1f2; /* Twitter celeste */
-}
-
-.instagram:hover {
-  color: #e1306c; /* Instagram rosa */
-}
-
-
-.whatsapp:hover {
-  color: #25d366; /* WhatsApp verde */
-}
-.linkedin:hover {
-  color: #0077b5; /* LinkedIn azul */
-} 
-/* .socialIcons a:hover {
-  color: #070707;
-} */
 
 .userIcon {
   color: #f0f0f0;
@@ -188,31 +182,35 @@
   .header {
     padding: 15px 20px;
   }
-    .logo {
+  .logo {
     width: 80px; /* Reduce el ancho del logo en pantallas más pequeñas */
   }
 
   .navbarMain {
     display: none; /* Oculta la navegación principal en pantallas más pequeñas */
+    /* Considera implementar un menú hamburguesa para móviles */
   }
-
-  
+  /* Oculta los iconos sociales o el selector de idioma si es necesario */
+  .languageSelector, .socialIcons {
+      display: none;
+  }
 }
 
+/* Si 768px y 576px tienen las mismas reglas que 992px, puedes consolidarlos */
 @media (max-width: 768px) {
   .header {
     padding: 15px 20px;
   }
-  .navbarMain {
-    display: none; /* Oculta la navegación principal en pantallas más pequeñas */
-  }
+  /* .navbarMain {
+    display: none; 
+  } */
 }
 
 @media (max-width: 576px) {
   .header {
     padding: 10px 15px;
   }
-  .logo h1 {
+  /* .logo h1 {
     font-size: 24px;
-  }
+  } */
 }
