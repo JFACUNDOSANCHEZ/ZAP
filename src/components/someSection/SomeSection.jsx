@@ -12,8 +12,8 @@ import project4Img from '../../assets/project10.png';
 import project1Img from '../../assets/project2.webp';
 import project6Img from '../../assets/project8.png';
 import project11Img from '../../assets/web.png';
-import project12Img from '../../assets/AkoAgro/5.png';
-import project15Img from '../../assets/Kromos/5.png';
+import project12Img from '../../assets/AkoAgro/5.webp';
+import project15Img from '../../assets/Kromos/5.webp';
 
 
 

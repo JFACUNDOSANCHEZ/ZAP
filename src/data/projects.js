@@ -1,16 +1,16 @@
 // Importa todas tus imágenes para que estén disponibles
 import project03Img from '../assets/AkoAgro/AKOP.webp';
 import project13Img from '../assets/AkoAgro/AKOP2.png';
-import project12Img from '../assets/AkoAgro/AKOP3.png';
+import project12Img from '../assets/AkoAgro/AKOP3.webp';
 import project11Img from '../assets/AkoAgro/AKOP4.png';
 
-import project04Img from '../assets/DivinaTierra/1.jpg';
+import project04Img from '../assets/DivinaTierra/1.webp';
 import project22Img from '../assets/DivinaTierra/DT22.webp';
 import project23Img from '../assets/DivinaTierra/DT23.webp';
 import project24Img from '../assets/DivinaTierra/DT24.webp';
 
 import project31Img from '../assets/Mufa/1.webp';
-import project32Img from '../assets/Mufa/2.png';
+import project32Img from '../assets/Mufa/2.webp';
 import project33Img from '../assets/Mufa/3.webp';
 import project34Img from '../assets/Mufa/4.webp';
 
@@ -22,7 +22,7 @@ import project44Img from '../assets/Marull/4.webp';
 import project51Img from '../assets/Kromos/1.webp';
 import project52Img from '../assets/Kromos/2.webp';
 import project53Img from '../assets/Kromos/3.webp';
-import project54Img from '../assets/Kromos/4.png';
+import project54Img from '../assets/Kromos/4.webp';
 
 import project61Img from '../assets/Orus/1.webp';
 import project62Img from '../assets/Orus/2.webp';
@@ -30,26 +30,26 @@ import project63Img from '../assets/Orus/3.webp';
 
 import project71Img from '../assets/Dasein/1.webp';
 import project72Img from '../assets/Dasein/2.webp';
-import project73Img from '../assets/Dasein/3.png';
+import project73Img from '../assets/Dasein/3.webp';
 
-import project81Img from '../assets/Punto33/1.webp';
-import project82Img from '../assets/Punto33/2.webp';
-import project83Img from '../assets/Punto33/3.png';
+import project90Img from '../assets/Punto33/1.webp';
+import project99Img from '../assets/Punto33/2.webp';
+import project98Img from '../assets/Punto33/3.webp';
 
 
 const projects = [
   {
     id: '8', 
-      imageSrc: project81Img,
+      imageSrc: project90Img,
       title: 'Packaging para Alimentos',
       category: 'Diseño de Producto',
       descriptionParts: [
         'Diseñamos soluciones de empaque creativas y sostenibles, enfocadas en la experiencia del usuario y la visibilidad de la marca en el punto de venta.'
       ],
       mainText: 'Diseñamos soluciones de empaque creativas y sostenibles, enfocadas en la experiencia del usuario y la visibilidad de la marca en el punto de venta.',
-      parallaxImage: project82Img,
+      parallaxImage: project99Img,
       gallery: [
-        project83Img,
+        project98Img,
       ],
     },
     {

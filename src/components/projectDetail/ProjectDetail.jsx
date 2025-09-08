@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Nav from '../nav/Nav';
 import { useParams, Link } from 'react-router-dom';
-import projectsData from '../../data/projects';
+import projectsData from '../../data/projects.js';
 import { motion } from 'framer-motion';
 import styles from './ProjectDetail.module.css';
 import ContactSection from '../contactSection/ContactSection';
