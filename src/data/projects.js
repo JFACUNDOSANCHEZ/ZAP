@@ -33,7 +33,7 @@ import project72Img from '../assets/Dasein/2.webp';
 import project73Img from '../assets/Dasein/3.png';
 
 import project81Img from '../assets/Punto33/1.webp';
-import project82Img from '../assets/Punto33/2.png';
+import project82Img from '../assets/Punto33/2.webp';
 import project83Img from '../assets/Punto33/3.png';
 
 
@@ -92,7 +92,7 @@ const projects = [
       id: '1', 
     imageSrc: project03Img,
     title: 'Ako Agro',
-    category: 'Una identidad de marca que resonara con innovación y eficiencia en la agricultura',
+    category: 'Creamos una identidad de marca que resonara con innovación y eficiencia en la agricultura',
     descriptionParts: [
       'Para Ako Agro, creamos una identidad de marca que resonara con innovación y eficiencia en la agricultura.',
       'Entendimos que el futuro del campo exigía soluciones optimizadas y sostenibles, y la marca debía reflejar esa promesa.',

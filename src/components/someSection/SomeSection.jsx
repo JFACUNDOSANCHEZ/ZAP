@@ -12,7 +12,8 @@ import project4Img from '../../assets/project10.png';
 import project1Img from '../../assets/project2.webp';
 import project6Img from '../../assets/project8.png';
 import project11Img from '../../assets/web.png';
-import project12Img from '../../assets/MartosMa.png';
+import project12Img from '../../assets/AkoAgro/5.png';
+import project15Img from '../../assets/Kromos/5.png';
 
 
 
@@ -21,7 +22,7 @@ const SomeSection = () => {
  // Define arrays de imágenes específicos para cada ítem
  const imagesForFirstItem = [project3Img, project1Img, project6Img];
  const imagesForSecondItem = [project8Img, project4Img, project11Img];
- const imagesForThirdItem = [project6Img, project7Img, project12Img];
+ const imagesForThirdItem = [project15Img, project7Img, project12Img];
 
  return (
  <section className={styles.sectionWrapper}>
