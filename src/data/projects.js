@@ -113,10 +113,10 @@ const projects = [
       title: 'Divina Tierra',
       category: 'Transformar el concepto "Alimento Libre" en una marca coherente y honesta',
       descriptionParts: [
-        'Divina Tierra fue transformar el concepto "Alimento Libre" en una marca coherente y honesta. El tagline es la esencia: una declaración de principios que habla de libertad y pureza.',
-        'El diseño se centró en una estética rústica y moderna, con una paleta de colores inspirada en la tierra, para reflejar la autenticidad del producto.',
-        'El logo fue concebido como un sello de garantía que certifica el origen de los huevos de gallinas criadas en libertad.',
-        'Cada decisión visual se tomó para contar la historia de Divina Tierra: una marca que celebra la conexión con la naturaleza y el respeto por la vida animal.'
+        // 'Divina Tierra fue transformar el concepto "Alimento Libre" en una marca coherente y honesta. El tagline es la esencia: una declaración de principios que habla de libertad y pureza.',
+        // 'El diseño se centró en una estética rústica y moderna, con una paleta de colores inspirada en la tierra, para reflejar la autenticidad del producto.',
+        // 'El logo fue concebido como un sello de garantía que certifica el origen de los huevos de gallinas criadas en libertad.',
+        // 'Cada decisión visual se tomó para contar la historia de Divina Tierra: una marca que celebra la conexión con la naturaleza y el respeto por la vida animal.'
       ],
       mainText: 'Divina Tierra fue transformar el concepto "Alimento Libre" en una marca coherente y honesta. El tagline es la esencia: una declaración de principios que habla de libertad y pureza. El diseño se centró en una estética rústica y moderna, con una paleta de colores inspirada en la tierra, para reflejar la autenticidad del producto. El logo fue concebido como un sello de garantía que certifica el origen de los huevos de gallinas criadas en libertad. Cada decisión visual se tomó para contar la historia de Divina Tierra: una marca que celebra la conexión con la naturaleza y el respeto por la vida animal.',
       parallaxImage: project22Img,
@@ -141,7 +141,7 @@ const projects = [
       'El objetivo: que la marca comunicara calidad, confianza y resultados tangibles, distinguiéndose en el mercado.',
       'Cada detalle de la marca se diseñó para construir una identidad fuerte y relevante, simbolizando una promesa de crecimiento y prosperidad para el sector agropecuario.'
     ],
-    mainText: 'Para Ako Agro, creamos una identidad de marca que resonara con innovación y eficiencia en la agricultura. Entendimos que el futuro del campo exigía soluciones optimizadas y sostenibles, y la marca debía reflejar esa promesa. Nuestro enfoque de branding fue posicionar a Ako Agro como un aliado estratégico y confiable. Desarrollamos un lenguaje visual y verbal que proyecta modernidad y solidez, con elementos que evocan crecimiento y tecnología. El objetivo: que la marca comunicara calidad, confianza y resultados tangibles, distinguiéndose en el mercado. Cada detalle de la marca se diseñó para construir una identidad fuerte y relevante, simbolizando una promesa de crecimiento y prosperidad para el sector agropecuario.',
+    // mainText: 'Para Ako Agro, creamos una identidad de marca que resonara con innovación y eficiencia en la agricultura. Entendimos que el futuro del campo exigía soluciones optimizadas y sostenibles, y la marca debía reflejar esa promesa. Nuestro enfoque de branding fue posicionar a Ako Agro como un aliado estratégico y confiable. Desarrollamos un lenguaje visual y verbal que proyecta modernidad y solidez, con elementos que evocan crecimiento y tecnología. El objetivo: que la marca comunicara calidad, confianza y resultados tangibles, distinguiéndose en el mercado. Cada detalle de la marca se diseñó para construir una identidad fuerte y relevante, simbolizando una promesa de crecimiento y prosperidad para el sector agropecuario.',
     parallaxImage: project13Img,
     gallery: [
       project12Img,
