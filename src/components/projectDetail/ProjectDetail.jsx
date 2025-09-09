@@ -11,10 +11,15 @@ const ProjectDetail = () => {
     const project = projectsData.find(p => p.id === id);
 
     const [isScrolled, setIsScrolled] = useState(false);
+    const [scaleValue, setScaleValue] = useState(1); 
 
     useEffect(() => {
         const handleScroll = () => {
             setIsScrolled(window.scrollY > 50);
+
+            const scrollPosition = window.scrollY;
+            const newScale = 1 + scrollPosition / 2000; 
+            setScaleValue(newScale);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
@@ -51,10 +56,17 @@ const ProjectDetail = () => {
                     <h1 className={styles.projectTitle}>{project.title}</h1>
                 </div>
 
-                {/* 2. Sección de imagen principal (imagen grande abajo) */}
-                <div className={styles.mainImageContainer}>
-                    <img src={project.imageSrc} alt={project.title} className={styles.mainImage} />
-                </div>
+                {/* 2. Sección de imagen principal con el efecto de zoom */}
+                {project.imageSrc && (
+                    <div className={styles.mainImageContainer}>
+                        <img 
+                            src={project.imageSrc} 
+                            alt={project.title} 
+                            className={styles.mainImage} 
+                            style={{ transform: `scale(${scaleValue})` }} 
+                        />
+                    </div>
+                )}
 
                 {/* 3. Sección de contenido (texto a la izquierda, paralaje a la derecha) */}
                 <motion.div
@@ -65,23 +77,46 @@ const ProjectDetail = () => {
                 >
                     <div className={styles.textContent}>
                         <p>{project.mainText}</p>
+                        {project.descriptionParts.map((part, index) => (
+                            <p key={index}>{part}</p>
+                        ))}
                     </div>
-                    <div className={styles.parallaxImageContainer} style={{ '--parallax-image': `url(${project.parallaxImage})` }}></div>
+                    {project.parallaxImage && (
+                        <div className={styles.parallaxImageContainer} style={{ '--parallax-image': `url(${project.parallaxImage})` }}></div>
+                    )}
                 </motion.div>
 
-                {/* 4. Galería de fotos inferior */}
-                <div className={styles.photoGalleryGrid}>
-                    {project.gallery.map((image, index) => (
-                        <motion.img
-                            key={index}
-                            src={image}
-                            alt={`Imagen de proyecto ${index}`}
-                            className={styles.galleryImage}
-                            initial={{ opacity: 0, y: 50 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.5, delay: 0.1 * index }}
-                        />
-                    ))}
+                {/* 4. Galería de fotos - NUEVO LAYOUT */}
+                <div className={styles.combinedPhotoGallery}>
+                    {/* Sección Superior: Dos imágenes grandes */}
+                    <div className={styles.galleryTopRow}>
+                        {project.gallery.slice(0, 2).map((image, index) => (
+                            <motion.img
+                                key={index}
+                                src={image}
+                                alt={`Galería superior ${index}`}
+                                className={styles.galleryImageLarge}
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.1 * index }}
+                            />
+                        ))}
+                    </div>
+
+                    {/* Sección Inferior: Tres imágenes pequeñas */}
+                    <div className={styles.galleryBottomRow}>
+                        {project.gallery.slice(2, 5).map((image, index) => (
+                            <motion.img
+                                key={index + 2}
+                                src={image}
+                                alt={`Galería inferior ${index}`}
+                                className={styles.galleryImageSmall}
+                                initial={{ opacity: 0, y: 50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.1 * (index + 2) }}
+                            />
+                        ))}
+                    </div>
                 </div>
 
                 <div className={styles.backButtonContainer}>
