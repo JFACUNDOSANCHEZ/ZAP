@@ -44,7 +44,7 @@ const Header = () => {
   return (
     <header ref={heroSectionRef} className={styles.heroSection}>
       <Nav isScrolled={isScrolled} />
-      <video
+      {/* <video
         className={styles.videoBackground}
         autoPlay
         loop
@@ -53,7 +53,7 @@ const Header = () => {
       >
         <source src={herobg} type="video/mp4" />
         Tu navegador no soporta videos HTML5.
-      </video>
+      </video> */}
       <div className={styles.overlay}></div>
       <div
         className={`${styles.heroContent} ${animateHero ? styles.animate : ''}`}
