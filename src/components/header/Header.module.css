@@ -23,7 +23,18 @@
   font-family: 'Inter', sans-serif;
 }
 
-
+.imageBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto es crucial para que la imagen cubra todo el espacio sin distorsionarse */
+    z-index: 0;
+    filter: brightness(0.6); /* Ajusta el brillo para que el texto se vea bien encima */
+    /* Si quieres un efecto de paralaje en la imagen, puedes añadir: */
+    /* background-attachment: fixed; */ /* Esto hará que la imagen no se mueva con el scroll, creando un efecto de paralaje */
+}
 .heroContent {
   /* Alineamos todo al centro */
   display: flex;

@@ -20,15 +20,12 @@
   transform: translateY(0);
 }
 
+/* Puedes mantener el hover para un feedback visual sutil si lo deseas */
 .itemContainer:hover {
   background-color: #8080800b;
 }
 
-.itemContainer:hover .iconCircle svg {
-  transform: rotate(180deg);
-  fill: #333;
-}
-
+/* El texto principal puede cambiar de color al hacer hover, no al abrir, si así lo prefieres */
 .itemContainer:hover .mainText {
   color: #000;
 }
@@ -61,6 +58,12 @@
   transition: transform 0.3s ease, fill 0.3s ease;
 }
 
+/* <<-- CAMBIO A .open -->> */
+.itemContainer.open .iconCircle svg { 
+  transform: rotate(180deg);
+  fill: #333; /* Color de relleno cuando está abierto */
+}
+
 .textContainer {
   display: flex;
   flex-direction: column;
@@ -81,15 +84,16 @@
 .descriptionText {
   font-size: 1.2rem;
   color: #777;
-  max-height: 0;
+  max-height: 0; /* Oculto por defecto */
   overflow: hidden;
   opacity: 0;
   transition: max-height 0.5s ease-out, opacity 0.5s ease-out, margin-top 0.5s ease-out;
   line-height: 1.6;
 }
 
-.itemContainer:hover .descriptionText {
-  max-height: 100px;
+/* <<-- CAMBIO A .open -->> */
+.itemContainer.open .descriptionText { 
+  max-height: 100px; /* Se expande al hacer click */
   opacity: 1;
   margin-top: 15px;
 }
@@ -107,15 +111,15 @@
   color: rgba(200, 200, 200, 0.8);
 }
 
-/* --- Imagen carrusel --- */
+/* --- Imagen carrusel (ahora se activa con .open) --- */
 .hoverImageCarousel {
   position: absolute;
   right: 4px;
   top: 50%;
-  transform: translateY(-50%) translateX(100px);
+  transform: translateY(-50%) translateX(100px); /* Inicialmente fuera de vista */
   width: 25%;
   height: 100%;
-  opacity: 0;
+  opacity: 0; /* Inicialmente invisible */
   z-index: 1;
   border-radius: 0px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.051);
@@ -123,9 +127,10 @@
   transition: transform 0.5s ease-out, opacity 0.5s ease-out;
 }
 
-.itemContainer:hover .hoverImageCarousel {
-  transform: translateY(-50%) translateX(0);
-  opacity: 1;
+/* <<-- CAMBIO A .open -->> */
+.itemContainer.open .hoverImageCarousel { 
+  transform: translateY(-50%) translateX(0); /* Entra en vista al hacer click */
+  opacity: 1; /* Se hace visible al hacer click */
 }
 
 /* Estilo para las imágenes individuales del carrusel */
@@ -145,23 +150,23 @@
   opacity: 1;
 }
 
-/* --- Imagen estática --- */
+/* --- Imagen estática (se oculta con .open) --- */
 .hoverImage {
   position: absolute;
   right: 10px;
   top: 50%;
   transform: translateY(-50%) translateX(0);
   width: 25%;
-  opacity: 1;
+  opacity: 1; /* Visible por defecto cuando no está abierto */
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.051);
   transition: opacity 0.5s ease-out;
 }
 
-/* Ocultar imagen estática en hover */
-.itemContainer:hover .hoverImage {
-  opacity: 0;
-  pointer-events: none;
+/* <<-- CAMBIO A .open -->> */
+.itemContainer.open .hoverImage { 
+  opacity: 0; /* Se oculta al hacer click */
+  pointer-events: none; /* Deshabilita interacciones */
 }
 
 /* --- Responsivo --- */
@@ -186,10 +191,10 @@
     text-align: center;
   }
 
-  /* NUEVO: Tamaños de fuente ajustados para móviles */
+  /* Tamaños de fuente ajustados para móviles */
   .mainText {
     font-size: 1.8rem;
-    margin-left: 0; /* Centra el texto */
+    margin-left: 0; 
     text-align: center;
   }
   
@@ -198,12 +203,23 @@
     text-align: center;
   }
 
+  /* Estas reglas responsive se aplicarán si el carrusel de imágenes
+     o la imagen estática existieran fuera del contenedor con posición absoluta */
   .hoverImage, .hoverImageCarousel {
-    position: relative;
+    position: relative; /* Cambia a relativo para que fluya con el contenido */
     top: auto;
-    transform: none;
+    transform: none; /* Elimina la transformación para que no esté fuera de la pantalla */
     width: 80%;
     max-width: 250px;
     margin-top: 20px;
+    height: auto; /* Ajusta la altura automáticamente */
+    opacity: 1; /* Asegura que sean visibles si están en este contexto */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra más sutil en móvil */
   }
+
+  /* Si quieres ocultarlos completamente en móvil cuando no están 'abiertos' 
+     (que es el comportamiento actual), estas reglas de 'opacity: 0' seguirán funcionando
+     para los elementos que se activan con '.open'.
+     Las reglas de '.itemContainer.open .hoverImageCarousel' y '.itemContainer.open .hoverImage'
+     prevalecerán para mostrar/ocultar según el click. */
 }
