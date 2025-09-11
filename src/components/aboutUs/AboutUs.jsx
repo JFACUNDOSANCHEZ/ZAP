@@ -9,9 +9,9 @@ const micaImage = "https://www.esade.edu/wp-content/uploads/2024/07/mujer-empren
   const silImage = "https://generalcargo.net/wp-content/uploads/2023/04/AdobeStock_565116699-scaled.jpeg";
 
   const silLinkedin = "#";
-  const silInstagram = "#";
-  const micaLinkedin = "#";
-  const micaInstagram = "#";
+  const silInstagram = "https://www.instagram.com//somoszap/";
+  const micaLinkedin = "";
+  const micaInstagram = "https://www.instagram.com//somoszap/";
 
   return (
     <section id='nos' className={styles.aboutUsContainer}>
@@ -32,7 +32,7 @@ const micaImage = "https://www.esade.edu/wp-content/uploads/2024/07/mujer-empren
             <h3 className={styles.founderName}>Silvia del Villar</h3>
             <p className={styles.founderBio}>Diseñadora y comunicadora estratégica</p>
             <div className={styles.socialLinks}>
-              <a href={silLinkedin} target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+              
               <a href={silInstagram} target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
             </div>
           </div>
@@ -44,7 +44,7 @@ const micaImage = "https://www.esade.edu/wp-content/uploads/2024/07/mujer-empren
             <h3 className={styles.founderName}>Micaela Pérez</h3>
             <p className={styles.founderBio}>Especialista en identidad de marca y coherencia visual</p>
             <div className={styles.socialLinks}>
-              <a href={micaLinkedin} target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
+            
               <a href={micaInstagram} target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
             </div>
           </div>

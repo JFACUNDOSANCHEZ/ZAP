@@ -100,9 +100,9 @@ const ContactSection = () => {
                 <div>
                     <strong>Conectate</strong>
                     <p><a href="mailto:hola@somoszap.com">hola@somoszap.com</a></p>
-                    <p>Buenos Aires, Argentina<br />+54 11-3968-2284</p>
-                    <p>Villa Allende, Córdoba, Arg.</p>
-                    <p>Barcelona, España<br />+34 654142249</p>
+                    <p>Micaela<br />+54 9 3513 93-5627</p>
+                    {/* <p>Villa Allende, Córdoba, Arg.</p> */}
+                    <p>Silvina<br />+54 9 3513 55-6910</p>
                 </div>
             </div>
             
