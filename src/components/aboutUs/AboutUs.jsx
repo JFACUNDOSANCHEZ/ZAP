@@ -29,8 +29,8 @@ const micaImage = "https://www.esade.edu/wp-content/uploads/2024/07/mujer-empren
         <div className={styles.founderCard}>
           <img src={silImage} alt="Silvia del Villar" className={styles.founderPhoto} />
           <div className={styles.founderContent}> {/* <-- ¡Nuevo div para el contenido! */}
-            <h3 className={styles.founderName}>Silvia del Villar</h3>
-            <p className={styles.founderBio}>Diseñadora y comunicadora estratégica</p>
+            <h3 className={styles.founderName}>SilviNa del Villar</h3>
+            <p className={styles.founderBio}>Diseñadora Gráfica y Marketer Digital.</p>
             <div className={styles.socialLinks}>
               
               <a href={silInstagram} target="_blank" rel="noopener noreferrer"><FaInstagram /></a>

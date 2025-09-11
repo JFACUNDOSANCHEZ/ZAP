@@ -34,11 +34,11 @@ const Home = () => {
          
         </div>
       </section>
-      {/* ... Tu código de otras secciones ... */}
-      <section id='servicios' >
-      </section>
       <section id="nos">
         <AboutUs />
+      </section>
+      {/* ... Tu código de otras secciones ... */}
+      <section id='servicios' >
       </section>
       <SomeSection></SomeSection>
     

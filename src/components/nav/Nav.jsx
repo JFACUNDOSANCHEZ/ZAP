@@ -32,9 +32,9 @@ const Nav = ({ isScrolled }) => {
         <ul className={styles.navLinksMain}>
           {/* Usa Link para todos los enlaces internos */}
           <li><Link to="/#home">INICIO</Link></li>
+          <li><Link to="/#nos">NOSOTROS</Link></li>
           <li><Link to="/#servicios">SERVICIOS</Link></li>
           <li><Link to="/#portfolio">PORTAFOLIO</Link></li>
-          <li><Link to="/#nos">NOSOTROS</Link></li>
           <li><Link to="/#contact" > CONTACTANOS</Link></li>
         </ul>
       </nav>
