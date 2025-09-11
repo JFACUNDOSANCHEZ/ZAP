@@ -15,9 +15,9 @@ const ContactSection = () => {
     }, []);
     
     // Reemplaza '5493511234567' con tu número de teléfono (sin espacios ni símbolos)
-    const whatsappNumber = '5493511234567';
+    const whatsappNumber = '5493513556910';
     const whatsappMessage = encodeURIComponent('¡Hola! Vi tu portafolio y me gustaría hablar sobre un proyecto.');
-
+const emailAddress = "hola@somoszap.com"; // Tu dirección de correo
     return (
         <footer id='contact' className={styles.contactHero}>
             <Nav isScrolled={isScrolled} />
@@ -34,18 +34,18 @@ const ContactSection = () => {
                 <div className={styles.contactButtonsContainer}>
                     <h3 className={styles.buttonsTitle}>Conéctate con nosotros</h3>
                     <div className={styles.directContact}>
-                        <a 
-                            href={`https://web.whatsapp.com/${whatsappNumber}?text=${whatsappMessage}`} 
-                            className={`${styles.actionButton} ${styles.whatsappButton}`} 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                        >
-                            <span className={styles.icon}></span>
-                            Enviar Mensaje por WhatsApp
-                        </a>
+                    <a
+    href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`} // Usamos wa.me para compatibilidad universal
+    className={`${styles.actionButton} ${styles.whatsappButton}`}
+    target="_blank"
+    rel="noopener noreferrer"
+>
+    <span className={styles.icon}></span>
+    Enviar Mensaje por WhatsApp
+</a>
 
                         <a 
-                            href="https://instagram.com/tuperfil" 
+                            href="https://www.instagram.com//somoszap/" 
                             className={`${styles.actionButton} ${styles.instagramButton}`} 
                             target="_blank" 
                             rel="noopener noreferrer"
@@ -54,7 +54,7 @@ const ContactSection = () => {
                             Visita nuestro Instagram
                         </a>
                         
-                        <a 
+                        {/* <a 
                             href="https://linkedin.com/in/tuperfil" 
                             className={`${styles.actionButton} ${styles.linkedinButton}`} 
                             target="_blank" 
@@ -62,10 +62,10 @@ const ContactSection = () => {
                         >
                             <span className={styles.icon}></span>
                             Conecta en LinkedIn
-                        </a>
+                        </a> */}
                         
                         <a 
-                            href="mailto:tu.email@gmail.com" 
+                            href="mailto:hola@somoszap.com" 
                             className={`${styles.actionButton} ${styles.emailButton}`}
                         >
                             <span className={styles.icon}></span>
