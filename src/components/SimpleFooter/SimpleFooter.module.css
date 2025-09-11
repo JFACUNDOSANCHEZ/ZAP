@@ -1,0 +1,38 @@
+.simpleFooterContainer {
+    background-color: #f5f5f500; /* Color de fondo gris claro */
+    max-width: 1200px;
+    margin: 100px auto 50px; /* Margen para separarlo del contenido superior y del final de la página */
+    padding: 0 40px; /* Misma lógica de padding que otras secciones */
+    text-align: center;
+    position: relative; /* Necesario para posicionar la línea y el logo si es necesario */
+}
+
+.line {
+    width: 100%;
+    height: 1px; /* Grosor de la línea */
+    background-color: #ffffff; /* Color blanco/gris claro de la línea */
+    margin-bottom: 30px; /* Espacio entre la línea y el logo */
+}
+
+.logo {
+    max-width: 120px; /* Tamaño máximo del logo, ajusta según sea necesario */
+    height: auto;
+    display: block; /* Para centrarlo correctamente con margin: auto */
+    margin: 0 auto; /* Centrar el logo horizontalmente */
+    opacity: 0.8; /* Ligeramente más tenue para un efecto de footer */
+}
+
+/* Media Query para responsividad si es necesario */
+@media (max-width: 992px) {
+    .simpleFooterContainer {
+        padding: 0 20px;
+        margin-top: 80px;
+        margin-bottom: 40px;
+    }
+    .line {
+        margin-bottom: 20px;
+    }
+    .logo {
+        max-width: 90px;
+    }
+}

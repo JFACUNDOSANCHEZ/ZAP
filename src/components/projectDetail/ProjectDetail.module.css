@@ -26,8 +26,7 @@
 }
 
 .projectTitle {
-    font-size: clamp(3rem, 6vw, 6rem);
-    font-weight: 400;
+ font-size: clamp(3rem, 4.5vw, 4.5rem);     font-weight: 400;
     line-height: 1.1;
     text-transform: uppercase;
     margin: 10px 0 0;
@@ -48,7 +47,7 @@
     transition: transform 0.2s ease-out; /* Transición para el efecto de zoom */
 }
 
-/* Sección de contenido de dos columnas (texto y paralaje) */
+/* Sección de contenido de dos columnas (texto a la izquierda, paralaje a la derecha) */
 .contentGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -56,19 +55,20 @@
     max-width: 1200px;
     margin: 150px auto 0;
     padding: 0 40px;
-    align-items: center; 
 }
 
-
-.textContent {
+/* Estilos para el texto de la columna izquierda */
+.textContentLeft { 
     display: flex;
     flex-direction: column; 
-    justify-content: center; 
-    
+    justify-content: flex-start; 
     font-size: clamp(1rem, 1.5vw, 1.2rem);
     line-height: 1.6;
     color: #ccc;
     padding: 20px;
+}
+.textContentLeft p {
+    margin-bottom: 1em; 
 }
 
 /* Contenedor de la imagen de paralaje */
@@ -81,6 +81,21 @@
     background-position: center center; 
     display: block;
 }
+
+/* <<-- NUEVO: Contenedor para el texto que va después de la galería -->> */
+.descriptionBottomTextContainer {
+    max-width: 1000px; /* Un poco menos ancho que el contentGrid para que respire */
+    margin: 100px auto; /* Margen superior para separarlo de la galería */
+    padding: 0 40px;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.6;
+    color: #ccc;
+    text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+}
+.descriptionBottomTextContainer p {
+    margin-bottom: 1em; /* Espacio entre párrafos */
+}
+
 
 /* Nuevo contenedor principal para la galería */
 .combinedPhotoGallery {
@@ -163,7 +178,7 @@
         gap: 40px;
         padding: 0 20px;
     }
-    .textContent {
+    .textContentLeft { 
         padding: 0;
     }
     .parallaxImageContainer {
@@ -182,6 +197,10 @@
     }
     .galleryImageSmall {
         height: 250px;
+    }
+    .descriptionBottomTextContainer { /* Ajuste en móvil */
+        padding: 0 20px;
+        margin-top: 50px; /* Reduce el margen en móvil */
     }
 }
 
