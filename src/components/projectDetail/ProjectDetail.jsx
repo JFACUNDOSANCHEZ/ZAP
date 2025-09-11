@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Nav from '../nav/Nav';
 import { useParams, Link } from 'react-router-dom';
-import projectsData from '../../data/projects.js';
+import projectsData from '../../data/projects.js'; // Asegúrate de que este path sea correcto
 import { motion } from 'framer-motion';
 import styles from './ProjectDetail.module.css';
-import ContactSection from '../contactSection/ContactSection'; 
-import SimpleFooter from '../SimpleFooter/SimpleFooter';
+import ContactSection from '../contactSection/ContactSection'; // Asumo que lo usas o lo usarás
+import SimpleFooter from '../SimpleFooter/SimpleFooter'; // Asegúrate de que este path sea correcto
 
 const ProjectDetail = () => {
     const { id } = useParams();
@@ -78,58 +78,67 @@ const ProjectDetail = () => {
                 >
                     {/* Columna Izquierda: Texto principal y descriptionParts */}
                     <div className={styles.textContentLeft}> 
-                        {project.mainText && project.mainText.trim() !== '' && <p>{project.mainText}</p>}
+                        {project.mainText && project.mainText.trim() !== '' && (
+                            // Aplicar dangerouslySetInnerHTML si mainText también puede contener HTML
+                            <p dangerouslySetInnerHTML={{ __html: project.mainText }}></p>
+                        )}
                         {project.descriptionParts && project.descriptionParts.map((part, index) => (
-                            <p key={`desc-part-${index}`}>{part}</p>
+                            // <<-- APLICO dangerouslySetInnerHTML AQUÍ -->>
+                            <p key={`desc-part-${index}`} dangerouslySetInnerHTML={{ __html: part }}></p>
                         ))}
                     </div>
 
                     {/* Columna Derecha: Solo la imagen de Paralaje */}
                     {project.parallaxImage && (
-                        <motion.div // <<-- Aquí ya está como motion.div, perfecto para la animación
+                        <motion.div 
                             className={styles.parallaxImageContainer} 
                             style={{ '--parallax-image': `url(${project.parallaxImage})` }}
-                            initial={{ opacity: 0, y: 100 }} // Empieza invisible y un poco abajo
-                            whileInView={{ opacity: 1, y: 0 }} // Aparece y sube al entrar en el viewport
-                            viewport={{ once: true, amount: 0.5 }} // Se activa cuando el 50% es visible, una sola vez
+                            initial={{ opacity: 0, y: 100 }} 
+                            whileInView={{ opacity: 1, y: 0 }} 
+                            viewport={{ once: true, amount: 0.5 }} 
                             transition={{ duration: 0.8, ease: "easeOut" }}
                         ></motion.div>
                     )}
                 </motion.div>
 
                 {/* 4. NUEVO: Sección combinada de Texto Inferior y Galería */}
-                {/* El orden en el JSX (párrafo primero, galería después) se mantiene */}
                 {(project.descriptionBottomText && project.descriptionBottomText.length > 0 || 
                   project.gallery && project.gallery.length > 0) && (
                     <div className={styles.bottomContentGrid}> 
                         {/* Texto inferior a la izquierda (o donde lo coloques con CSS) */}
                         {project.descriptionBottomText && project.descriptionBottomText.length > 0 && ( 
-                            <motion.div // <<-- APLICANDO ANIMACIÓN AL TEXTO INFERIOR
+                            <motion.div 
                                 className={styles.descriptionBottomTextContainer} 
-                                initial={{ opacity: 0, y: 50 }} // Empieza invisible y un poco abajo
-                                whileInView={{ opacity: 1, y: 0 }} // Aparece y sube al entrar en el viewport
-                                viewport={{ once: true, amount: 0.4 }} // Se activa cuando el 40% del texto es visible
-                                transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }} // Animación con un pequeño retraso
+                                initial={{ opacity: 0, y: 50 }} 
+                                whileInView={{ opacity: 1, y: 0 }} 
+                                viewport={{ once: true, amount: 0.4 }} 
+                                transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }} 
                             >
                                 {project.descriptionBottomText.map((part, index) => (
-                                    <p key={`bottom-text-after-gallery-${index}`}>{part}</p>
+                                    // <<-- APLICO dangerouslySetInnerHTML AQUÍ -->>
+                                    <p key={`bottom-text-after-gallery-${index}`} dangerouslySetInnerHTML={{ __html: part }}></p>
                                 ))}
+                                
+                                {/* <<-- BOTÓN MOVIDO AQUÍ DENTRO DE UN CONTENEDOR PARA CENTRARLO -->> */}
+                                <div className={styles.centeredButtonContainer}> 
+                                    <Link to="/#portfolio" className={styles.backButtonWhite}> Volver al portfolio</Link>
+                                </div>
                             </motion.div>
                         )}
 
                         {/* Galería de fotos a la derecha (o donde lo coloques con CSS) */}
                         {project.gallery && project.gallery.length > 0 && (
-                            <motion.div // <<-- APLICANDO ANIMACIÓN AL CONTENEDOR DE LA GALERÍA
+                            <motion.div 
                                 className={styles.combinedPhotoGallery} 
-                                initial={{ opacity: 0, y: 50 }} // Empieza invisible y un poco abajo
-                                whileInView={{ opacity: 1, y: 0 }} // Aparece y sube al entrar en el viewport
-                                viewport={{ once: true, amount: 0.4 }} // Se activa cuando el 40% de la galería es visible
-                                transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }} // Animación con un retraso mayor al texto
+                                initial={{ opacity: 0, y: 50 }} 
+                                whileInView={{ opacity: 1, y: 0 }} 
+                                viewport={{ once: true, amount: 0.4 }} 
+                                transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }} 
                             > 
                                 {/* Fila Superior: Dos imágenes grandes */}
                                 <div className={styles.galleryTopRow}>
                                     {project.gallery.slice(0, 2).map((image, index) => (
-                                        <motion.img // <<-- Ya tienen animación individual, esto seguirá funcionando
+                                        <motion.img 
                                             key={index}
                                             src={image}
                                             alt={`${project.title} - Galería superior ${index + 1}`}
@@ -145,7 +154,7 @@ const ProjectDetail = () => {
                                 {/* Fila Inferior: Tres imágenes pequeñas */}
                                 <div className={styles.galleryBottomRow}>
                                     {project.gallery.slice(2, 5).map((image, index) => (
-                                        <motion.img // <<-- Ya tienen animación individual, esto seguirá funcionando
+                                        <motion.img 
                                             key={index + 2} 
                                             src={image}
                                             alt={`${project.title} - Galería inferior ${index + 3}`}
@@ -157,17 +166,19 @@ const ProjectDetail = () => {
                                         />
                                     ))}
                                 </div>
+
                             </motion.div>
                         )}
                     </div>
                 )}
-
-                {/* Botón para volver al portfolio */}
+                
+                {/* <<-- EL VIEJO CONTENEDOR DEL BOTÓN HA SIDO ELIMINADO DE AQUÍ -->> */}
                 {/* <div className={styles.backButtonContainer}>
                     <Link to="/#portfolio" className={styles.backButtonWhite}>&lt;- Volver al portfolio</Link>
                 </div> */}
                 
-            <SimpleFooter></SimpleFooter>
+                {/* Footer Simple */}
+                <SimpleFooter /> 
             </motion.div>
         </>
     );

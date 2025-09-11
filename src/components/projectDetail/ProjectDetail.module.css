@@ -77,8 +77,9 @@
     height: 500px; 
     min-height: 400px; 
     background-image: var(--parallax-image);
-    background-size: cover; 
+    background-size: contain; /* <--- Altere para 'contain' */
     background-position: center center; 
+    background-repeat: no-repeat; /* <--- Adicione para evitar repetição da imagem */
     display: block;
 }
 
@@ -90,7 +91,7 @@
     font-size: clamp(1rem, 1.5vw, 1.2rem);
     line-height: 1.6;
     color: #ccc;
-    text-align: left; /* Asegura que el texto esté alineado a la izquierda */
+    text-align: center; /* Asegura que el texto esté alineado a la izquierda */
 }
 .descriptionBottomTextContainer p {
     margin-bottom: 1em; /* Espacio entre párrafos */
@@ -150,8 +151,8 @@
 /* Botón de regreso */
 .backButtonContainer {
     max-width: 1200px;
-    margin: 60px auto 100px;
-    padding: 0 40px;
+    margin: 60px auto 00px;
+    padding: auto 40px;
 }
 
 .backButtonWhite {

@@ -4,25 +4,25 @@ import ExpandableItem from '../expandableItem/ExpandableItem';
 import styles from './SomeSection.module.css';
 
 // Importa todas las imágenes que necesitas
-import project7Img from '../../assets/project11.png';
-import project8Img from '../../assets/project7.png';
-import project3Img from '../../assets/project3.png';
+import project7Img from '../../assets/Dasein/1.webp';
+import project8Img from '../../assets/Dasein/4.webp';
+import project3Img from '../../assets/Punto33/7.webp';
 // Asume que tienes más imágenes, como las siguientes
-import project4Img from '../../assets/project10.png';
-import project1Img from '../../assets/project2.webp';
-import project6Img from '../../assets/project8.png';
-import project11Img from '../../assets/web.png';
+import project4Img from '../../assets/Marull/3.webp';
+import project1Img from '../../assets/Orus/web.webp';
+import project6Img from '../../assets/Orus/4.webp';
+import project11Img from '../../assets/Kromos/3.webp' ;
 import project12Img from '../../assets/AkoAgro/5.webp';
-import project15Img from '../../assets/Kromos/5.webp';
+import project15Img from '../../assets/AkoAgro/4.webp';
 
 
 
 
 const SomeSection = () => {
  // Define arrays de imágenes específicos para cada ítem
- const imagesForFirstItem = [project3Img, project1Img, project6Img];
- const imagesForSecondItem = [project8Img, project4Img, project11Img];
- const imagesForThirdItem = [project15Img, project7Img, project12Img];
+ const imagesForFirstItem = [project3Img, project7Img, project11Img];
+ const imagesForSecondItem = [project4Img, project1Img, project6Img];
+ const imagesForThirdItem = [project15Img, project12Img, project8Img];
 
  return (
  <section className={styles.sectionWrapper}>
