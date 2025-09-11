@@ -46,7 +46,7 @@ const Nav = ({ isScrolled }) => {
           <a href="https://www.instagram.com//somoszap/" target="_blank" rel="noopener noreferrer" className={styles.instagram}>
             <i className="fab fa-instagram"></i>
           </a>
-          <a href="https://wa.me/5492945416727" target="_blank" rel="noopener noreferrer" className={styles.whatsapp}>
+          <a href="https://wa.me/5493513935627" target="_blank" rel="noopener noreferrer" className={styles.whatsapp}>
   <i className="fab fa-whatsapp"></i>
 </a>
 
