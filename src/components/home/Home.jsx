@@ -37,6 +37,9 @@ const Home = () => {
       {/* ... Tu código de otras secciones ... */}
       <section id='servicios' >
       </section>
+      <section id="nos">
+        <AboutUs />
+      </section>
       <SomeSection></SomeSection>
     
       
@@ -46,9 +49,6 @@ const Home = () => {
         <ProjectGrid />
       </section>
 
-      <section id="nos">
-        <AboutUs />
-      </section>
       <Reviews></Reviews>
       <BrandsSection></BrandsSection>
       <section id="contact">
