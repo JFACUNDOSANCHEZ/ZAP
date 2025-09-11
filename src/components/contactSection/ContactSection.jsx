@@ -35,7 +35,7 @@ const ContactSection = () => {
                     <h3 className={styles.buttonsTitle}>Conéctate con nosotros</h3>
                     <div className={styles.directContact}>
                         <a 
-                            href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`} 
+                            href={`https://web.whatsapp.com/${whatsappNumber}?text=${whatsappMessage}`} 
                             className={`${styles.actionButton} ${styles.whatsappButton}`} 
                             target="_blank" 
                             rel="noopener noreferrer"

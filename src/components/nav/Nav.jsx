@@ -42,15 +42,14 @@ const Nav = ({ isScrolled }) => {
       {/* Los enlaces de redes sociales están bien con <a> porque son externos */}
       <div className={styles.headerRight}>
         <div className={styles.socialIcons}>
-          <a href="https://www.linkedin.com/in/tu_perfil" target="_blank" rel="noopener noreferrer" className={styles.linkedin}>
-            <i className="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://www.instagram.com/tu_usuario" target="_blank" rel="noopener noreferrer" className={styles.instagram}>
+      
+          <a href="https://www.instagram.com//somoszap/" target="_blank" rel="noopener noreferrer" className={styles.instagram}>
             <i className="fab fa-instagram"></i>
           </a>
-          <a href="https://wa.me/tunumerodetelefono" target="_blank" rel="noopener noreferrer" className={styles.whatsapp}>
-            <i className="fab fa-whatsapp"></i>
-          </a>
+          <a href="https://wa.me/5492945416727" target="_blank" rel="noopener noreferrer" className={styles.whatsapp}>
+  <i className="fab fa-whatsapp"></i>
+</a>
+
         </div>
       </div>
     </header>
