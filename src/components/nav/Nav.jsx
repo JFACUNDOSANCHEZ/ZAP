@@ -33,8 +33,8 @@ const Nav = ({ isScrolled }) => {
           {/* Usa Link para todos los enlaces internos */}
           <li><Link to="/#home">INICIO</Link></li>
           <li><Link to="/#nos">NOSOTROS</Link></li>
-          <li><Link to="/#servicios">SERVICIOS</Link></li>
           <li><Link to="/#portfolio">PORTAFOLIO</Link></li>
+          <li><Link to="/#servicios">SERVICIOS</Link></li>
           <li><Link to="/#contact" > CONTACTANOS</Link></li>
         </ul>
       </nav>
@@ -49,7 +49,16 @@ const Nav = ({ isScrolled }) => {
           <a href="https://wa.me/5493513935627" target="_blank" rel="noopener noreferrer" className={styles.whatsapp}>
   <i className="fab fa-whatsapp"></i>
 </a>
-
+<a
+    href="mailto:hola@somoszap.com"
+    className={`${styles.actionButton} ${styles.emailButton}`}
+>
+    {/* <<-- CAMBIO AQUÍ -->> */}
+    <i className="fa-regular fa-envelope"></i> {/* Icono de Gmail / sobre */}
+    {/* O puedes usar el de Font Awesome 5 si tienes esa versión: <i className="far fa-envelope"></i> */}
+    {/* Si quieres el logo de Google Gmail específicamente y usas Font Awesome 6 Pro: <i className="fa-brands fa-google"></i> o <i className="fa-brands fa-google-plus-g"></i>, pero fa-envelope es más universal para email */}
+    
+</a>
         </div>
       </div>
     </header>

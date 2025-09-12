@@ -123,7 +123,9 @@
   color: #1da1f2; 
 }
 */
-
+.emailButton:hover i { /* Cuando pasas el ratón por el botón de email, el icono cambia de color */
+    color: #EA4335; /* Un rojo similar al de Gmail */
+}
 
 /* Reglas más específicas para cuando el header SÍ tiene scroll */
 /* Aquí aseguras que el color del texto y los iconos sea blanco cuando el fondo es oscuro */
@@ -192,7 +194,7 @@
   }
   /* Oculta los iconos sociales o el selector de idioma si es necesario */
   .languageSelector, .socialIcons {
-      display: none;
+      display: flex;
   }
 }
 
