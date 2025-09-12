@@ -104,6 +104,7 @@
   font-size: 18px;
   color: #f0f0f0; /* Color inicial para los iconos */
   transition: color 0.3s ease;
+    text-decoration: none;
 }
 
 .whatsapp:hover {
@@ -123,8 +124,23 @@
   color: #1da1f2; 
 }
 */
-.emailButton:hover i { /* Cuando pasas el ratón por el botón de email, el icono cambia de color */
+/* Agrega un color base para el icono del botón de email */
+.emailButton i {
+    color: #f0f0f0; /* Color inicial para el icono de email */
+    font-size: 18px; /* Asegura un tamaño consistente */
+    margin-right: 8px; /* Para separarlo del texto "Envía un Email" */
+    transition: color 0.3s ease;
+}
+
+.emailButton:hover i { /* Este ya lo tenías, ahora funcionará mejor */
     color: #EA4335; /* Un rojo similar al de Gmail */
+}
+
+/* También asegúrate de que el texto dentro del <a> tenga color si no es solo el icono */
+.emailButton {
+    color: #f0f0f0; /* Color base para el texto del botón de email */
+    text-decoration: none; /* Si es un enlace */
+    /* ... otras propiedades del botón ... */
 }
 
 /* Reglas más específicas para cuando el header SÍ tiene scroll */
