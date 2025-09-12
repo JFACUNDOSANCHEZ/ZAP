@@ -14,7 +14,7 @@ const DynamicTitle = ({ className }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % words.length);
-    }, 4500); // <-- Aumentamos el tiempo para que la animación se vea completa
+    }, 2000); // <-- Aumentamos el tiempo para que la animación se vea completa
 
     return () => clearInterval(interval);
   }, []);
