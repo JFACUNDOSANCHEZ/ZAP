@@ -100,9 +100,11 @@ const emailAddress = "hola@somoszap.com"; // Tu dirección de correo
                 <div>
                     <strong>Conectate</strong>
                     <p><a href="mailto:hola@somoszap.com">hola@somoszap.com</a></p>
+                    <p><a href={`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`} target="_blank" rel="noopener noreferrer">WhatsApp</a></p>
                     <p>Micaela<br />+54 9 3513 93-5627</p>
                     {/* <p>Villa Allende, Córdoba, Arg.</p> */}
                     <p>Silvina<br />+54 9 3513 55-6910</p>
+                    
                 </div>
             </div>
             
