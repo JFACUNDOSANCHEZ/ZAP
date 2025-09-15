@@ -91,11 +91,11 @@ const emailAddress = "hola@somoszap.com"; // Tu dirección de correo
                     <p>Branding y diseño de marca</p>
                 </div>
                 <div>
-                    <strong>Menu</strong>
-                    <p><Link to="/#home">Home</Link></p>
+                    <strong>Menú</strong>
+                    <p><Link to="/#home">Inicio</Link></p>
                     <p><Link to="/#nos">Nosotros</Link></p>
-                    <p><Link to="/#portfolio">Trabajos</Link></p>
-                    <p><Link to="/#contact">Contacto</Link></p>
+                    <p><Link to="/#portfolio">Portafolio</Link></p>
+                    <p><Link to="/#contact">Servicios</Link></p>
                 </div>
                 <div>
                     <strong>Conectate</strong>

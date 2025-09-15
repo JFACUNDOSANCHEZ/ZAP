@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Nav from '../nav/Nav';
 import { useParams, Link } from 'react-router-dom';
-import projectsData from '../../data/projects.js'; // Asegúrate de que este path sea correcto
+import projectsData from '../../data/projects.js';
 import { motion } from 'framer-motion';
 import styles from './ProjectDetail.module.css';
-import ContactSection from '../contactSection/ContactSection'; // Asumo que lo usas o lo usarás
-import SimpleFooter from '../SimpleFooter/SimpleFooter'; // Asegúrate de que este path sea correcto
+import ContactSection from '../contactSection/ContactSection';
+import SimpleFooter from '../SimpleFooter/SimpleFooter';
 
 const ProjectDetail = () => {
     const { id } = useParams();
@@ -13,7 +13,11 @@ const ProjectDetail = () => {
 
     const [isScrolled, setIsScrolled] = useState(false);
     const [scaleValue, setScaleValue] = useState(1);
-    const [isImageModalOpen, setIsImageModalOpen] = useState(false); // NUEVO ESTADO PARA EL MODAL DE IMAGEN
+
+    // Estados del modal
+    const [isImageModalOpen, setIsImageModalOpen] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(null);
+    const [allImages, setAllImages] = useState([]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -31,16 +35,36 @@ const ProjectDetail = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    // Función para abrir el modal
-    const openImageModal = () => {
+    // Abrir modal con índice
+    const openImageModal = (imageSrc) => {
+        const images = [
+            project.imageSrc,
+            ...(project.gallery || [])
+        ];
+
+        setAllImages(images);
+
+        const index = images.indexOf(imageSrc);
+        setCurrentIndex(index);
+
         setIsImageModalOpen(true);
-        document.body.style.overflow = 'hidden'; // Evita el scroll del body cuando el modal está abierto
+        document.body.style.overflow = 'hidden';
     };
 
-    // Función para cerrar el modal
     const closeImageModal = () => {
         setIsImageModalOpen(false);
-        document.body.style.overflow = 'unset'; // Restaura el scroll del body
+        setCurrentIndex(null);
+        document.body.style.overflow = 'unset';
+    };
+
+    const showNextImage = (e) => {
+        e.stopPropagation();
+        setCurrentIndex((prev) => (prev + 1) % allImages.length);
+    };
+
+    const showPrevImage = (e) => {
+        e.stopPropagation();
+        setCurrentIndex((prev) => (prev - 1 + allImages.length) % allImages.length);
     };
 
     if (!project) {
@@ -64,13 +88,13 @@ const ProjectDetail = () => {
                 transition={{ duration: 0.7 }}
                 className={styles.projectDetailContainer}
             >
-                {/* 1. Sección de título (texto arriba) */}
+                {/* 1. Título */}
                 <div className={styles.titleSection}>
                     <p className={styles.projectCategory}>{project.category}</p>
                     <h1 className={styles.projectTitle}>{project.title}</h1>
                 </div>
 
-                {/* 2. Sección de imagen principal con el efecto de zoom y onClick */}
+                {/* 2. Imagen principal */}
                 {project.imageSrc && (
                     <div className={styles.mainImageContainer}>
                         <img
@@ -78,19 +102,18 @@ const ProjectDetail = () => {
                             alt={project.title}
                             className={styles.mainImage}
                             style={{ transform: `scale(${scaleValue})` }}
-                            onClick={openImageModal} // <-- NUEVO: Al hacer click, abre el modal
+                            onClick={() => openImageModal(project.imageSrc)}
                         />
                     </div>
                 )}
 
-                {/* 3. Sección de contenido: texto a la izquierda, paralaje a la derecha */}
+                {/* 3. Texto + Parallax */}
                 <motion.div
                     className={styles.contentGrid}
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
                 >
-                    {/* Columna Izquierda: Texto principal y descriptionParts */}
                     <div className={styles.textContentLeft}>
                         {project.mainText && project.mainText.trim() !== '' && (
                             <p dangerouslySetInnerHTML={{ __html: project.mainText }}></p>
@@ -100,7 +123,6 @@ const ProjectDetail = () => {
                         ))}
                     </div>
 
-                    {/* Columna Derecha: Solo la imagen de Paralaje */}
                     {project.parallaxImage && (
                         <motion.div
                             className={styles.parallaxImageContainer}
@@ -113,11 +135,10 @@ const ProjectDetail = () => {
                     )}
                 </motion.div>
 
-                {/* 4. NUEVO: Sección combinada de Texto Inferior y Galería */}
+                {/* 4. Texto inferior + Galería */}
                 {(project.descriptionBottomText && project.descriptionBottomText.length > 0 ||
                     project.gallery && project.gallery.length > 0) && (
                         <div className={styles.bottomContentGrid}>
-                            {/* Galería de fotos a la derecha (o donde lo coloques con CSS) */}
                             {project.gallery && project.gallery.length > 0 && (
                                 <motion.div
                                     className={styles.combinedPhotoGallery}
@@ -126,7 +147,7 @@ const ProjectDetail = () => {
                                     viewport={{ once: true, amount: 0.4 }}
                                     transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
                                 >
-                                    {/* Fila Superior: Dos imágenes grandes */}
+                                    {/* Fila superior */}
                                     <div className={styles.galleryTopRow}>
                                         {project.gallery.slice(0, 2).map((image, index) => (
                                             <motion.img
@@ -138,12 +159,12 @@ const ProjectDetail = () => {
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true, amount: 0.5 }}
                                                 transition={{ duration: 0.5, delay: 0.1 * index }}
-                                                onClick={openImageModal} // <-- Opcional: también abrir modal con estas imágenes
+                                                onClick={() => openImageModal(image)}
                                             />
                                         ))}
                                     </div>
 
-                                    {/* Fila Inferior: Tres imágenes pequeñas */}
+                                    {/* Fila inferior */}
                                     <div className={styles.galleryBottomRow}>
                                         {project.gallery.slice(2, 5).map((image, index) => (
                                             <motion.img
@@ -155,7 +176,7 @@ const ProjectDetail = () => {
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true, amount: 0.5 }}
                                                 transition={{ duration: 0.5, delay: 0.1 * (index + 2) }}
-                                                onClick={openImageModal} // <-- Opcional: también abrir modal con estas imágenes
+                                                onClick={() => openImageModal(image)}
                                             />
                                         ))}
                                     </div>
@@ -184,26 +205,36 @@ const ProjectDetail = () => {
                 <SimpleFooter />
             </motion.div>
 
-            {/* NUEVO: Modal de Imagen */}
-            {isImageModalOpen && project.imageSrc && (
+            {/* Modal de Imagen con navegación */}
+            {isImageModalOpen && currentIndex !== null && (
                 <motion.div
                     className={styles.imageModalOverlay}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    onClick={closeImageModal} // Cierra el modal al hacer click en el overlay
+                    onClick={closeImageModal}
                 >
+                    <button className={styles.imageModalPrev} onClick={showPrevImage}>
+                        &#10094;
+                    </button>
                     <motion.img
-                        src={project.imageSrc}
-                        alt={project.title}
+                        src={allImages[currentIndex]}
+                        alt="Imagen ampliada"
                         className={styles.imageModalContent}
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.8, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        onClick={(e) => e.stopPropagation()} // Evita que el click en la imagen cierre el modal
+                        onClick={(e) => e.stopPropagation()}
                     />
+
+                    {/* Flechas de navegación */}
+
+                    {/* Botón cerrar */}
+                    <button className={styles.imageModalNext} onClick={showNextImage}>
+                        &#10095;
+                    </button>
                     <button className={styles.imageModalCloseButton} onClick={closeImageModal}>
                         &times;
                     </button>

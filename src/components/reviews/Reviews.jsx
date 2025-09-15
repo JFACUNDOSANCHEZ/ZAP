@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import styles from './Reviews.module.css';
 import { motion, AnimatePresence } from 'framer-motion';
+import r1 from '../../assets/rv1.jpeg';
 
 const reviewsData = [
   {
     id: 1,
-    text: "El trabajo de diseño y desarrollo web fue excepcional. Entendieron perfectamente la visión de nuestra marca y la tradujeron en una página web elegante y funcional, optimizada para todos los dispositivos y con una experiencia de usuario impecable. ¡Totalmente recomendado!",
-    author: "Sofía M.",
-    company: "Gerente de Marketing en XYZ Corp.",
-    imageSrc: "https://images.squarespace-cdn.com/content/v1/5d77a7f8ad30356d21445262/1695000300830-5TKAFHC2EBYTTM2QUWUP/fotos-de-perfil-blanco-y-negro.jpg"
+    text: "Chicas gracias x todo el laburo y predisposición para esta Feria! Siempre se trabaja a contra reloj y apurados en estas ocasiones, pero muchas gracias x su compromiso!",
+    author: "Veronica Taglioretti.",
+    company: "Coating.Tech.",
+    imageSrc:r1
   },
   {
     id: 2,
