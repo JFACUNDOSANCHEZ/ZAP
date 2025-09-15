@@ -12,7 +12,7 @@
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  filter: brightness(0.6);
+  filter: brightness(0.3);
 }
 .heroPretitle {
   font-size: 1.9rem;
@@ -31,7 +31,7 @@
     height: 100%;
     object-fit: cover; /* Esto es crucial para que la imagen cubra todo el espacio sin distorsionarse */
     z-index: 0;
-    filter: brightness(0.6); /* Ajusta el brillo para que el texto se vea bien encima */
+    filter: brightness(1.1); /* Ajusta el brillo para que el texto se vea bien encima */
     /* Si quieres un efecto de paralaje en la imagen, puedes añadir: */
     /* background-attachment: fixed; */ /* Esto hará que la imagen no se mueva con el scroll, creando un efecto de paralaje */
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Header.module.css';
-// import herobg from '../../assets/hero-bg1.mp4'; // <<--- ELIMINAR ESTA LÍNEA
+ import herobg from '../../assets/hero-bg1.mp4'; // <<--- ELIMINAR ESTA LÍNEA
 import heroImage from '../../assets/fdbg.jpeg'; // <<--- AÑADIR ESTA LÍNEA (usa el nombre de tu archivo de imagen)
 import Nav from '../nav/Nav';
 import DynamicTitle from './DynamicTitle'; 
@@ -43,7 +43,7 @@ const Header = () => {
   return (
     <header ref={heroSectionRef} className={styles.heroSection}>
       <Nav isScrolled={isScrolled} />
-      {/* <video // <<--- ELIMINAR TODO ESTE BLOQUE DE VIDEO
+      <video // <<--- ELIMINAR TODO ESTE BLOQUE DE VIDEO
         className={styles.videoBackground}
         autoPlay
         loop
@@ -52,13 +52,13 @@ const Header = () => {
       >
         <source src={herobg} type="video/mp4" />
         Tu navegador no soporta videos HTML5.
-      </video>  */}
+      </video> 
         {/* <<--- AÑADIR ESTA LÍNEA CON LA IMAGEN */}
-        <img 
+        {/* <img 
             src={heroImage} 
             alt="Fondo de héroe" 
             className={styles.imageBackground} 
-        />
+        /> */}
       <div className={styles.overlay}></div>
       <div
         className={`${styles.heroContent} ${animateHero ? styles.animate : ''}`}
