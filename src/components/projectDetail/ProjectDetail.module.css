@@ -213,3 +213,45 @@
         padding: 0 20px;
     }
 }
+/* Estilos para el Modal de Imagen */
+.imageModalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo oscuro semitransparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    cursor: zoom-out; /* Indica que se puede cerrar haciendo clic */
+}
+
+.imageModalContent {
+    max-width: 90%; /* Máximo 90% del ancho de la ventana */
+    max-height: 90%; /* Máximo 90% de la altura de la ventana */
+    object-fit: contain; /* Asegura que la imagen se ajuste sin cortarse */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    cursor: default; /* Cambia el cursor de nuevo para la imagen en sí */
+}
+
+.imageModalCloseButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 1001; /* Asegura que el botón esté por encima de la imagen */
+    padding: 10px;
+    line-height: 1; /* Para alinear bien el 'x' */
+    transition: color 0.2s ease;
+}
+
+.imageModalCloseButton:hover {
+    color: #ccc;
+}
