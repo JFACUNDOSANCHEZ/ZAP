@@ -20,7 +20,7 @@ const ContactSection = () => {
 const emailAddress = "hola@somoszap.com"; // Tu dirección de correo
     return (
         <footer id='contact' className={styles.contactHero}>
-            <Nav isScrolled={isScrolled} />
+            {/* <Nav isScrolled={isScrolled} /> */}
             
             <div className={styles.topContentContainer}>
                 <div className={styles.heroContent}>

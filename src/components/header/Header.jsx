@@ -42,7 +42,7 @@ const Header = () => {
 
   return (
     <header ref={heroSectionRef} className={styles.heroSection}>
-      <Nav isScrolled={isScrolled} />
+        <Nav isScrolled={isScrolled} />  
       <video // <<--- ELIMINAR TODO ESTE BLOQUE DE VIDEO
         className={styles.videoBackground}
         autoPlay
