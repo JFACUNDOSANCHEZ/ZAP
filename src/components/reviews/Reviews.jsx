@@ -11,27 +11,7 @@ const reviewsData = [
     company: "Coating.Tech.",
     imageSrc:r1
   },
-  {
-    id: 2,
-    text: "Estoy muy impresionado con la atención al detalle y la creatividad que se aplicó en mi proyecto. El resultado superó todas mis expectativas. Un verdadero profesional que se toma el tiempo de entender las necesidades del cliente y las convierte en una realidad impactante.",
-    author: "Juan C.",
-    company: "Emprendedor",
-    imageSrc: "https://muhimu.es/wp-content/uploads/2017/04/FRENTE-NITIDA.jpg"
-  },
-  {
-    id: 3,
-    text: "Trabajar con este equipo ha sido un placer. La comunicación fue fluida y el resultado final es un diseño de marca que realmente nos representa. Gracias por el increíble trabajo y por hacer de este proceso una experiencia tan positiva.",
-    author: "Ana P.",
-    company: "Dueña de 'La Dulce Vita'",
-    imageSrc: "https://media.glamour.mx/photos/65b096f13756393e0200c63d/16:9/w_2560%2Cc_limit/que-significa-tu-foto-de-perfil.jpg"
-  },
-  {
-    id: 4,
-    text: "El profesionalismo y la calidad del trabajo son insuperables. Nuestra nueva identidad visual ha recibido elogios de todos nuestros clientes. Su enfoque estratégico es evidente en cada detalle.",
-    author: "Carlos G.",
-    company: "Director Creativo en 'Studio Nexus'",
-    imageSrc: "https://media.istockphoto.com/id/1090878494/es/foto/retrato-de-joven-sonriente-a-hombre-guapo-en-camiseta-polo-azul-aislado-sobre-fondo-gris-de.jpg?s=612x612&w=0&k=20&c=dHFsDEJSZ1kuSO4wTDAEaGOJEF-HuToZ6Gt-E2odc6U="
-  },
+
 ];
 
 const Reviews = () => {
